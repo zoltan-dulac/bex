@@ -83,14 +83,18 @@ body {
   background: url("../images/page.jpg");
   /* shared styles */
 }
-@media (min-width: 1025px) {
+/* line 22, ../sass/style.scss */
+body #lightboxOverlay, body #lightbox {
+  -webkit-transform: translateZ(0);
+}
+@media (min-width: 1000px) {
   /* line 20, ../sass/style.scss */
   body {
     padding: 0px;
     background: #ffffff;
   }
 }
-/* line 37, ../sass/style.scss */
+/* line 41, ../sass/style.scss */
 body nav ul {
   position: fixed;
   top: 0;
@@ -100,8 +104,8 @@ body nav ul {
   width: 100%;
   padding: 10px;
 }
-@media (min-width: 1025px) {
-  /* line 37, ../sass/style.scss */
+@media (min-width: 1000px) {
+  /* line 41, ../sass/style.scss */
   body nav ul {
     position: static;
     height: initial;
@@ -110,19 +114,19 @@ body nav ul {
     padding: 0;
   }
 }
-/* line 56, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 body nav ul li {
   display: inline-block;
   width: 18%;
   text-align: center;
 }
-@media (min-width: 1025px) {
-  /* line 56, ../sass/style.scss */
+@media (min-width: 1000px) {
+  /* line 60, ../sass/style.scss */
   body nav ul li {
     width: 19%;
   }
 }
-/* line 66, ../sass/style.scss */
+/* line 70, ../sass/style.scss */
 body nav ul li a {
   text-decoration: none;
   color: white;
@@ -140,7 +144,7 @@ body nav ul li a {
   -webkit-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
   font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
 }
-/* line 81, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 body.ie9down body nav ul li a {
   /*
   * older IE doesn't support font-feature-settings, so we it to use the old
@@ -149,14 +153,14 @@ body.ie9down body nav ul li a {
   */
   font-variant: small-caps;
 }
-@media (min-width: 1025px) {
-  /* line 66, ../sass/style.scss */
+@media (min-width: 1000px) {
+  /* line 70, ../sass/style.scss */
   body nav ul li a {
     font-size: 20px;
     color: black;
   }
 }
-/* line 105, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 body #book > div {
   /*
   * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
@@ -166,31 +170,31 @@ body #book > div {
   padding-top: 30px;
   padding: 10px;
 }
-@media (min-width: 1025px) {
-  /* line 105, ../sass/style.scss */
+@media (min-width: 1000px) {
+  /* line 109, ../sass/style.scss */
   body #book > div {
     background: none;
   }
 }
-/* line 117, ../sass/style.scss */
+/* line 121, ../sass/style.scss */
 body #book > div.no-mobile {
   display: none;
 }
-/* line 122, ../sass/style.scss */
+/* line 126, ../sass/style.scss */
 body #book > div.hide {
   display: none;
 }
-@media (min-width: 1025px) {
-  /* line 105, ../sass/style.scss */
+@media (min-width: 1000px) {
+  /* line 109, ../sass/style.scss */
   body #book > div {
     padding: 0;
   }
-  /* line 135, ../sass/style.scss */
+  /* line 139, ../sass/style.scss */
   body #book > div.no-mobile {
     display: initial;
   }
 }
-/* line 141, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 body #book h1 {
   font-family: 'MardianDemo', cursive;
   -ms-font-feature-settings: "dlig" 1;
@@ -201,30 +205,30 @@ body #book h1 {
   text-align: center;
   margin-bottom: 10px;
 }
-/* line 149, ../sass/style.scss */
+/* line 153, ../sass/style.scss */
 body #book h1.cover {
   margin-top: 50px;
 }
 @media (min-width: 321px) {
-  /* line 141, ../sass/style.scss */
+  /* line 145, ../sass/style.scss */
   body #book h1 {
     font-size: 70px;
   }
 }
-/* line 158, ../sass/style.scss */
+/* line 162, ../sass/style.scss */
 body #book p {
   max-width: 390px;
   width: 100%;
   margin: 10px auto 0 auto;
 }
 @media (min-width: 321px) {
-  /* line 158, ../sass/style.scss */
+  /* line 162, ../sass/style.scss */
   body #book p {
-    max-width: initial;
-    width: initial;
+    /* max-width: initial;
+    width: initial;  */
   }
 }
-/* line 170, ../sass/style.scss */
+/* line 174, ../sass/style.scss */
 body #book .date {
   font-family: 'MardianDemo', cursive;
   font-size: 30px;
@@ -233,79 +237,91 @@ body #book .date {
   line-height: 1.1;
 }
 @media (min-width: 321px) {
-  /* line 170, ../sass/style.scss */
+  /* line 174, ../sass/style.scss */
   body #book .date {
     font-size: 50px;
   }
 }
-/* line 183, ../sass/style.scss */
+/* line 187, ../sass/style.scss */
 body #book img.page-width {
   max-width: 390px;
   width: 100%;
   display: block;
   margin: 0 auto;
 }
-/* line 191, ../sass/style.scss */
+/* line 194, ../sass/style.scss */
+body #book form {
+  width: 390px;
+  margin: 0 auto;
+}
+/* line 199, ../sass/style.scss */
 body #book form > div {
   margin: 20px 0;
 }
-/* line 195, ../sass/style.scss */
+/* line 203, ../sass/style.scss */
 body #book form label > span {
   width: 200px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 201, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 body #book form input[type="number"] {
   margin-left: 4px;
 }
-/* line 205, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 body #book form label.full-width > span,
 body #book form label.full-width > div,
 body #book form textarea {
   width: 100%;
   text-align: left;
 }
-/* line 212, ../sass/style.scss */
+/* line 220, ../sass/style.scss */
 body #book form textarea {
   height: 200px;
 }
-/* line 216, ../sass/style.scss */
+/* line 224, ../sass/style.scss */
 body #book form label > span, body #book form label > div {
   display: inline-block;
 }
-/* line 224, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 body #book form select {
   width: 120px;
 }
-/* line 231, ../sass/style.scss */
+@media (min-width: 1000px) {
+  /* line 194, ../sass/style.scss */
+  body #book form {
+    width: auto;
+    margin: 0;
+  }
+}
+/* line 244, ../sass/style.scss */
 body #book ul.photos li {
   border: solid 1px red;
   display: inline-block;
   margin: 0 0 10px 10px;
 }
-/* line 238, ../sass/style.scss */
+/* line 251, ../sass/style.scss */
 body #book ul.photos li, body #book ul.photos img {
   width: 114px;
   height: 114px;
 }
-@media (min-width: 1025px) {
+@media (min-width: 1000px) {
   /* line 20, ../sass/style.scss */
   body {
     /* Nav */
   }
-  /* line 248, ../sass/style.scss */
+  /* line 262, ../sass/style.scss */
   body p {
     margin-bottom: 1em;
     width: auto;
     margin: initial;
   }
-  /* line 259, ../sass/style.scss */
+  /* line 273, ../sass/style.scss */
   body nav ul {
     display: block;
     padding: 10px 0;
   }
-  /* line 271, ../sass/style.scss */
+  /* line 285, ../sass/style.scss */
   body #book-container {
     /*
     * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
@@ -316,10 +332,10 @@ body #book ul.photos li, body #book ul.photos img {
     background-repeat: no-repeat;
     width: 960px;
     height: 700px;
-    margin: 0 auto;
+    margin: -20px auto 0 auto;
     overflow: hidden;
   }
-  /* line 287, ../sass/style.scss */
+  /* line 303, ../sass/style.scss */
   body #book {
     width: 860px;
     height: 650px;
@@ -328,27 +344,27 @@ body #book ul.photos li, body #book ul.photos img {
     position: relative;
   }
 }
-@media (min-width: 1025px) and (min-width: 1025px) {
-  /* line 287, ../sass/style.scss */
+@media (min-width: 1000px) and (min-width: 1000px) {
+  /* line 303, ../sass/style.scss */
   body #book {
     background: url("../images/page.jpg");
   }
 }
-@media (min-width: 1025px) {
-  /* line 305, ../sass/style.scss */
+@media (min-width: 1000px) {
+  /* line 321, ../sass/style.scss */
   body #book > .turn-page-wrapper[page="1"] .turn-page, body #book > .turn-page-wrapper[page="3"] .turn-page, body #book > .turn-page-wrapper[page="5"] .turn-page, body #book > .turn-page-wrapper[page="7"] .turn-page, body #book > .turn-page-wrapper[page="9"] .turn-page {
     box-shadow: 10px 0 10px rgba(200, 200, 200, 0.5) inset;
   }
-  /* line 325, ../sass/style.scss */
+  /* line 341, ../sass/style.scss */
   body #book img.page-width {
     margin: 10px 0;
   }
-  /* line 331, ../sass/style.scss */
+  /* line 347, ../sass/style.scss */
   body #book .turn-page {
     background: url("../images/page.jpg");
     border: solid 1px #cccccc;
   }
-  /* line 337, ../sass/style.scss */
+  /* line 353, ../sass/style.scss */
   body #book .turn-page .page-container {
     padding: 20px;
   }
