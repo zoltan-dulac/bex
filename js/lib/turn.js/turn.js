@@ -1778,8 +1778,9 @@ flipMethods = {
 	_eventStart: function(e) {
 
 		var data = this.data().f;
+		
 
-		if (!data.disabled && !this.flip('isTurning')) {
+		if (data && !data.disabled && !this.flip('isTurning')) {
 			data.corner = flipMethods._cornerActivated.call(this, e);
 			if (data.corner && flipMethods._foldingPage.call(this, data.corner)) {
 				flipMethods._moveFoldingPage.call(this, true);
@@ -1795,7 +1796,7 @@ flipMethods = {
 
 		var data = this.data().f;
 
-		if (!data.disabled) {
+		if (data && !data.disabled) {
 			e = (isTouch) ? e.originalEvent.touches : [e];
 		
 			if (data.corner) {
@@ -1826,15 +1827,16 @@ flipMethods = {
 
 		var data = this.data().f;
 
-		if (!data.disabled && data.point) {
-			var event = $.Event('released');
-			this.trigger(event, [data.point]);
-			if (!event.isDefaultPrevented())
-				flipMethods.hideFoldedPage.call(this, true);
+		if (data) {
+			if (!data.disabled && data.point) {
+				var event = $.Event('released');
+				this.trigger(event, [data.point]);
+				if (!event.isDefaultPrevented())
+					flipMethods.hideFoldedPage.call(this, true);
+			}
+	
+			data.corner = null;
 		}
-
-		data.corner = null;
-
 	},
 
 	disable: function(disable) {

@@ -18,14 +18,15 @@ html, body {
 
 
 body {
-   background: #ffffff;
+   
    padding: 0px;
    line-height: 1.2;
    font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
    padding-top: 30px;
-   
+   background: url('../images/page.jpg');
    @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
       padding: 0px;
+      background: #ffffff;
    }
    
    /* shared styles */
@@ -232,10 +233,11 @@ body {
               border: solid 1px red;
               display: inline-block;
               margin: 0 0 10px 10px;
-         
+          }
+          
+          li, img {
               width: $thumb_size;
               height: $thumb_size;
-              
           }
         }
       
@@ -286,7 +288,9 @@ body {
          width: 860px;
          height: 650px;
          
-         background: url('../images/page.jpg');
+         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+             background: url('../images/page.jpg');
+         }
          
          left: 62px;
          top: 26px;

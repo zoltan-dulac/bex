@@ -38,13 +38,11 @@ var weddingBook = new function () {
 		isBook = false;
 	
 	me.init = function () {
-		$jc = {
-			book: $('#book'),
-			window: $(window),
-			pages: $('#book > div')
-		}
+		
+		cacheJquery();
 		
 		originalHTML = $jc.book.html();
+		
 		resizeEvent();
 		
 		if (isMobile()) {
@@ -54,7 +52,27 @@ var weddingBook = new function () {
 		/* sets up the main nav */
 		$('nav a').bind('click', navClickEvent);
 		
-		$(window).smartresize(resizeEvent)
+		$(window).smartresize(resizeEvent);
+		
+		gotoHashPage();
+		setTimeout(function() {
+		  if (location.hash) {
+		    window.scrollTo(0, 0);
+		  }
+		}, 1);
+	}
+	
+	function gotoHashPage() {
+		var hash = location.hash;
+		$('a[href="' + hash + '"]').click();
+	}
+	
+	function cacheJquery() {
+		$jc = {
+			book: $('#book'),
+			window: $(window),
+			pages: $('#book > div')
+		}
 	}
 	
 	function isMobile() {
@@ -72,8 +90,9 @@ var weddingBook = new function () {
 			pageNum = parseInt(target.href.split('#')[1]);
 		if (isDesktop()) {
 
-			e.preventDefault();
 			
+			location.hash = '#' + pageNum;
+			e.preventDefault();
 			//alert(target.href);
 			$jc.book.turn('page', pageNum);
 		} else {
@@ -85,9 +104,10 @@ var weddingBook = new function () {
 	}
 	
 	function showOnly(dataFor) {
-		
+		console.log($jc.pages.length);
 		$jc.pages.each(function(i, el) {
 			var $el = $(el);
+			console.log('data-for', el.outerHTML, $el.attr('data-for'));
 			if ($el.attr('data-for') === dataFor) {
 				$el.removeClass('hide');
 			} else {
@@ -104,16 +124,22 @@ var weddingBook = new function () {
 		var w = $jc.window.width();
 		
 		if (isMobile() && isBook && originalHTML !== '') {
-			//$jc.book.turn('destroy');
-			// destroy jquery plugin. From http://ub4.underblob.com/remove-jquery-plugin-instance/
+			console.error('change to mobile')
 			destroyCrappyPlugin($jc.book);
 			
+			//console.log(originalHTML);
 			$jc.book.html(originalHTML).attr('style', '');
+			cacheJquery();
+			console.log($jc.book[0].outerHTML);
 			showOnly('home');
 			isBook = false;
+			gotoHashPage();
 		} else if (isDesktop() && !isBook){
+			console.error('change to desktop')
+			cacheJquery();
 			$jc.book.turn({gradients: true, acceleration: true});
 			isBook = true;
+			gotoHashPage();
 		}
 	}
 	
