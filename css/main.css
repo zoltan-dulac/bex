@@ -1,0 +1,233 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(../fonts/calendas-plus/hinted-stylesheet.css);
+@import url(../fonts/mardian/stylesheet.css);
+/* line 6, ../sass/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, ../sass/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, ../sass/reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 34, ../sass/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, ../sass/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 40, ../sass/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, ../sass/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 50, ../sass/reset.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Mixins - to be put into a seperate file later */
+/* line 14, ../sass/main.scss */
+html, body {
+  height: 100%;
+  background: yellow;
+}
+@media (min-width: 321px) {
+  /* line 14, ../sass/main.scss */
+  html, body {
+    background: blue;
+  }
+}
+
+/* line 23, ../sass/main.scss */
+body {
+  background: #ffffff;
+  padding: 10px;
+  line-height: 1.2;
+  font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
+}
+
+/* line 29, ../sass/main.scss */
+p {
+  margin-bottom: 1em;
+}
+
+/* Nav */
+/* line 37, ../sass/main.scss */
+nav ul {
+  display: block;
+  padding: 10px 0;
+}
+/* line 44, ../sass/main.scss */
+nav ul li {
+  display: inline-block;
+  width: 19%;
+  text-align: center;
+}
+/* line 49, ../sass/main.scss */
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  /* 
+   * Tells the browser to use the following variants of the font:
+   * - small caps (see below for CSS fix for old IE)
+   * - ligatures
+   * - discretionary ligatures
+   * - swash characters
+   * - use the font's kerning.
+   */
+  -ms-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
+  -moz-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
+  -webkit-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
+  font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
+}
+/* line 63, ../sass/main.scss */
+body.ie9down nav ul li a {
+  /* 
+   * older IE doesn't support font-feature-settings, so we it to use the old
+   * way to do small caps. Note this is not the best way to do small caps.
+   * but it's the best it can do
+   */
+  font-variant: small-caps;
+}
+
+/* line 80, ../sass/main.scss */
+#book-container {
+  /* 
+   * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
+   * I cut each half to be 512x700.
+   */
+  background-image: url("../images/book-cover-left.png"), url("../images/book-cover-right.png");
+  background-position: left top, right top;
+  background-repeat: no-repeat;
+  width: 960px;
+  height: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* line 96, ../sass/main.scss */
+#book-container #book {
+  width: 860px;
+  height: 650px;
+  background: url("../images/page.jpg");
+  left: 62px;
+  top: 26px;
+  position: relative;
+}
+/* line 112, ../sass/main.scss */
+#book-container #book > .turn-page-wrapper[page="1"] .turn-page, #book-container #book > .turn-page-wrapper[page="3"] .turn-page, #book-container #book > .turn-page-wrapper[page="5"] .turn-page, #book-container #book > .turn-page-wrapper[page="7"] .turn-page, #book-container #book > .turn-page-wrapper[page="9"] .turn-page {
+  box-shadow: 10px 0 10px rgba(200, 200, 200, 0.5) inset;
+}
+/* line 130, ../sass/main.scss */
+#book-container #book h1 {
+  font-family: 'MardianDemo', cursive;
+  -ms-font-feature-settings: "dlig" 1;
+  -moz-font-feature-settings: "dlig" 1;
+  -webkit-font-feature-settings: "dlig" 1;
+  font-feature-settings: "dlig" 1;
+  font-size: 70px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* line 138, ../sass/main.scss */
+#book-container #book h1.cover {
+  margin-top: 50px;
+}
+/* line 143, ../sass/main.scss */
+#book-container #book .date {
+  font-family: 'MardianDemo', cursive;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+/* line 151, ../sass/main.scss */
+#book-container #book img.page-width {
+  width: 390px;
+  margin: 10px 0;
+}
+/* line 157, ../sass/main.scss */
+#book-container #book form > div {
+  margin: 20px 0;
+}
+/* line 161, ../sass/main.scss */
+#book-container #book form label > span {
+  width: 200px;
+  text-align: right;
+  margin-right: 10px;
+}
+/* line 167, ../sass/main.scss */
+#book-container #book form input[type="number"] {
+  margin-left: 4px;
+}
+/* line 171, ../sass/main.scss */
+#book-container #book form label.full-width > span,
+#book-container #book form label.full-width > div,
+#book-container #book form textarea {
+  width: 100%;
+  text-align: left;
+}
+/* line 178, ../sass/main.scss */
+#book-container #book form textarea {
+  height: 200px;
+}
+/* line 182, ../sass/main.scss */
+#book-container #book form label > span, #book-container #book form label > div {
+  display: inline-block;
+}
+/* line 190, ../sass/main.scss */
+#book-container #book form select {
+  width: 120px;
+}
+/* line 195, ../sass/main.scss */
+#book-container #book .turn-page {
+  background: url("../images/page.jpg");
+  border: solid 1px #cccccc;
+}
+/* line 201, ../sass/main.scss */
+#book-container #book .turn-page .page-container {
+  padding: 20px;
+}

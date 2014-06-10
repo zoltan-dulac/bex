@@ -1,0 +1,56 @@
+/*
+Syntax error: Invalid CSS after "@import ": expected file to import (string or url()), was "breakpoints.scss"
+        on line 1 of /cygdrive/c/project3/jodylovesrebecca.com/sass/clean.scss
+
+1: /cygdrive/c/project3/jodylovesrebecca.com/sass/clean.scss
+
+Backtrace:
+/cygdrive/c/project3/jodylovesrebecca.com/sass/clean.scss:1
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:1314:in `expected'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:1248:in `expected'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:1228:in `expr!'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:368:in `block in import_directive'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:367:in `loop'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:367:in `import_directive'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:221:in `special_directive'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:193:in `directive'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:659:in `block_child'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:649:in `block_contents'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:116:in `stylesheet'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/scss/parser.rb:41:in `parse'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/engine.rb:409:in `_to_tree'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.3.8/lib/sass/engine.rb:274:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/compass-import-once-1.0.4/lib/compass/import-once/engine.rb:17:in `block in render'
+/usr/lib/ruby/gems/1.9.1/gems/compass-import-once-1.0.4/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+/usr/lib/ruby/gems/1.9.1/gems/compass-import-once-1.0.4/lib/compass/import-once/engine.rb:16:in `render'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/compiler.rb:171:in `block (2 levels) in compile'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/compiler.rb:153:in `timed'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/compiler.rb:166:in `block in compile'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/logger.rb:46:in `red'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/compiler.rb:165:in `compile'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/compiler.rb:144:in `compile_if_required'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/compiler.rb:129:in `block (2 levels) in run'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/compiler.rb:127:in `each'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/compiler.rb:127:in `block in run'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/compiler.rb:153:in `timed'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/compiler.rb:126:in `run'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/watcher/compiler.rb:24:in `compile'
+/usr/lib/ruby/1.9.1/forwardable.rb:201:in `compile'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/watcher/project_watcher.rb:106:in `sass_added'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/watcher/project_watcher.rb:91:in `sass_callback'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/watcher/watch.rb:14:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/watcher/watch.rb:14:in `run_callback'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/watcher/project_watcher.rb:69:in `block in listen_callback'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/watcher/project_watcher.rb:66:in `each'
+/usr/lib/ruby/gems/1.9.1/gems/compass-1.0.0.alpha.19/lib/compass/watcher/project_watcher.rb:66:in `listen_callback'
+/usr/lib/ruby/gems/1.9.1/gems/listen-1.1.6/lib/listen/listener.rb:236:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/listen-1.1.6/lib/listen/listener.rb:236:in `on_change'
+/usr/lib/ruby/gems/1.9.1/gems/listen-1.1.6/lib/listen/listener.rb:271:in `block in initialize_adapter'
+/usr/lib/ruby/gems/1.9.1/gems/listen-1.1.6/lib/listen/adapters/polling.rb:48:in `call'
+/usr/lib/ruby/gems/1.9.1/gems/listen-1.1.6/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+/usr/lib/ruby/gems/1.9.1/gems/listen-1.1.6/lib/listen/adapter.rb:289:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"@import \": expected file to import (string or url()), was \"breakpoints.scss\"\A         on line 1 of /cygdrive/c/project3/jodylovesrebecca.com/sass/clean.scss\A \A 1: /cygdrive/c/project3/jodylovesrebecca.com/sass/clean.scss"; }

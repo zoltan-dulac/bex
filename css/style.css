@@ -1,0 +1,344 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(../fonts/calendas-plus/hinted-stylesheet.css);
+@import url(../fonts/mardian/stylesheet.css);
+/* line 6, ../sass/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, ../sass/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, ../sass/reset.scss */
+body {
+  line-height: 1;
+}
+
+/* line 34, ../sass/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, ../sass/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 40, ../sass/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, ../sass/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 50, ../sass/reset.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Mixins - to be put into a seperate file later */
+/* line 14, ../sass/style.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 20, ../sass/style.scss */
+body {
+  background: #ffffff;
+  padding: 0px;
+  line-height: 1.2;
+  font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
+  padding-top: 30px;
+  /* shared styles */
+}
+@media (min-width: 1025px) {
+  /* line 20, ../sass/style.scss */
+  body {
+    padding: 0px;
+  }
+}
+/* line 36, ../sass/style.scss */
+body nav ul {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: black;
+  color: white;
+  width: 100%;
+  padding: 10px;
+}
+@media (min-width: 1025px) {
+  /* line 36, ../sass/style.scss */
+  body nav ul {
+    position: static;
+    height: initial;
+    background: white;
+    color: black;
+    padding: 0;
+  }
+}
+/* line 55, ../sass/style.scss */
+body nav ul li {
+  display: inline-block;
+  width: 18%;
+  text-align: center;
+}
+@media (min-width: 1025px) {
+  /* line 55, ../sass/style.scss */
+  body nav ul li {
+    width: 19%;
+  }
+}
+/* line 65, ../sass/style.scss */
+body nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  /*
+  * Tells the browser to use the following variants of the font:
+  * - small caps (see below for CSS fix for old IE)
+  * - ligatures
+  * - discretionary ligatures
+  * - swash characters
+  * - use the font's kerning.
+  */
+  -ms-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
+  -moz-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
+  -webkit-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
+  font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
+}
+/* line 80, ../sass/style.scss */
+body.ie9down body nav ul li a {
+  /*
+  * older IE doesn't support font-feature-settings, so we it to use the old
+  * way to do small caps. Note this is not the best way to do small caps.
+  * but it's the best it can do
+  */
+  font-variant: small-caps;
+}
+@media (min-width: 1025px) {
+  /* line 65, ../sass/style.scss */
+  body nav ul li a {
+    font-size: 20px;
+    color: black;
+  }
+}
+/* line 104, ../sass/style.scss */
+body #book > div {
+  /*
+  * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
+  * I cut each half to be 512x700.
+  */
+  background: url("../images/page.jpg");
+  padding-top: 30px;
+  padding: 10px;
+}
+@media (min-width: 1025px) {
+  /* line 104, ../sass/style.scss */
+  body #book > div {
+    background: none;
+  }
+}
+/* line 116, ../sass/style.scss */
+body #book > div.no-mobile {
+  display: none;
+}
+/* line 121, ../sass/style.scss */
+body #book > div.hide {
+  display: none;
+}
+@media (min-width: 1025px) {
+  /* line 104, ../sass/style.scss */
+  body #book > div {
+    padding: 0;
+  }
+  /* line 134, ../sass/style.scss */
+  body #book > div.no-mobile {
+    display: initial;
+  }
+}
+/* line 140, ../sass/style.scss */
+body #book h1 {
+  font-family: 'MardianDemo', cursive;
+  -ms-font-feature-settings: "dlig" 1;
+  -moz-font-feature-settings: "dlig" 1;
+  -webkit-font-feature-settings: "dlig" 1;
+  font-feature-settings: "dlig" 1;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* line 148, ../sass/style.scss */
+body #book h1.cover {
+  margin-top: 50px;
+}
+@media (min-width: 321px) {
+  /* line 140, ../sass/style.scss */
+  body #book h1 {
+    font-size: 70px;
+  }
+}
+/* line 157, ../sass/style.scss */
+body #book p {
+  max-width: 390px;
+  width: 100%;
+  margin: 10px auto 0 auto;
+}
+@media (min-width: 321px) {
+  /* line 157, ../sass/style.scss */
+  body #book p {
+    max-width: initial;
+    width: initial;
+  }
+}
+/* line 169, ../sass/style.scss */
+body #book .date {
+  font-family: 'MardianDemo', cursive;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+@media (min-width: 321px) {
+  /* line 169, ../sass/style.scss */
+  body #book .date {
+    font-size: 50px;
+  }
+}
+/* line 182, ../sass/style.scss */
+body #book img.page-width {
+  max-width: 390px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+/* line 190, ../sass/style.scss */
+body #book form > div {
+  margin: 20px 0;
+}
+/* line 194, ../sass/style.scss */
+body #book form label > span {
+  width: 200px;
+  text-align: right;
+  margin-right: 10px;
+}
+/* line 200, ../sass/style.scss */
+body #book form input[type="number"] {
+  margin-left: 4px;
+}
+/* line 204, ../sass/style.scss */
+body #book form label.full-width > span,
+body #book form label.full-width > div,
+body #book form textarea {
+  width: 100%;
+  text-align: left;
+}
+/* line 211, ../sass/style.scss */
+body #book form textarea {
+  height: 200px;
+}
+/* line 215, ../sass/style.scss */
+body #book form label > span, body #book form label > div {
+  display: inline-block;
+}
+/* line 223, ../sass/style.scss */
+body #book form select {
+  width: 120px;
+}
+/* line 230, ../sass/style.scss */
+body #book ul.photos li {
+  border: solid 1px red;
+  display: inline-block;
+  margin: 0 0 10px 10px;
+  width: 114px;
+  height: 114px;
+}
+@media (min-width: 1025px) {
+  /* line 20, ../sass/style.scss */
+  body {
+    /* Nav */
+  }
+  /* line 246, ../sass/style.scss */
+  body p {
+    margin-bottom: 1em;
+    width: auto;
+    margin: initial;
+  }
+  /* line 257, ../sass/style.scss */
+  body nav ul {
+    display: block;
+    padding: 10px 0;
+  }
+  /* line 269, ../sass/style.scss */
+  body #book-container {
+    /*
+    * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
+    * I cut each half to be 512x700.
+    */
+    background-image: url("../images/book-cover-left.png"), url("../images/book-cover-right.png");
+    background-position: left top, right top;
+    background-repeat: no-repeat;
+    width: 960px;
+    height: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  /* line 285, ../sass/style.scss */
+  body #book {
+    width: 860px;
+    height: 650px;
+    background: url("../images/page.jpg");
+    left: 62px;
+    top: 26px;
+    position: relative;
+  }
+  /* line 301, ../sass/style.scss */
+  body #book > .turn-page-wrapper[page="1"] .turn-page, body #book > .turn-page-wrapper[page="3"] .turn-page, body #book > .turn-page-wrapper[page="5"] .turn-page, body #book > .turn-page-wrapper[page="7"] .turn-page, body #book > .turn-page-wrapper[page="9"] .turn-page {
+    box-shadow: 10px 0 10px rgba(200, 200, 200, 0.5) inset;
+  }
+  /* line 321, ../sass/style.scss */
+  body #book img.page-width {
+    margin: 10px 0;
+  }
+  /* line 327, ../sass/style.scss */
+  body #book .turn-page {
+    background: url("../images/page.jpg");
+    border: solid 1px #cccccc;
+  }
+  /* line 333, ../sass/style.scss */
+  body #book .turn-page .page-container {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,8 @@
+
+@font-face {
+	font-family: 'MardianDemo';
+	src: url('MardianDemo.eot?') format('eot'), 
+	     url('MardianDemo.woff') format('woff'), 
+	     url('MardianDemo.ttf')  format('truetype'),
+	     url('MardianDemo.svg#MardianDemo') format('svg');
+}

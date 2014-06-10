@@ -1,0 +1,142 @@
+@import breakpoints.scss
+@import reset.scss
+@import ../fonts/calendas-plus/hinted-stylesheet.css
+@import ../fonts/mardian/stylesheet.css
+
+/* Mixins - to be put into a seperate file later
+=font-feature-settings($list...)
+  -ms-font-feature-settings: $list
+  -moz-font-feature-settings: $list
+  -webkit-font-feature-settings: $list
+  font-feature-settings: $list
+
+html, body
+  height: 100%
+
+body
+  background: #ffffff
+  padding: 10px
+  line-height: 1.2
+  font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif
+  /* shared styles
+  nav
+    ul
+      li
+        a
+          text-decoration: none
+          color: black
+          font-size: 20px
+          /* 
+           * Tells the browser to use the following variants of the font:
+           * - small caps (see below for CSS fix for old IE)
+           * - ligatures
+           * - discretionary ligatures
+           * - swash characters
+           * - use the font's kerning.
+          +font-feature-settings("smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1)
+          body.ie9down &
+            /* 
+             * older IE doesn't support font-feature-settings, so we it to use the old
+             * way to do small caps. Note this is not the best way to do small caps.
+             * but it's the best it can do
+            font-variant: small-caps
+  #book
+    & > div
+      /* 
+       * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
+       * I cut each half to be 512x700.
+      background: url("../images/page.jpg")
+    h1
+      font-family: 'MardianDemo', cursive
+      +font-feature-settings("dlig" 1)
+      font-size: 70px
+      text-align: center
+      margin-bottom: 10px
+      &.cover
+        margin-top: 50px
+    .date
+      font-family: 'MardianDemo', cursive
+      font-size: 50px
+      text-align: center
+      margin-bottom: 10px
+      line-height: 1.1
+    img.page-width
+      width: 390px
+      display: block
+      margin: 0 auto
+    form
+      & > div
+        margin: 20px 0
+      label > span
+        width: 200px
+        text-align: right
+        margin-right: 10px
+      input[type="number"]
+        margin-left: 4px
+      label.full-width > span,
+      label.full-width > div,
+      textarea
+        width: 100%
+        text-align: left
+      textarea
+        height: 200px
+      label > span, label > div
+        display: inline-block
+      select
+        width: 120px
+    +breakpoint($bp-desktop, $no-query: ".no-mqs")
+      p
+        margin-bottom: 1em
+      $page-shadow: rgba(200, 200, 200, 0.5)
+      /* Nav
+      nav
+        ul
+          display: block
+          padding: 10px 0
+          li
+            display: inline-block
+            width: 19%
+            text-align: center
+      #book-container
+        /* 
+         * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
+         * I cut each half to be 512x700.
+        background-image: url("../images/book-cover-left.png"), url("../images/book-cover-right.png")
+        background-position: left top, right top
+        background-repeat: no-repeat
+        width: 960px
+        height: 700px
+        margin: 0 auto
+        overflow: hidden
+      #book
+        width: 860px
+        height: 650px
+        background: url("../images/page.jpg")
+        left: 62px
+        top: 26px
+        position: relative
+        & > .turn-page-wrapper[page="1"],
+        & > .turn-page-wrapper[page="3"],
+        & > .turn-page-wrapper[page="5"],
+        & > .turn-page-wrapper[page="7"],
+        & > .turn-page-wrapper[page="9"]
+          .turn-page
+            box-shadow: 10px 0 10px $page-shadow inset
+        & > .turn-page-wrapper[page="2"],
+        & > .turn-page-wrapper[page="4"],
+        & > .turn-page-wrapper[page="6"],
+        & > .turn-page-wrapper[page="8"],
+        & > .turn-page-wrapper[page="10"]
+          .turn-page
+        img.page-width
+          margin: 10px 0
+        .turn-page
+          background: url("../images/page.jpg")
+          border: solid 1px #cccccc
+          .page-container
+            padding: 20px
+
+    +breakpoint($bp-tablet)
+      p
+        width: 390px
+        margin: 0 auto

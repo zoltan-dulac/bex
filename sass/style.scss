@@ -1,0 +1,345 @@
+@import "breakpoints.scss";
+@import "reset.scss";
+@import "../fonts/calendas-plus/hinted-stylesheet.css";
+@import "../fonts/mardian/stylesheet.css"; 
+
+/* Mixins - to be put into a seperate file later */
+@mixin font-feature-settings($list...) {
+   -ms-font-feature-settings:    $list;
+   -moz-font-feature-settings:   $list;
+   -webkit-font-feature-settings: $list;
+   font-feature-settings:       $list;
+}
+
+html, body {
+   height: 100%;
+   
+}
+
+
+body {
+   background: #ffffff;
+   padding: 0px;
+   line-height: 1.2;
+   font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
+   padding-top: 30px;
+   
+   @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+      padding: 0px;
+   }
+   
+   /* shared styles */
+   nav {
+      
+      
+      
+      ul {
+         position: fixed;
+         top: 0;
+         left: 0;
+         
+         background: black;
+         color: white;
+         width: 100%;
+         padding: 10px;
+         
+         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+            position: static;
+            
+            height: initial;
+            background: white;
+            color: black;
+            padding: 0;
+         }
+         
+         li {
+            display: inline-block;
+            width: 18%;
+            text-align: center;
+               
+            @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+               width: 19%; 
+            }   
+             
+            
+            a {
+               text-decoration: none;
+               color: white;
+               font-size: 15px;
+               
+               /*
+               * Tells the browser to use the following variants of the font:
+               * - small caps (see below for CSS fix for old IE)
+               * - ligatures
+               * - discretionary ligatures
+               * - swash characters
+               * - use the font's kerning.
+               */
+               @include font-feature-settings('smcp' 1, 'liga' 1, 'dlig' 1, 'swsh' 1, 'kern' 1);
+               
+               body.ie9down & {
+                  /*
+                  * older IE doesn't support font-feature-settings, so we it to use the old
+                  * way to do small caps. Note this is not the best way to do small caps.
+                  * but it's the best it can do
+                  */
+                  font-variant: small-caps;
+                  
+               }
+               
+               @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+                 font-size: 20px;
+                 color: black;
+               }
+            }
+            
+            
+         }
+      }
+      
+      
+   }
+   #book {
+      
+      & > div {
+         /*
+         * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
+         * I cut each half to be 512x700.
+         */
+         background: url('../images/page.jpg');
+         padding-top: 30px;
+         
+         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+            background: none;
+         }
+          
+         &.no-mobile {
+           display: none;
+           
+         }
+         
+         &.hide {
+           display: none;
+         }
+         
+         padding: 10px;
+         
+         
+         
+         
+         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+           
+            padding: 0;
+            
+            &.no-mobile {
+               display: initial;
+            }
+         }
+      }
+      
+      h1 {
+         font-family: 'MardianDemo', cursive;
+         @include font-feature-settings('dlig' 1);
+         font-size: 30px;
+         text-align: center;
+         margin-bottom: 10px;
+         
+         
+         &.cover {
+            margin-top: 50px;
+         }
+         
+         @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
+            font-size: 70px; 
+         }
+      }
+      
+      p {
+         max-width: 390px;
+         width: 100%;
+         margin: 10px auto 0 auto;
+         
+         @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
+            max-width: initial;
+            width: initial; 
+         }
+      }
+   
+      
+      .date {
+         font-family: 'MardianDemo', cursive;
+         font-size: 30px;
+         text-align: center;
+         margin-bottom: 10px;
+         line-height: 1.1;
+         
+         @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
+            font-size: 50px;
+         }
+      }
+      
+      
+      img.page-width {
+         max-width: 390px;
+         width: 100%;
+         display: block;
+         margin: 0 auto;
+      }
+      
+      form {
+         & > div {
+            margin: 20px 0;
+         }
+         
+         label > span {
+            width: 200px;
+            text-align: right;
+            margin-right: 10px;
+         }
+         
+         input[type="number"] {
+            margin-left: 4px;
+         }
+         
+         label.full-width > span,
+         label.full-width > div,
+         textarea {
+            width: 100%;
+            text-align: left;
+         }
+         
+         textarea {
+            height: 200px;
+         }
+         
+         label > span, label > div{
+            display: inline-block;
+         }
+         
+         
+         
+         
+         
+         select {
+            width: 120px;
+         }
+      }
+      
+      ul.photos {
+          $thumb_size: 114px;
+          li {
+            
+              border: solid 1px red;
+              display: inline-block;
+              margin: 0 0 10px 10px;
+         
+              width: $thumb_size;
+              height: $thumb_size;
+              
+          }
+        }
+      
+      
+   }
+      
+   @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+      p {
+         margin-bottom: 1em;
+         width: auto;
+         margin: initial;
+      
+      }
+      
+      $page-shadow: rgba(200, 200, 200, 0.5);
+      /* Nav */
+      nav {
+         
+         ul {
+            display: block;
+            
+            padding: 10px 0;
+            
+            
+            
+            
+            
+         }
+      }
+      
+      #book-container {
+         
+         
+         /*
+         * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
+         * I cut each half to be 512x700.
+         */
+         background-image: url('../images/book-cover-left.png'),url('../images/book-cover-right.png');
+         background-position: left top, right top;
+         background-repeat: no-repeat;
+         width: 960px;
+         height: 700px;
+         margin: 0 auto;
+         overflow: hidden;
+      }
+      
+      #book{
+         width: 860px;
+         height: 650px;
+         
+         background: url('../images/page.jpg');
+         
+         left: 62px;
+         top: 26px;
+         position: relative;
+         
+         & > .turn-page-wrapper[page="1"],
+         & > .turn-page-wrapper[page="3"],
+         & > .turn-page-wrapper[page="5"],
+         & > .turn-page-wrapper[page="7"],
+         & > .turn-page-wrapper[page="9"]
+         {
+            .turn-page {
+               box-shadow: 10px 0 10px $page-shadow inset;
+            }
+         }
+         
+         & > .turn-page-wrapper[page="2"],
+         & > .turn-page-wrapper[page="4"],
+         & > .turn-page-wrapper[page="6"],
+         & > .turn-page-wrapper[page="8"],
+         & > .turn-page-wrapper[page="10"]
+         {
+            .turn-page {
+               
+            }
+         }
+         
+         
+         
+         
+         
+         img.page-width {
+            margin: 10px 0;
+         }
+         
+         
+         
+         .turn-page{
+            background: url('../images/page.jpg');
+            border: solid 1px #cccccc;
+            
+            
+            
+            .page-container {
+               padding: 20px;
+            }
+         }
+      }
+      
+   }
+   
+   
+   
+
+   
+}
