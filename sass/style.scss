@@ -18,6 +18,10 @@ html, body {
 
 
 body {
+  
+  #lightboxOverlay, #lightbox {
+    -webkit-transform: translateZ(0);
+  }
    
    padding: 0px;
    line-height: 1.2;
@@ -161,8 +165,8 @@ body {
          margin: 10px auto 0 auto;
          
          @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
-            max-width: initial;
-            width: initial; 
+            /* max-width: initial;
+            width: initial;  */
          }
       }
    
@@ -188,6 +192,10 @@ body {
       }
       
       form {
+        
+         width: 390px;
+         margin: 0 auto;
+         
          & > div {
             margin: 20px 0;
          }
@@ -224,6 +232,11 @@ body {
          select {
             width: 120px;
          }
+         
+         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+           width: auto;
+           margin: 0;
+         }
       }
       
       ul.photos {
@@ -245,6 +258,7 @@ body {
    }
       
    @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+     
       p {
          margin-bottom: 1em;
          width: auto;
@@ -280,8 +294,10 @@ body {
          background-repeat: no-repeat;
          width: 960px;
          height: 700px;
-         margin: 0 auto;
+         margin: -20px auto 0 auto;
          overflow: hidden;
+         
+         
       }
       
       #book{

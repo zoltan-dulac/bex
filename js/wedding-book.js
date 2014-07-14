@@ -24,7 +24,7 @@
 
           timeout = setTimeout(delayed, threshold || 100);
       };
-  }
+  };
   // smartresize 
   jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
@@ -54,13 +54,14 @@ var weddingBook = new function () {
 		
 		$(window).smartresize(resizeEvent);
 		
+		
 		gotoHashPage();
 		setTimeout(function() {
 		  if (location.hash) {
 		    window.scrollTo(0, 0);
 		  }
 		}, 1);
-	}
+	};
 	
 	function gotoHashPage() {
 		var hash = location.hash;
@@ -120,6 +121,10 @@ var weddingBook = new function () {
 		
 	}
 	
+	function landscapeTouchMoveEvent(e) {
+	    e.preventDefault();
+	}
+	
 	function resizeEvent(e) {
 		var w = $jc.window.width();
 		
@@ -134,12 +139,17 @@ var weddingBook = new function () {
 			showOnly('home');
 			isBook = false;
 			gotoHashPage();
+			
+			// prevent scrolling of page
+			$(document).unbind('touchmove', landscapeTouchMoveEvent);
+			
 		} else if (isDesktop() && !isBook){
 			console.error('change to desktop')
 			cacheJquery();
 			$jc.book.turn({gradients: true, acceleration: true});
 			isBook = true;
 			gotoHashPage();
+			$(document).bind('touchmove', landscapeTouchMoveEvent);
 		}
 	}
 	
@@ -156,6 +166,6 @@ var weddingBook = new function () {
 	        $elem.unbind('.' + eventNamespace);
 	    }
 	};
-}
+};
 
 weddingBook.init();
