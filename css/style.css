@@ -117,13 +117,13 @@ body nav ul {
 /* line 60, ../sass/style.scss */
 body nav ul li {
   display: inline-block;
-  width: 16%;
+  width: 14%;
   text-align: center;
 }
 @media (min-width: 1000px) {
   /* line 60, ../sass/style.scss */
   body nav ul li {
-    width: 16%;
+    width: 14%;
   }
 }
 /* line 70, ../sass/style.scss */

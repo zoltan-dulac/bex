@@ -59,11 +59,11 @@ body {
          
          li {
             display: inline-block;
-            width: 16%;
+            width: 14%;
             text-align: center;
                
             @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-               width: 16%; 
+               width: 14%; 
             }   
              
             

@@ -49,6 +49,16 @@ var weddingBook = new function () {
 			showOnly('home');
 		}
 		
+		for (var i=6; i<=16; i++) {
+			var $el = $('#' + i + ' .page-container');
+			
+			if (i % 2 == 0) {
+				$el.append('<a href="#' + (i+1) + '" class="next">Next</a>');
+			} else {
+				$el.append('<a href="#' + (i-1) + '" class="prev">Previous</a>');
+			}
+		}
+		
 		/* sets up the main nav */
 		$('nav a').bind('click', navClickEvent);
 		
