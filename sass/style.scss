@@ -59,11 +59,11 @@ body {
          
          li {
             display: inline-block;
-            width: 18%;
+            width: 16%;
             text-align: center;
                
             @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-               width: 19%; 
+               width: 16%; 
             }   
              
             
@@ -149,9 +149,17 @@ body {
          text-align: center;
          margin-bottom: 10px;
          
+         &.name {
+           @include font-feature-settings('dlig' 0);
+           font-size: 50px;
+         }
          
          &.cover {
             margin-top: 50px;
+         }
+         
+         &.center-title {
+           margin-top: 180px;
          }
          
          @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
