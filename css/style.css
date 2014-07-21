@@ -69,12 +69,19 @@ table {
 }
 
 /* Mixins - to be put into a seperate file later */
-/* line 14, ../sass/style.scss */
+/* line 16, ../sass/style.scss */
 html, body {
   height: 100%;
+  /* Let's turn off selecting text */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-/* line 20, ../sass/style.scss */
+/* line 29, ../sass/style.scss */
 body {
   padding: 0px;
   line-height: 1.2;
@@ -82,19 +89,22 @@ body {
   padding-top: 30px;
   background: url("../images/page.jpg");
   /* shared styles */
+  /*
+   * counter stuff
+   */
 }
-/* line 22, ../sass/style.scss */
+/* line 31, ../sass/style.scss */
 body #lightboxOverlay, body #lightbox {
   -webkit-transform: translateZ(0);
 }
 @media (min-width: 1000px) {
-  /* line 20, ../sass/style.scss */
+  /* line 29, ../sass/style.scss */
   body {
     padding: 0px;
     background: #ffffff;
   }
 }
-/* line 41, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 body nav ul {
   position: fixed;
   top: 0;
@@ -105,7 +115,7 @@ body nav ul {
   padding: 10px;
 }
 @media (min-width: 1000px) {
-  /* line 41, ../sass/style.scss */
+  /* line 50, ../sass/style.scss */
   body nav ul {
     position: static;
     height: initial;
@@ -114,19 +124,19 @@ body nav ul {
     padding: 0;
   }
 }
-/* line 60, ../sass/style.scss */
+/* line 69, ../sass/style.scss */
 body nav ul li {
   display: inline-block;
   width: 14%;
   text-align: center;
 }
 @media (min-width: 1000px) {
-  /* line 60, ../sass/style.scss */
+  /* line 69, ../sass/style.scss */
   body nav ul li {
     width: 14%;
   }
 }
-/* line 70, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 body nav ul li a {
   text-decoration: none;
   color: white;
@@ -144,7 +154,7 @@ body nav ul li a {
   -webkit-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
   font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
 }
-/* line 85, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 body.ie9down body nav ul li a {
   /*
   * older IE doesn't support font-feature-settings, so we it to use the old
@@ -154,13 +164,13 @@ body.ie9down body nav ul li a {
   font-variant: small-caps;
 }
 @media (min-width: 1000px) {
-  /* line 70, ../sass/style.scss */
+  /* line 79, ../sass/style.scss */
   body nav ul li a {
     font-size: 20px;
     color: black;
   }
 }
-/* line 109, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 body #book > div {
   /*
   * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
@@ -171,30 +181,30 @@ body #book > div {
   padding: 10px;
 }
 @media (min-width: 1000px) {
-  /* line 109, ../sass/style.scss */
+  /* line 118, ../sass/style.scss */
   body #book > div {
     background: none;
   }
 }
-/* line 121, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 body #book > div.no-mobile {
   display: none;
 }
-/* line 126, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 body #book > div.hide {
   display: none;
 }
 @media (min-width: 1000px) {
-  /* line 109, ../sass/style.scss */
+  /* line 118, ../sass/style.scss */
   body #book > div {
     padding: 0;
   }
-  /* line 139, ../sass/style.scss */
+  /* line 148, ../sass/style.scss */
   body #book > div.no-mobile {
     display: initial;
   }
 }
-/* line 145, ../sass/style.scss */
+/* line 154, ../sass/style.scss */
 body #book h1 {
   font-family: 'MardianDemo', cursive;
   -ms-font-feature-settings: "dlig" 1;
@@ -205,7 +215,7 @@ body #book h1 {
   text-align: center;
   margin-bottom: 10px;
 }
-/* line 152, ../sass/style.scss */
+/* line 161, ../sass/style.scss */
 body #book h1.name {
   -ms-font-feature-settings: "dlig" 0;
   -moz-font-feature-settings: "dlig" 0;
@@ -213,34 +223,35 @@ body #book h1.name {
   font-feature-settings: "dlig" 0;
   font-size: 50px;
 }
-/* line 157, ../sass/style.scss */
+/* line 166, ../sass/style.scss */
 body #book h1.cover {
   margin-top: 50px;
 }
-/* line 161, ../sass/style.scss */
+/* line 170, ../sass/style.scss */
 body #book h1.center-title {
   margin-top: 180px;
 }
 @media (min-width: 321px) {
-  /* line 145, ../sass/style.scss */
+  /* line 154, ../sass/style.scss */
   body #book h1 {
-    font-size: 70px;
+    font-size: 55px;
   }
 }
-/* line 170, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 body #book p {
   max-width: 390px;
   width: 100%;
-  margin: 10px auto 0 auto;
+  margin: 10px auto 10px auto;
+  font-size: 15px;
 }
 @media (min-width: 321px) {
-  /* line 170, ../sass/style.scss */
+  /* line 179, ../sass/style.scss */
   body #book p {
     /* max-width: initial;
     width: initial;  */
   }
 }
-/* line 182, ../sass/style.scss */
+/* line 191, ../sass/style.scss */
 body #book .date {
   font-family: 'MardianDemo', cursive;
   font-size: 30px;
@@ -249,91 +260,146 @@ body #book .date {
   line-height: 1.1;
 }
 @media (min-width: 321px) {
-  /* line 182, ../sass/style.scss */
+  /* line 191, ../sass/style.scss */
   body #book .date {
     font-size: 50px;
   }
 }
-/* line 195, ../sass/style.scss */
+/* line 203, ../sass/style.scss */
+body #book .address {
+  -moz-transform: perspective(1px) skewX(-10deg);
+  -ms-transform: perspective(1px) skewX(-10deg);
+  -webkit-transform: perspective(1px) skewX(-10deg);
+  transform: perspective(1px) skewX(-10deg);
+  text-align: center;
+  margin: 30px 0;
+  /* Let's turn off selecting text */
+  -webkit-touch-callout: initial;
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+}
+/* line 217, ../sass/style.scss */
 body #book img.page-width {
   max-width: 390px;
   width: 100%;
   display: block;
   margin: 0 auto;
 }
-/* line 202, ../sass/style.scss */
+/* line 224, ../sass/style.scss */
+body #book table.rates {
+  margin: 20px 0 40px 0;
+}
+/* line 228, ../sass/style.scss */
+body #book table.rates tr, body #book table.rates td {
+  border-top: solid 1px #ccc;
+  border-bottom: solid 1px #ccc;
+}
+/* line 234, ../sass/style.scss */
+body #book table.rates tr:first-child, body #book table.rates tr:last-child, body #book table.rates tr:last-child td {
+  border: none;
+}
+/* line 242, ../sass/style.scss */
+body #book table.rates tr:first-child, body #book table.rates tr:first-child th {
+  border-bottom: solid 3px black;
+}
+/* line 248, ../sass/style.scss */
+body #book table.rates th {
+  vertical-align: bottom;
+  border: none;
+}
+/* line 254, ../sass/style.scss */
+body #book table.rates tr th:first-child + th, body #book table.rates tr th:first-child + th + th {
+  width: 50px;
+}
+/* line 259, ../sass/style.scss */
+body #book table.rates th, body #book table.rates td {
+  padding: 5px 10px;
+}
+/* line 264, ../sass/style.scss */
+body #book table.rates tr td {
+  text-align: center;
+  font-size: 0.9em;
+}
+/* line 270, ../sass/style.scss */
 body #book form {
   width: 390px;
   margin: 0 auto;
 }
-/* line 207, ../sass/style.scss */
+/* line 275, ../sass/style.scss */
 body #book form > div {
   margin: 20px 0;
 }
-/* line 211, ../sass/style.scss */
+/* line 279, ../sass/style.scss */
 body #book form label > span {
   width: 200px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 217, ../sass/style.scss */
+/* line 285, ../sass/style.scss */
 body #book form input[type="number"] {
   margin-left: 4px;
 }
-/* line 221, ../sass/style.scss */
+/* line 289, ../sass/style.scss */
+body #book form input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+}
+/* line 294, ../sass/style.scss */
 body #book form label.full-width > span,
 body #book form label.full-width > div,
 body #book form textarea {
   width: 100%;
   text-align: left;
 }
-/* line 228, ../sass/style.scss */
+/* line 301, ../sass/style.scss */
 body #book form textarea {
-  height: 200px;
+  height: 100px;
 }
-/* line 232, ../sass/style.scss */
+/* line 305, ../sass/style.scss */
 body #book form label > span, body #book form label > div {
   display: inline-block;
 }
-/* line 240, ../sass/style.scss */
+/* line 313, ../sass/style.scss */
 body #book form select {
   width: 120px;
 }
 @media (min-width: 1000px) {
-  /* line 202, ../sass/style.scss */
+  /* line 270, ../sass/style.scss */
   body #book form {
     width: auto;
     margin: 0;
   }
 }
-/* line 252, ../sass/style.scss */
+/* line 325, ../sass/style.scss */
 body #book ul.photos li {
-  border: solid 1px red;
   display: inline-block;
   margin: 0 0 10px 10px;
 }
-/* line 259, ../sass/style.scss */
+/* line 330, ../sass/style.scss */
 body #book ul.photos li, body #book ul.photos img {
   width: 114px;
   height: 114px;
 }
 @media (min-width: 1000px) {
-  /* line 20, ../sass/style.scss */
+  /* line 29, ../sass/style.scss */
   body {
     /* Nav */
   }
-  /* line 270, ../sass/style.scss */
+  /* line 341, ../sass/style.scss */
   body p {
     margin-bottom: 1em;
     width: auto;
     margin: initial;
   }
-  /* line 281, ../sass/style.scss */
+  /* line 352, ../sass/style.scss */
   body nav ul {
     display: block;
     padding: 10px 0;
   }
-  /* line 293, ../sass/style.scss */
+  /* line 364, ../sass/style.scss */
   body #book-container {
     /*
     * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
@@ -346,8 +412,9 @@ body #book ul.photos li, body #book ul.photos img {
     height: 700px;
     margin: -20px auto 0 auto;
     overflow: hidden;
+    position: relative;
   }
-  /* line 311, ../sass/style.scss */
+  /* line 383, ../sass/style.scss */
   body #book {
     width: 860px;
     height: 650px;
@@ -357,27 +424,69 @@ body #book ul.photos li, body #book ul.photos img {
   }
 }
 @media (min-width: 1000px) and (min-width: 1000px) {
-  /* line 311, ../sass/style.scss */
+  /* line 383, ../sass/style.scss */
   body #book {
     background: url("../images/page.jpg");
   }
 }
 @media (min-width: 1000px) {
-  /* line 329, ../sass/style.scss */
+  /* line 401, ../sass/style.scss */
   body #book > .turn-page-wrapper[page="1"] .turn-page, body #book > .turn-page-wrapper[page="3"] .turn-page, body #book > .turn-page-wrapper[page="5"] .turn-page, body #book > .turn-page-wrapper[page="7"] .turn-page, body #book > .turn-page-wrapper[page="9"] .turn-page {
     box-shadow: 10px 0 10px rgba(200, 200, 200, 0.5) inset;
   }
-  /* line 349, ../sass/style.scss */
+  /* line 421, ../sass/style.scss */
   body #book img.page-width {
     margin: 10px 0;
   }
-  /* line 355, ../sass/style.scss */
+  /* line 427, ../sass/style.scss */
   body #book .turn-page {
     background: url("../images/page.jpg");
     border: solid 1px #cccccc;
   }
-  /* line 361, ../sass/style.scss */
+  /* line 433, ../sass/style.scss */
   body #book .turn-page .page-container {
     padding: 20px;
+    position: relative;
+    height: 100%;
   }
+  /* line 439, ../sass/style.scss */
+  body #book .turn-page .page-container .prev, body #book .turn-page .page-container .next {
+    bottom: 20px;
+    position: absolute;
+    text-decoration: none;
+    display: block;
+    height: 39px;
+    line-height: 39px;
+  }
+  /* line 448, ../sass/style.scss */
+  body #book .turn-page .page-container .prev:hover, body #book .turn-page .page-container .next:hover {
+    color: red;
+  }
+  /* line 454, ../sass/style.scss */
+  body #book .turn-page .page-container .prev {
+    left: 20px;
+    padding-left: 85px;
+    background: url("../images/icons/pointing-hand-left.png") left center no-repeat;
+  }
+  /* line 460, ../sass/style.scss */
+  body #book .turn-page .page-container .next {
+    right: 20px;
+    padding-right: 85px;
+    background: url("../images/icons/pointing-hand-right.png") right center no-repeat;
+  }
+  /* line 466, ../sass/style.scss */
+  body #book .turn-page .page-container iframe {
+    background: rgba(255, 255, 255, 0.4) url("../images/icons/spinner.gif") center center no-repeat;
+  }
+}
+/* line 480, ../sass/style.scss */
+body .counter.is-countdown {
+  margin: 0 auto;
+  width: 200px;
+  background-color: transparent;
+  border: none;
+}
+/* line 486, ../sass/style.scss */
+body .counter.is-countdown .countdown-period {
+  font-size: 10px;
 }

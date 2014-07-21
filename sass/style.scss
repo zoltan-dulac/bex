@@ -1,4 +1,6 @@
 @import "breakpoints.scss";
+@import "compass/css3/transform";
+@import "compass/css3/text-shadow";
 @import "reset.scss";
 @import "../fonts/calendas-plus/hinted-stylesheet.css";
 @import "../fonts/mardian/stylesheet.css"; 
@@ -14,6 +16,13 @@
 html, body {
    height: 100%;
    
+   /* Let's turn off selecting text */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 
@@ -163,15 +172,15 @@ body {
          }
          
          @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
-            font-size: 70px; 
+            font-size: 55px; 
          }
       }
       
       p {
          max-width: 390px;
          width: 100%;
-         margin: 10px auto 0 auto;
-         
+         margin: 10px auto 10px auto;
+         font-size: 15px;
          @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
             /* max-width: initial;
             width: initial;  */
@@ -191,12 +200,71 @@ body {
          }
       }
       
+      .address {
+        @include transform(perspective(1px)  skewX(-10deg));
+        text-align: center;
+        margin: 30px 0;
+        
+        /* Let's turn off selecting text */
+        -webkit-touch-callout: initial;
+        -webkit-user-select: initial;
+        -khtml-user-select: initial;
+        -moz-user-select: initial;
+        -ms-user-select: initial;
+        user-select: initial;
+      }
       
       img.page-width {
          max-width: 390px;
          width: 100%;
          display: block;
          margin: 0 auto;
+      }
+      
+      table.rates {
+        
+        margin: 20px 0 40px 0;
+        
+        & tr, & td {
+          border-top: solid 1px #ccc;
+          border-bottom: solid 1px #ccc;
+        }
+        
+        
+        & tr:first-child,
+        & tr:last-child,
+        & tr:last-child td 
+         {
+          border: none;
+        }
+        
+        
+        & tr:first-child ,
+        & tr:first-child th
+         {
+          border-bottom: solid 3px black;
+        }
+        
+        & th {
+          vertical-align: bottom;
+          border: none;
+
+        } 
+        
+        & tr th:first-child + th,
+        & tr th:first-child + th + th{
+          width: 50px;
+        }       
+        
+        & th,
+        & td {
+          padding: 5px 10px;
+        }
+        
+        & tr td {
+          text-align: center;
+          font-size: 0.9em;
+        }
       }
       
       form {
@@ -218,6 +286,11 @@ body {
             margin-left: 4px;
          }
          
+         input[type="submit"] {
+           display: block;
+           margin: 0 auto;
+         }
+         
          label.full-width > span,
          label.full-width > div,
          textarea {
@@ -226,7 +299,7 @@ body {
          }
          
          textarea {
-            height: 200px;
+            height: 100px;
          }
          
          label > span, label > div{
@@ -250,8 +323,6 @@ body {
       ul.photos {
           $thumb_size: 114px;
           li {
-            
-              border: solid 1px red;
               display: inline-block;
               margin: 0 0 10px 10px;
           }
@@ -304,6 +375,7 @@ body {
          height: 700px;
          margin: -20px auto 0 auto;
          overflow: hidden;
+         position: relative;
          
          
       }
@@ -311,7 +383,7 @@ body {
       #book{
          width: 860px;
          height: 650px;
-         
+          
          @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
              background: url('../images/page.jpg');
          }
@@ -355,11 +427,45 @@ body {
          .turn-page{
             background: url('../images/page.jpg');
             border: solid 1px #cccccc;
-            
+            $padding: 20px;
             
             
             .page-container {
                padding: 20px;
+               position: relative;
+               height: 100%;
+              
+               
+               .prev, .next {
+                   bottom: $padding;
+                   position: absolute;
+                   text-decoration: none;
+                   display: block;
+                   height: 39px;
+                   line-height: 39px;
+                   
+                   
+                   &:hover {
+                     color: red;
+                     
+                   }
+               }
+               
+               .prev {
+                   left: $padding;
+                   padding-left: 85px;
+                   background: url('../images/icons/pointing-hand-left.png') left center no-repeat;
+               }
+               
+               .next {
+                  right: $padding;
+                  padding-right: 85px;
+                  background: url('../images/icons/pointing-hand-right.png') right center no-repeat;
+               }
+               
+               iframe {
+                 background: rgba(255, 255, 255, 0.4) url('../images/icons/spinner.gif') center center no-repeat;
+               }
             }
          }
       }
@@ -367,7 +473,20 @@ body {
    }
    
    
+   /*
+    * counter stuff
+    */
    
+   .counter.is-countdown {
+     margin: 0 auto;
+     width: 200px;
+     background-color: transparent;
+     border: none;
+     
+     .countdown-period {
+       font-size: 10px;
+     }
+   }
 
    
 }

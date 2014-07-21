@@ -41,6 +41,22 @@ var weddingBook = new function () {
 		
 		cacheJquery();
 		
+		
+		
+		for (var i=6; i<=16; i++) {
+			var $el = $('#' + i + ' .page-container');
+			console.log(i, $el.length, $('#' + i ).html());
+			if (i % 2 === 0) {
+				$el.append('<div href="#' + (i+1) + '" class="next">Next</a>');
+			} else {
+				$el.append('<div href="#' + (i-1) + '" class="prev">Previous</a>');
+			}
+		}
+		
+		
+		/* sets up the main nav */
+		$('nav a').bind('click', navClickEvent);
+		
 		originalHTML = $jc.book.html();
 		
 		resizeEvent();
@@ -49,41 +65,43 @@ var weddingBook = new function () {
 			showOnly('home');
 		}
 		
-		for (var i=6; i<=16; i++) {
-			var $el = $('#' + i + ' .page-container');
-			
-			if (i % 2 == 0) {
-				$el.append('<a href="#' + (i+1) + '" class="next">Next</a>');
-			} else {
-				$el.append('<a href="#' + (i-1) + '" class="prev">Previous</a>');
-			}
-		}
-		
-		/* sets up the main nav */
-		$('nav a').bind('click', navClickEvent);
 		
 		$(window).smartresize(resizeEvent);
 		
+		
+		startCounter();
 		
 		gotoHashPage();
 		setTimeout(function() {
 		  if (location.hash) {
 		    window.scrollTo(0, 0);
 		  }
+		  
+		  
 		}, 1);
 	};
 	
 	function gotoHashPage() {
 		var hash = location.hash;
-		$('a[href="' + hash + '"]').click();
+		if (location.hash !== '') {
+			$('a[href="' + hash + '"]').click();
+			startCounter();
+		}
 	}
 	
 	function cacheJquery() {
 		$jc = {
 			book: $('#book'),
 			window: $(window),
-			pages: $('#book > div')
+			pages: $('#book > div'),
+			counter: $('.counter')
 		}
+	}
+	
+	function startCounter () {
+		var weddingDate = new Date();
+		weddingDate = new Date(2014, 9, 12, 12, 0);
+		$jc.counter.countdown({until: weddingDate, format: 'dHMs'});
 	}
 	
 	function isMobile() {
@@ -99,6 +117,9 @@ var weddingBook = new function () {
 	function navClickEvent(e) {
 		var target = e.currentTarget,
 			pageNum = parseInt(target.href.split('#')[1]);
+			
+		e.preventDefault();
+			
 		if (isDesktop()) {
 
 			
