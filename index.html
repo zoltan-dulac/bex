@@ -21,6 +21,10 @@
 		
 		<link rel="stylesheet" type="text/css" href="js/lib/jquery.countdown/jquery.countdown.css"> 
 		
+		<link rel="stylesheet" type="text/css" href="js/lib/visibleIf/shared/css/visibleIf.css"> 
+		
+		<script src="js/lib/visibleIf/shared/js/EventHelpers.js"></script>
+		<script src="js/lib/visibleIf/shared/js/visibleIf.js"></script>
 		<script src="js/lib/jquery/jquery-1.11.0.js"></script> 
 		
 	</head>
@@ -42,11 +46,11 @@
 						<li><a href="#3" id="the-couple">The Couple</a></li>
 						<li><a href="#5" id="the-bridesmaids">Wedding Party</a></li>
 						
-						<li><a href="#17" id="photos">Photos</a></li>
+						<li><a href="#21" id="photos">Photos</a></li>
 						
-						<li><a href="#19" id="registry">Venues</a></li>
-						<li><a href="#21" id="registry">Accomodation </a></li>
-						<li><a href="#23" id="rsvp">RSVP</a></li>
+						<li><a href="#23" id="registry">Venues</a></li>
+						<li><a href="#25" id="registry">Accomodation </a></li>
+						<li><a href="#27" id="rsvp">RSVP</a></li>
 					</ul>
 				</nav>
 				
@@ -65,20 +69,52 @@
 				    
 				    <div id="3" data-for="the-couple"><span class="text"><div class="page-container">
 				    	<h1>Jody</h1>
-				    	<img class="page-width" src="images/photos/cover/jodi-tux.jpg" />
+				    	<img class="page-width" src="images/photos/cover/jodi-cover.jpg" />
 				    	
-				    	<p>As many of you know, Jody and I shockingly met on the internet.  I was resistant to this way of meeting for many years and almost gave up on meeting my guy.  Thankfully some very pushy and persuasive family and friends convinced me to give it a shot.  I’m obviously now very thankful to them for this, or I would never have met my wonderful, thoughtful, Irish- French Canadian purchasing manager from Mississauga.  While we are both very different in many ways, we are essentially the same when it comes to our core beliefs in family and values and our differences seem to compliment each other in many ways.  I’m so excited and happy to be marrying the amazing Jody Joseph Russell and start our lives together. </p>
+				    	<p>As many of you know, Jody and I shockingly met on the internet.  
+				    		I was resistant to this way of meeting for many years and almost gave 
+				    		up on meeting my guy.  Thankfully some very pushy and persuasive family 
+				    		and friends convinced me to give it a shot.  I’m obviously now very thankful
+				    		 to them for this, or I would never have met my wonderful, thoughtful, 
+				    		 Irish-French Canadian from Mississauga.  While we 
+				    		 are both very different in many ways, we are essentially the same when 
+				    		 it comes to our core beliefs in family and values and our differences 
+				    		 seem to compliment each other in many ways.  I’m so excited and happy 
+				    		 to be marrying the amazing Jody Joseph Russell and start our lives together. </p>
 				    	</div></span></div>
 				    <div id="4" data-for="the-couple"><span class="text"><div class="page-container">
 				    	<h1>Rebecca</h1>
-				    	<img class="page-width" src="images/photos/cover/rebecca-410.jpg" />
-				    	<p>It's not every day you come across someone as wonderful as Rebecca. We have been together for over a year now. I knew from the moment I met Rebecca there was something special between us. Even though it was a slow dating process ;-)  it grew into a wonderful relationship which lead me to known that Rebecca would be the one I asked to marry me. I have never cared so much for anyone as I do for Rebecca. Oct 12, 2014 will be another way for me to express how much I care for her and can’t wait to continue our life’s adventure as One. Watch out world as here comes team RODY !!!</p>
+				    	<img class="page-width" src="images/photos/cover/bex-cover.jpg" />
+				    	<p>It's not every day you come across someone as wonderful as Rebecca.
+				    		 We have been together for over a year now. I knew from the moment 
+				    		 I met Rebecca there was something special between us. Even though it
+				    		  was a slow dating process ;-)  it grew into a wonderful relationship 
+				    		  which lead me to known that Rebecca would be the one I asked to marry me.
+				    		   I have never cared so much for anyone as I do for Rebecca. Oct 12, 
+				    		   2014 will be another way for me to express how much I care for her 
+				    		   and can’t wait to continue our life’s adventure as One. Watch out 
+				    		   world as here comes team RODY!!!</p>
 				    	</div></span></div>
-				    <div id="5" data-for="the-bridesmaids"><div class="page-container">
+				    <div id="5" data-for="the-wedding-party"><div class="page-container">
+				    	<h1 class="name">The Edward Family</h1>
+				    	
+				    	<img class="page-width" src="images/photos/wedding-party/edward-family.jpg" />
+				    	<p class="center">From left to right: Ernest, Helen and Rebecca Edward.</p>
+				    </div></div>
+				     <div id="6" data-for="the-wedding-party"><div class="page-container">
+				    	
+				    	<h1 class="name">The Gallan Family</h1>
+				    	
+				    	<img class="page-width" src="images/photos/wedding-party/gallan-family.jpg" />
+				    	<p class="center">From left to right: Kelly, Jody and Sharon Gallan</p>
+				    </div></div>
+				    <div id="7" data-for="the-bridesmaids"><div class="page-container">
 				    	<h1 class="center-title">The Bridesmaids</h1> 
 				    </div></div>
-				    <div id="6" data-for="the-wedding-party"><div class="page-container">
+				    <div id="8" data-for="the-wedding-party"><div class="page-container">
+				    	<h2 class="title">Maid of Honour</h2>
 				    	<h1 class="name">Samantha Chandrasena</h1>
+				    	
 				    	<img class="page-width" src="images/photos/wedding-party/samantha.jpg" />
 				    	<p>Rebecca says that her young cousin from Chatham is  "a world travelling fun and 
 				    		adventurous ... she taught me how to 
@@ -87,7 +123,7 @@
 							she was born - may have even changed a diaper or two ;-)"   </p>
 				    </div></div>
 				    
-				    <div id="7" data-for="the-wedding-party"><div class="page-container">
+				    <div id="9" data-for="the-wedding-party"><div class="page-container">
 				    	<h1 class="name">Ele Pawelski</h1>
 				    	<img class="page-width" src="images/photos/wedding-party/ele.jpg" />
 				    	<p>"Rebecca and I built our friendship in the late 1990s drinking numerous 
@@ -98,7 +134,7 @@
 				    		 Until she met Jody of course ;)" </p>
 				    </div></div>
 				   
-				    <div id="8" data-for="the-wedding-party"><div class="page-container">
+				    <div id="10" data-for="the-wedding-party"><div class="page-container">
 				    	<h1 class="name">Suma Edward</h1>
 				    	<img class="page-width" src="images/photos/wedding-party/suma.jpg" />
 				    	<p>Rebecca's sister-in-law from Ottawa has been "married to my brother 
@@ -109,7 +145,7 @@
 							I didn't start, she'd go online as me." </p>
 				    </div></div>
 				   
-				    <div id="9" data-for="the-wedding-party"><div class="page-container">
+				    <div id="11" data-for="the-wedding-party"><div class="page-container">
 				    	<h1 class="name">Kelly Gallan</h1>
 				    	<img class="page-width" src="images/photos/wedding-party/kelly.jpg" />
 				    	<p>Jody's sister is "incredibly smart, fun,  
@@ -118,7 +154,7 @@
 							industry means we will hopefully get some awesome discounts
 							on their future vacations.</p>
 				    </div></div>
-				     <div id="10" data-for="the-wedding-party"><div class="page-container">
+				     <div id="12" data-for="the-wedding-party"><div class="page-container">
 				    	<h1 class="name">Kathryn Dickson</h1>
 				    	<img class="page-width" src="images/photos/wedding-party/kathryn2.jpg" />
 				    	<p>Rebecca's former neighbour and good friend of more than a decade, 
@@ -132,10 +168,11 @@
  						
  						</p>
 				    </div></div>
-				    <div id="11" data-for="the-groomsmen"><div class="page-container">
+				    <div id="13" data-for="the-groomsmen"><div class="page-container">
 				    	<h1 class="center-title">The Groomsmen</h1> 
 				    </div></div>
-				    <div id="12" data-for="the-wedding-party"><div class="page-container">
+				    <div id="14" data-for="the-wedding-party"><div class="page-container">
+				    	<h2 class="title">Best Man</h2>
 				    	<h1 class="name">Adriano Pagana</h1>
 				    	<img class="page-width" src="images/photos/wedding-party/adriano.jpg" />
 				    	<p>Jody's best man has known him for over 35 year. A former neighbor from my days 
@@ -149,7 +186,7 @@
  						
  						</p>
 				    </div></div>
-				    <div id="13" data-for="the-wedding-party"><div class="page-container">
+				    <div id="15" data-for="the-wedding-party"><div class="page-container">
 				    	<h1 class="name">Sanjeeve Edward</h1>
 				    	<img class="page-width" src="images/photos/wedding-party/sanjeeve.jpg" />
 				    	<p> 
@@ -163,7 +200,7 @@
 						part of the wedding as a flower girl and a bridesmaids respectively.
  						</p>
 				    </div></div>
-				    <div id="14" data-for="the-wedding-party"><div class="page-container">
+				    <div id="16" data-for="the-wedding-party"><div class="page-container">
 				    	<h1 class="name">Jackie Hagipetros</h1>
 				    	<img class="page-width" src="images/photos/wedding-party/jackie.jpg" />
 				    	<p> 
@@ -178,7 +215,7 @@
 						 
  						</p>
 				    </div></div>
-				    <div id="15" data-for="the-wedding-party"><div class="page-container">
+				    <div id="17" data-for="the-wedding-party"><div class="page-container">
 				    	<h1 class="name">Terry Assels</h1>
 				    	<img class="page-width" src="images/photos/wedding-party/terry.jpg" />
 				    	<p> 
@@ -188,7 +225,7 @@
 						 Toronto and helped me get onto my feet".  
  						</p>
 				    </div></div>
-				    <div id="16" data-for="the-wedding-party"><div class="page-container">
+				    <div id="18" data-for="the-wedding-party"><div class="page-container">
 				    	<h1 class="name">Mohan Chitram</h1>
 				    	<img class="page-width" src="images/photos/wedding-party/mohan.jpg" />
 				    	<p> 
@@ -200,43 +237,57 @@
 						 rest of the class.
  						</p>
 				    </div></div>
-				    <div id="17" data-for="photos"><span class="text"><div class="page-container">
+				    <div id="19" data-for="the-wedding-party"><div class="page-container">
+				    	<h2 class="title">Flower Girl</h2>
+				    	<h1 class="name">Anika</h1>
+				    	<img class="page-width" src="images/photos/wedding-party/anika.jpg" />
+				    	<p class="center">Rebecca's Precocious Neice, Age 8</p>
+				    </div></div>
+				    <div id="20" data-for="the-wedding-party"><div class="page-container">
+				    	<h2 class="title">Flower Girl</h2>
+				    	<h1 class="name">Courtney</h1>
+				    	<img class="page-width" src="images/photos/wedding-party/courtney.jpg" />
+				    	<p class="center">Jody's Rambunctious Neice, Age 5</p>
+				    	
+				    </div></div>
+				    
+				    <div id="21" data-for="photos"><span class="text"><div class="page-container">
 				    	<h1>Photos</h1>
 				    	<ul class="photos">
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/engagement//1.jpg"><img src="images/photos/professional/engagement//thumbs/1.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/engagement//3.jpg"><img src="images/photos/professional/engagement//thumbs/3.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/engagement//4.jpg"><img src="images/photos/professional/engagement//thumbs/4.jpg" alt="" /></a></li>
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/engagement//5.jpg"><img src="images/photos/professional/engagement//thumbs/5.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/engagement//6.jpg"><img src="images/photos/professional/engagement//thumbs/6.jpg" alt="" /></a></li>
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/engagement//7.jpg"><img src="images/photos/professional/engagement//thumbs/7.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/engagement//8.jpg"><img src="images/photos/professional/engagement//thumbs/8.jpg" alt="" /></a></li>
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//9.jpg"><img src="images/photos/professional/highlights/thumbs/9.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//10.jpg"><img src="images/photos/professional/highlights/thumbs/10.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//11.jpg"><img src="images/photos/professional/highlights/thumbs/11.jpg" alt="" /></a></li>
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//12.jpg"><img src="images/photos/professional/highlights/thumbs/12.jpg" alt="" /></a></li>
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//25.jpg"><img src="images/photos/professional/highlights/thumbs/25.jpg" alt="" /></a></li>
-				    		
-				    	</ul>
-				    	</div></span></div>
-				    <div id="18" data-for="photos" class="no-mobile"><span class="text"><div class="page-container">
-				    	<h1>&nbsp;</h1>
-				    	<ul class="photos">
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//13.jpg"><img src="images/photos/professional/highlights/thumbs/13.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//14.jpg"><img src="images/photos/professional/highlights/thumbs/14.jpg" alt="" /></a></li>
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//15.jpg"><img src="images/photos/professional/highlights/thumbs/15.jpg" alt="" /></a></li>
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//16.jpg"><img src="images/photos/professional/highlights/thumbs/16.jpg" alt="" /></a></li>
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//17.jpg"><img src="images/photos/professional/highlights/thumbs/17.jpg" alt="" /></a></li>
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//18.jpg"><img src="images/photos/professional/highlights/thumbs/18.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//19.jpg"><img src="images/photos/professional/highlights/thumbs/19.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//20.jpg"><img src="images/photos/professional/highlights/thumbs/20.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//21.jpg"><img src="images/photos/professional/highlights/thumbs/21.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//22.jpg"><img src="images/photos/professional/highlights/thumbs/22.jpg" alt="" /></a></li>
-				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//23.jpg"><img src="images/photos/professional/highlights/thumbs/23.jpg" alt="" /></a></li>
 				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//24.jpg"><img src="images/photos/professional/highlights/thumbs/24.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/professional/highlights//21.jpg"><img src="images/photos/professional/highlights/thumbs/21.jpg" alt="" /></a></li>
+				    		
 				    		
 				    	</ul>
 				    	</div></span></div>
-				    <div id="19" data-for="rsvp"><span class="text"><div class="page-container">
+				    <div id="22" data-for="photos" class="no-mobile"><span class="text"><div class="page-container">
+				    	<h1>&nbsp;</h1>
+				    	<ul class="photos">
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi1.jpg"><img src="images/photos/gallery/thumbs/bex-jodi1-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi2.jpg"><img src="images/photos/gallery/thumbs/bex-jodi2-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi3.jpg"><img src="images/photos/gallery/thumbs/bex-jodi3-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi4.jpg"><img src="images/photos/gallery/thumbs/bex-jodi4-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi5.jpg"><img src="images/photos/gallery/thumbs/bex-jodi5-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi6.jpg"><img src="images/photos/gallery/thumbs/bex-jodi6-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi8.jpg"><img src="images/photos/gallery/thumbs/bex-jodi8-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi9.jpg"><img src="images/photos/gallery/thumbs/bex-jodi9-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi10.jpg"><img src="images/photos/gallery/thumbs/bex-jodi10-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi11.jpg"><img src="images/photos/gallery/thumbs/bex-jodi11-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi12.jpg"><img src="images/photos/gallery/thumbs/bex-jodi12-0.jpg" alt="" /></a></li>
+				    		<li><a data-lightbox="wedding"  href="images/photos/gallery/bex-jodi7.jpg"><img src="images/photos/gallery/thumbs/bex-jodi7-0.jpg" alt="" /></a></li>
+				    	</ul>
+				    	</div></span></div>
+				    <div id="23" data-for="rsvp"><span class="text"><div class="page-container">
 				    	<h1>Church</h1>
 				    	
 				    	<p>
@@ -254,7 +305,7 @@
 				    	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2886.522020995822!2d-79.460534!3d43.658111999999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405752e282f2a8cf%3A0x5db4ef7b577e4830!2sSt.+Martin-in-the-Fields+Anglican+Church!5e0!3m2!1sen!2s!4v1405478892616"  height="280" width="390" frameborder="0" style="border:0"></iframe>
 				        
 				    </div></span></div>
-				    <div id="20" data-for="rsvp"><span class="text"><div class="page-container">
+				    <div id="24" data-for="rsvp"><span class="text"><div class="page-container">
 				    	<h1>Reception</h1>
 				    	
 				    	<p>Proceed South bound on Keele St, which will eventually turn into Parkside Rd., 
@@ -274,7 +325,7 @@
 				    		please plan ahead and plan to have a wonderful, worry free celebration with us.
 				    	</p>
 				    	</div></span></div>
-				    <div id="11" data-for="registry"><span class="text"><div class="page-container">
+				    <div id="25" data-for="registry"><span class="text"><div class="page-container">
 				    	<h1>Accomodation</h1>
 				    	<p>We are very excited to celebrate with you and appreciate the 
 				    		distance that many of you will have to travel to share in our wedding day.</p>
@@ -286,30 +337,31 @@
 						M5J 2N5
 						</div>
 						
-						
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2887.4537528170063!2d-79.38595000000001!3d43.638726999999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b352a2007e65f%3A0x42ec8b943f3724d5!2sRadisson+Plaza+Hotel+Admiral!5e0!3m2!1sen!2s!4v1405990016639" width="390" height="250" frameborder="0" style="border:0"></iframe>
 						
 						
 						
 				    </div></span></div>
-				    <div id="21" data-for="registry"><span class="text"><div class="page-container">
+				    <div id="26" data-for="registry"><span class="text"><div class="page-container">
 				    	<p>
 						The special discounted rate starts at $149/night and is as follows: 
 						</p>
 						
 						<table class="rates" rules="ROWS">
-          
-				          <tr valign="top">
-				            <th class="c13" >Room
-				            </td>
-				
-				            <th class="c13" >Single
-				              Rate
-				            </td>
-				
-				            <th class="c13" >Double
-				              Rate
-				            </td>
-				          </tr>
+          				  <thead>
+					          <tr valign="top">
+					            <th class="c13" >Room
+					            </td>
+					
+					            <th class="c13" >Single
+					              Rate
+					            </td>
+					
+					            <th class="c13" >Double
+					              Rate
+					            </td>
+					          </tr>
+					      </thead>
 				
 				          <tr valign="top">
 				            <td class="c16" >
@@ -373,28 +425,25 @@
 				        </table>
 				    	<p class="c1">Parking is extra at $21 a night with in and
 				        out privileges. To make a reservation with the special
-				        rate, please contact the hotel directly at:</p>
-				
-				        <p class="c4">+1 (800) 967-9033 and reference the
-				        Edward/Gallan Wedding or</p>
-				
-				        <p class="c4">Book online at <a href=
-				        "http://www.radisson.com/EdwardGallan">www.radisson.com/EdwardGallan</a></p>
+				        rate, please contact the hotel directly at +1 (800) 967-9033 and reference the
+				        Edward/Gallan Wedding or book online at <a href=
+				        "http://www.radisson.com/EdwardGallan">the Radisson Admiral website</a>.</p>
 				    	</div></span></div>
-				    <div id="22"><span class="text"><div class="page-container">
+				    <div id="27"><span class="text"><div class="page-container">
 				    	<h1>RSVP</h1>
 				    	<p>We really hope you can join us on our Special Day.
 				    	If you will be coming, please fill out the form on the
 				    	right (and don't forget to tell us what you want to 
-				    	eat!  After all, do you really want to be stuck with 
-				    	the vegetarian option if Don doesn't show up?)</p>
-				    	<p>If you are not coming, please visit the Registry
-				    		and get us something nice.  You don't want us to 
-				    		think you're cheap, do you?</p>
+				    	eat! )</p>
+				    	
+				    	
+				    	
 				    </div></span></div>
 				    
-				    <div id="21" data-for="registry"><span class="text"><div class="page-container">
+				    <div id="28" data-for="registry"><span class="text"><div class="page-container">
 				    	<form action="php/formmail.php" method="post">
+				    		
+				    		
 				    		<input type="hidden" name="env_report" value="REMOTE_HOST,REMOTE_ADDR,HTTP_USER_AGENT,AUTH_TYPE,REMOTE_USER" />
 				    		
 				    		
@@ -411,48 +460,126 @@
 						    <input type="hidden" name="subject" value="A Wedding Guest has sent an RSVP!" />
 							<input type="hidden" name="csvfile" value="guests.csv" />
 				    		<input type="hidden" name="csvcolumns"
-								value="email,realname,num-in-party,food,notes" />
-				    		<div><label for="realname"><span>Name:</span>
-				    				<div><input type="text" name="realname" required="required" /></div>
-				    			</label></div>
-				    		<div><label for="email"><span>Your Email Address:</span>
-				    				<div><input type="email" name="guest-email" required="required" /></div>
-				    			</label></div>
-				    		<div><label for="num-in-party">
-				    				<span>Number of guests?</span><div>
-				    					<input required="required" type="number" min="1" max="10" name="num-in-party" size="2" value="0" /></div>
-				    			</label></div>
-				    		<!-- <div><label for="relation">
-				    				<span>I am a guest of:</span>
-				    				<div><select required="required" name="relation">
-				    					<option value="">-- choose one --</option>
-				    					<option value="groom">Groom</option>
-				    					<option value="bride">Bride</option>
-				    					<option value="crashed">no one. I am a wedding crasher.</option>
-				    				</select></div>
-				    		</label></div>-->
-				    		<div><label for="food">
-				    				<span>Food Preference:</span>
-				    					<div><select required="required" name="food">
-				    						<option value="">-- choose one --</option>
-				    						<option value="Steak">Beef Tenderloin &amp; Snow Crab with Hollandaise &amp; Port Reduction</option>
-				    						<option value="Seafood">Trio of Roasted Halibut, Lobster Tail &amp; Black Tiger Shrimp in a Tomato &amp; Saffron Buerre Blanc</option>
-				    						<option value="Lamb">Lemon, Herb &amp; Garlic Crusted Rack of Lamb with Ice Wine Reduction</option>
-				    						<option value="Vegetarian">Portabello Mushroom &amp; Goat Cheese Strudel with Buttery Asparagus</option>
-				    					</select>
-				    				</div>
-				    			</label></div>
-				    		<div><label for="notes"  class="full-width">
-				    				<span>Anything else you need to tell us<sup>*</sup>:</span>
-				    					<div><textarea name="notes" cols="37" placeholder="If you are a parent of the bride and groom, you are
-				    			not allowed to fill out this field">
-				    					</textarea>
-				    				</div>
-				    			</label></div>
+								value="email,realname,food,notes" />
 				    		
-				    		<!-- <p><small><sup>*</sup>Note: if you are a parent of the bride and groom, you are
-				    			not allowed to fill out this field.</small></p> -->
+				    		<div class="email">
+				    			<label for="email">
+				    				Can you come to the wedding: <input type="radio" name="coming" value="yes"/> Yes
+				    				<input type="radio" name="coming" value="no"/> No
+				    			</label>
+				    		</div>
+				    		
+				    		<span data-visibleIf="coming=='no'">
+				    			<div>
+				    				<span>Name: <input type="text" name="name" value="" /></span>
+				    			</div>
+				    			<div>
+				    				<span>Email Address: <input type="email" name="email" value="" /></span>
+				    			</div>
 				    			
+				    		</span>
+				    		
+				    		<span data-visibleIf="coming=='yes'">
+					    		<div>
+					    			<span>Who is coming in your party?</span><div>
+					    			<table class="guests">
+					    				<thead>
+					    					<tr>
+					    						<th>Full Name of Guest</th>
+					    						<th>Food Option</th>	
+					    					</tr>
+					    				</thead>
+					    				<tbody>
+					    					<tr>
+					    						<td><input type="text" name="name1" value="" required="required"/></td>
+					    						<td>
+					    							<select required="required" name="food1" required="required">
+							    						<option value="">-- choose one --</option>
+							    						<option value="Beef and Crab">Surf and Turf (Beef Tenderloin &amp; Snow Crab with Hollandaise &amp; Port Reduction)</option>
+							    						<option value="Seafood">Seafood (Trio of Roasted Halibut, Lobster Tail &amp; Black Tiger Shrimp in a Tomato &amp; Saffron Buerre Blanc)</option>
+							    						<option value="Lamb">Lamb (Lemon, Herb &amp; Garlic Crusted Rack of Lamb with Ice Wine Reduction)</option>
+							    						<option value="Vegetarian">Vegetarian (Portabello Mushroom &amp; Goat Cheese Strudel with Buttery Asparagus)</option>
+							    					</select>
+					    						</td>
+					    					</tr>
+					    					<tr>
+					    						<td><input type="text" name="name2" value="" /></td>
+					    						<td>
+					    							<select  name="food2">
+							    						<option value="">-- choose one --</option>
+							    						<option value="Beef and Crab">Surf and Turf (Beef Tenderloin &amp; Snow Crab with Hollandaise &amp; Port Reduction)</option>
+							    						<option value="Seafood">Seafood (Trio of Roasted Halibut, Lobster Tail &amp; Black Tiger Shrimp in a Tomato &amp; Saffron Buerre Blanc)</option>
+							    						<option value="Lamb">Lamb (Lemon, Herb &amp; Garlic Crusted Rack of Lamb with Ice Wine Reduction)</option>
+							    						<option value="Vegetarian">Vegetarian (Portabello Mushroom &amp; Goat Cheese Strudel with Buttery Asparagus)</option>
+							    					</select>
+					    						</td>
+					    					</tr>
+					    					<tr>
+					    						<td><input type="text" name="name3" value="" /></td>
+					    						<td>
+					    							<select  name="food3">
+							    						<option value="">-- choose one --</option>
+							    						<option value="Beef and Crab">Surf and Turf (Beef Tenderloin &amp; Snow Crab with Hollandaise &amp; Port Reduction)</option>
+							    						<option value="Seafood">Seafood (Trio of Roasted Halibut, Lobster Tail &amp; Black Tiger Shrimp in a Tomato &amp; Saffron Buerre Blanc)</option>
+							    						<option value="Lamb">Lamb (Lemon, Herb &amp; Garlic Crusted Rack of Lamb with Ice Wine Reduction)</option>
+							    						<option value="Vegetarian">Vegetarian (Portabello Mushroom &amp; Goat Cheese Strudel with Buttery Asparagus)</option>
+							    					</select>
+					    						</td>
+					    					</tr>
+					    					<tr>
+					    						<td><input type="text" name="name4" value="" /></td>
+					    						<td>
+					    							<select  name="food4">
+							    						<option value="">-- choose one --</option>
+							    						<option value="Beef and Crab">Surf and Turf (Beef Tenderloin &amp; Snow Crab with Hollandaise &amp; Port Reduction)</option>
+							    						<option value="Seafood">Seafood (Trio of Roasted Halibut, Lobster Tail &amp; Black Tiger Shrimp in a Tomato &amp; Saffron Buerre Blanc)</option>
+							    						<option value="Lamb">Lamb (Lemon, Herb &amp; Garlic Crusted Rack of Lamb with Ice Wine Reduction)</option>
+							    						<option value="Vegetarian">Vegetarian (Portabello Mushroom &amp; Goat Cheese Strudel with Buttery Asparagus)</option>
+							    					</select>
+					    						</td>
+					    					</tr>
+					    					<tr>
+					    						<td><input type="text" name="name5" value="" /></td>
+					    						<td>
+					    							<select  name="food5">
+							    						<option value="">-- choose one --</option>
+							    						<option value="Beef and Crab">Surf and Turf (Beef Tenderloin &amp; Snow Crab with Hollandaise &amp; Port Reduction)</option>
+							    						<option value="Seafood">Seafood (Trio of Roasted Halibut, Lobster Tail &amp; Black Tiger Shrimp in a Tomato &amp; Saffron Buerre Blanc)</option>
+							    						<option value="Lamb">Lamb (Lemon, Herb &amp; Garlic Crusted Rack of Lamb with Ice Wine Reduction)</option>
+							    						<option value="Vegetarian">Vegetarian (Portabello Mushroom &amp; Goat Cheese Strudel with Buttery Asparagus)</option>
+							    					</select>
+					    						</td>
+					    					</tr>
+					    					
+					    				</tbody>
+					    			</table>
+					    		</div>
+					    		<!-- <div><label for="relation">
+					    				<span>I am a guest of:</span>
+					    				<div><select required="required" name="relation">
+					    					<option value="">-- choose one --</option>
+					    					<option value="groom">Groom</option>
+					    					<option value="bride">Bride</option>
+					    					<option value="crashed">no one. I am a wedding crasher.</option>
+					    				</select></div>
+					    		</label></div>-->
+					    		
+					    		<div class="email">
+					    			<label for="email">
+					    				Your Email Address: <input type="email" name="guest-email" required="required" />
+					    			</label>
+					    		</div>
+					    		<div><label for="notes"  class="full-width">
+					    				<span>Anything else you need to tell us:</span>
+					    					<div><textarea name="notes" cols="37" placeholder="If you are a parent of the bride and groom, you are
+					    			not allowed to fill out this field">
+					    					</textarea>
+					    				</div>
+					    			</label></div>
+					    		
+					    		<!-- <p><small><sup>*</sup>Note: if you are a parent of the bride and groom, you are
+					    			not allowed to fill out this field.</small></p> -->
+				    		</span>	
 				    		<input type="submit" value="Submit this info to Jody and Rebecca" />
 				    	</form>
 				    </div></span></div>
@@ -463,7 +590,8 @@
 				
 			</footer>
 		
-
+			
+			
 		<script type="text/javascript" src="js/lib/jquery.countdown/jquery.plugin.js"></script> 
 		<script type="text/javascript" src="js/lib/jquery.countdown/jquery.countdown.js"></script>
 				

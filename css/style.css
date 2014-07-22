@@ -83,6 +83,9 @@ html, body {
 
 /* line 29, ../sass/style.scss */
 body {
+  /* colors */
+  /* accent colors */
+  color: black;
   padding: 0px;
   line-height: 1.2;
   font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
@@ -93,7 +96,7 @@ body {
    * counter stuff
    */
 }
-/* line 31, ../sass/style.scss */
+/* line 44, ../sass/style.scss */
 body #lightboxOverlay, body #lightbox {
   -webkit-transform: translateZ(0);
 }
@@ -101,42 +104,46 @@ body #lightboxOverlay, body #lightbox {
   /* line 29, ../sass/style.scss */
   body {
     padding: 0px;
-    background: #ffffff;
+    background-color: #ffffff;
+    background-image: url("../images/photos/backgrounds/wine-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
   }
 }
-/* line 50, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 body nav ul {
   position: fixed;
   top: 0;
   left: 0;
-  background: black;
+  background: #890c58;
   color: white;
   width: 100%;
   padding: 10px;
 }
 @media (min-width: 1000px) {
-  /* line 50, ../sass/style.scss */
+  /* line 68, ../sass/style.scss */
   body nav ul {
     position: static;
     height: initial;
-    background: white;
-    color: black;
+    background: rgba(255, 255, 255, 0.8);
+    color: #890c58;
     padding: 0;
   }
 }
-/* line 69, ../sass/style.scss */
+/* line 87, ../sass/style.scss */
 body nav ul li {
   display: inline-block;
-  width: 14%;
+  width: 13%;
   text-align: center;
 }
 @media (min-width: 1000px) {
-  /* line 69, ../sass/style.scss */
+  /* line 87, ../sass/style.scss */
   body nav ul li {
-    width: 14%;
+    width: 13%;
   }
 }
-/* line 79, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 body nav ul li a {
   text-decoration: none;
   color: white;
@@ -154,7 +161,7 @@ body nav ul li a {
   -webkit-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
   font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
 }
-/* line 94, ../sass/style.scss */
+/* line 112, ../sass/style.scss */
 body.ie9down body nav ul li a {
   /*
   * older IE doesn't support font-feature-settings, so we it to use the old
@@ -164,13 +171,17 @@ body.ie9down body nav ul li a {
   font-variant: small-caps;
 }
 @media (min-width: 1000px) {
-  /* line 79, ../sass/style.scss */
+  /* line 97, ../sass/style.scss */
   body nav ul li a {
-    font-size: 20px;
-    color: black;
+    font-size: 15px;
+    color: #890c58;
   }
 }
-/* line 118, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
+body nav ul li a:hover {
+  color: #00becc;
+}
+/* line 139, ../sass/style.scss */
 body #book > div {
   /*
   * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
@@ -181,30 +192,30 @@ body #book > div {
   padding: 10px;
 }
 @media (min-width: 1000px) {
-  /* line 118, ../sass/style.scss */
+  /* line 139, ../sass/style.scss */
   body #book > div {
     background: none;
   }
 }
-/* line 130, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 body #book > div.no-mobile {
   display: none;
 }
-/* line 135, ../sass/style.scss */
+/* line 156, ../sass/style.scss */
 body #book > div.hide {
   display: none;
 }
 @media (min-width: 1000px) {
-  /* line 118, ../sass/style.scss */
+  /* line 139, ../sass/style.scss */
   body #book > div {
     padding: 0;
   }
-  /* line 148, ../sass/style.scss */
+  /* line 169, ../sass/style.scss */
   body #book > div.no-mobile {
     display: initial;
   }
 }
-/* line 154, ../sass/style.scss */
+/* line 175, ../sass/style.scss */
 body #book h1 {
   font-family: 'MardianDemo', cursive;
   -ms-font-feature-settings: "dlig" 1;
@@ -214,8 +225,9 @@ body #book h1 {
   font-size: 30px;
   text-align: center;
   margin-bottom: 10px;
+  color: #890c58;
 }
-/* line 161, ../sass/style.scss */
+/* line 183, ../sass/style.scss */
 body #book h1.name {
   -ms-font-feature-settings: "dlig" 0;
   -moz-font-feature-settings: "dlig" 0;
@@ -223,21 +235,31 @@ body #book h1.name {
   font-feature-settings: "dlig" 0;
   font-size: 50px;
 }
-/* line 166, ../sass/style.scss */
+/* line 189, ../sass/style.scss */
 body #book h1.cover {
   margin-top: 50px;
 }
-/* line 170, ../sass/style.scss */
+/* line 193, ../sass/style.scss */
 body #book h1.center-title {
   margin-top: 180px;
 }
 @media (min-width: 321px) {
-  /* line 154, ../sass/style.scss */
+  /* line 175, ../sass/style.scss */
   body #book h1 {
     font-size: 55px;
   }
 }
-/* line 179, ../sass/style.scss */
+/* line 202, ../sass/style.scss */
+body #book h2.title {
+  color: #890c58;
+  -ms-font-feature-settings: "smcp" 1;
+  -moz-font-feature-settings: "smcp" 1;
+  -webkit-font-feature-settings: "smcp" 1;
+  font-feature-settings: "smcp" 1;
+  font-size: 15px;
+  text-align: center;
+}
+/* line 210, ../sass/style.scss */
 body #book p {
   max-width: 390px;
   width: 100%;
@@ -245,27 +267,32 @@ body #book p {
   font-size: 15px;
 }
 @media (min-width: 321px) {
-  /* line 179, ../sass/style.scss */
+  /* line 210, ../sass/style.scss */
   body #book p {
     /* max-width: initial;
     width: initial;  */
   }
 }
-/* line 191, ../sass/style.scss */
+/* line 220, ../sass/style.scss */
+body #book p.center {
+  text-align: center;
+}
+/* line 226, ../sass/style.scss */
 body #book .date {
   font-family: 'MardianDemo', cursive;
   font-size: 30px;
   text-align: center;
   margin-bottom: 10px;
   line-height: 1.1;
+  color: #890c58;
 }
 @media (min-width: 321px) {
-  /* line 191, ../sass/style.scss */
+  /* line 226, ../sass/style.scss */
   body #book .date {
     font-size: 50px;
   }
 }
-/* line 203, ../sass/style.scss */
+/* line 239, ../sass/style.scss */
 body #book .address {
   -moz-transform: perspective(1px) skewX(-10deg);
   -ms-transform: perspective(1px) skewX(-10deg);
@@ -281,104 +308,112 @@ body #book .address {
   -ms-user-select: initial;
   user-select: initial;
 }
-/* line 217, ../sass/style.scss */
+/* line 253, ../sass/style.scss */
 body #book img.page-width {
   max-width: 390px;
   width: 100%;
   display: block;
   margin: 0 auto;
 }
-/* line 224, ../sass/style.scss */
-body #book table.rates {
-  margin: 20px 0 40px 0;
+/* line 260, ../sass/style.scss */
+body #book table {
+  margin: 20px auto 40px auto;
 }
-/* line 228, ../sass/style.scss */
-body #book table.rates tr, body #book table.rates td {
+/* line 264, ../sass/style.scss */
+body #book table tr, body #book table td {
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
 }
-/* line 234, ../sass/style.scss */
-body #book table.rates tr:first-child, body #book table.rates tr:last-child, body #book table.rates tr:last-child td {
+/* line 270, ../sass/style.scss */
+body #book table tr:first-child, body #book table tr:last-child, body #book table tr:last-child td {
   border: none;
 }
-/* line 242, ../sass/style.scss */
-body #book table.rates tr:first-child, body #book table.rates tr:first-child th {
-  border-bottom: solid 3px black;
+/* line 278, ../sass/style.scss */
+body #book table thead tr:first-child {
+  border-bottom: solid 3px #890c58;
 }
-/* line 248, ../sass/style.scss */
-body #book table.rates th {
+/* line 283, ../sass/style.scss */
+body #book table th {
   vertical-align: bottom;
   border: none;
 }
-/* line 254, ../sass/style.scss */
-body #book table.rates tr th:first-child + th, body #book table.rates tr th:first-child + th + th {
+/* line 289, ../sass/style.scss */
+body #book table tr th:first-child + th, body #book table tr th:first-child + th + th {
   width: 50px;
 }
-/* line 259, ../sass/style.scss */
-body #book table.rates th, body #book table.rates td {
+/* line 294, ../sass/style.scss */
+body #book table th, body #book table td {
   padding: 5px 10px;
 }
-/* line 264, ../sass/style.scss */
-body #book table.rates tr td {
+/* line 299, ../sass/style.scss */
+body #book table tr td {
   text-align: center;
   font-size: 0.9em;
 }
-/* line 270, ../sass/style.scss */
+/* line 304, ../sass/style.scss */
+body #book table.guests input {
+  width: 220px;
+}
+/* line 309, ../sass/style.scss */
 body #book form {
   width: 390px;
   margin: 0 auto;
 }
-/* line 275, ../sass/style.scss */
+/* line 314, ../sass/style.scss */
 body #book form > div {
   margin: 20px 0;
 }
-/* line 279, ../sass/style.scss */
+/* line 318, ../sass/style.scss */
+body #book form div.email {
+  margin-bottom: 20px;
+}
+/* line 322, ../sass/style.scss */
 body #book form label > span {
   width: 200px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 285, ../sass/style.scss */
+/* line 328, ../sass/style.scss */
 body #book form input[type="number"] {
   margin-left: 4px;
 }
-/* line 289, ../sass/style.scss */
+/* line 332, ../sass/style.scss */
 body #book form input[type="submit"] {
   display: block;
   margin: 0 auto;
 }
-/* line 294, ../sass/style.scss */
+/* line 337, ../sass/style.scss */
 body #book form label.full-width > span,
 body #book form label.full-width > div,
 body #book form textarea {
   width: 100%;
   text-align: left;
 }
-/* line 301, ../sass/style.scss */
+/* line 344, ../sass/style.scss */
 body #book form textarea {
   height: 100px;
 }
-/* line 305, ../sass/style.scss */
+/* line 348, ../sass/style.scss */
 body #book form label > span, body #book form label > div {
   display: inline-block;
 }
-/* line 313, ../sass/style.scss */
+/* line 356, ../sass/style.scss */
 body #book form select {
   width: 120px;
 }
 @media (min-width: 1000px) {
-  /* line 270, ../sass/style.scss */
+  /* line 309, ../sass/style.scss */
   body #book form {
     width: auto;
     margin: 0;
   }
 }
-/* line 325, ../sass/style.scss */
+/* line 368, ../sass/style.scss */
 body #book ul.photos li {
   display: inline-block;
   margin: 0 0 10px 10px;
 }
-/* line 330, ../sass/style.scss */
+/* line 373, ../sass/style.scss */
 body #book ul.photos li, body #book ul.photos img {
   width: 114px;
   height: 114px;
@@ -388,18 +423,18 @@ body #book ul.photos li, body #book ul.photos img {
   body {
     /* Nav */
   }
-  /* line 341, ../sass/style.scss */
+  /* line 384, ../sass/style.scss */
   body p {
     margin-bottom: 1em;
     width: auto;
     margin: initial;
   }
-  /* line 352, ../sass/style.scss */
+  /* line 395, ../sass/style.scss */
   body nav ul {
     display: block;
     padding: 10px 0;
   }
-  /* line 364, ../sass/style.scss */
+  /* line 407, ../sass/style.scss */
   body #book-container {
     /*
     * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
@@ -414,7 +449,15 @@ body #book ul.photos li, body #book ul.photos img {
     overflow: hidden;
     position: relative;
   }
-  /* line 383, ../sass/style.scss */
+}
+@media (min-width: 1000px) and (min-width: 1000px) {
+  /* line 407, ../sass/style.scss */
+  body #book-container {
+    top: 40px;
+  }
+}
+@media (min-width: 1000px) {
+  /* line 428, ../sass/style.scss */
   body #book {
     width: 860px;
     height: 650px;
@@ -424,32 +467,32 @@ body #book ul.photos li, body #book ul.photos img {
   }
 }
 @media (min-width: 1000px) and (min-width: 1000px) {
-  /* line 383, ../sass/style.scss */
+  /* line 428, ../sass/style.scss */
   body #book {
     background: url("../images/page.jpg");
   }
 }
 @media (min-width: 1000px) {
-  /* line 401, ../sass/style.scss */
+  /* line 446, ../sass/style.scss */
   body #book > .turn-page-wrapper[page="1"] .turn-page, body #book > .turn-page-wrapper[page="3"] .turn-page, body #book > .turn-page-wrapper[page="5"] .turn-page, body #book > .turn-page-wrapper[page="7"] .turn-page, body #book > .turn-page-wrapper[page="9"] .turn-page {
     box-shadow: 10px 0 10px rgba(200, 200, 200, 0.5) inset;
   }
-  /* line 421, ../sass/style.scss */
+  /* line 466, ../sass/style.scss */
   body #book img.page-width {
     margin: 10px 0;
   }
-  /* line 427, ../sass/style.scss */
+  /* line 472, ../sass/style.scss */
   body #book .turn-page {
     background: url("../images/page.jpg");
     border: solid 1px #cccccc;
   }
-  /* line 433, ../sass/style.scss */
+  /* line 478, ../sass/style.scss */
   body #book .turn-page .page-container {
     padding: 20px;
     position: relative;
     height: 100%;
   }
-  /* line 439, ../sass/style.scss */
+  /* line 484, ../sass/style.scss */
   body #book .turn-page .page-container .prev, body #book .turn-page .page-container .next {
     bottom: 20px;
     position: absolute;
@@ -457,36 +500,38 @@ body #book ul.photos li, body #book ul.photos img {
     display: block;
     height: 39px;
     line-height: 39px;
+    color: #890c58;
   }
-  /* line 448, ../sass/style.scss */
+  /* line 493, ../sass/style.scss */
   body #book .turn-page .page-container .prev:hover, body #book .turn-page .page-container .next:hover {
-    color: red;
+    color: #00becc;
+    cursor: pointer;
   }
-  /* line 454, ../sass/style.scss */
+  /* line 499, ../sass/style.scss */
   body #book .turn-page .page-container .prev {
     left: 20px;
     padding-left: 85px;
     background: url("../images/icons/pointing-hand-left.png") left center no-repeat;
   }
-  /* line 460, ../sass/style.scss */
+  /* line 505, ../sass/style.scss */
   body #book .turn-page .page-container .next {
     right: 20px;
     padding-right: 85px;
     background: url("../images/icons/pointing-hand-right.png") right center no-repeat;
   }
-  /* line 466, ../sass/style.scss */
+  /* line 511, ../sass/style.scss */
   body #book .turn-page .page-container iframe {
     background: rgba(255, 255, 255, 0.4) url("../images/icons/spinner.gif") center center no-repeat;
   }
 }
-/* line 480, ../sass/style.scss */
+/* line 525, ../sass/style.scss */
 body .counter.is-countdown {
   margin: 0 auto;
   width: 200px;
   background-color: transparent;
   border: none;
 }
-/* line 486, ../sass/style.scss */
+/* line 531, ../sass/style.scss */
 body .counter.is-countdown .countdown-period {
   font-size: 10px;
 }

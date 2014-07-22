@@ -45,7 +45,6 @@ var weddingBook = new function () {
 		
 		for (var i=6; i<=16; i++) {
 			var $el = $('#' + i + ' .page-container');
-			console.log(i, $el.length, $('#' + i ).html());
 			if (i % 2 === 0) {
 				$el.append('<div href="#' + (i+1) + '" class="next">Next</a>');
 			} else {
@@ -136,10 +135,8 @@ var weddingBook = new function () {
 	}
 	
 	function showOnly(dataFor) {
-		console.log($jc.pages.length);
 		$jc.pages.each(function(i, el) {
 			var $el = $(el);
-			console.log('data-for', el.outerHTML, $el.attr('data-for'));
 			if ($el.attr('data-for') === dataFor) {
 				$el.removeClass('hide');
 			} else {
@@ -160,13 +157,11 @@ var weddingBook = new function () {
 		var w = $jc.window.width();
 		
 		if (isMobile() && isBook && originalHTML !== '') {
-			console.error('change to mobile')
 			destroyCrappyPlugin($jc.book);
 			
 			//console.log(originalHTML);
 			$jc.book.html(originalHTML).attr('style', '');
 			cacheJquery();
-			console.log($jc.book[0].outerHTML);
 			showOnly('home');
 			isBook = false;
 			gotoHashPage();
@@ -175,7 +170,6 @@ var weddingBook = new function () {
 			$(document).unbind('touchmove', landscapeTouchMoveEvent);
 			
 		} else if (isDesktop() && !isBook){
-			console.error('change to desktop')
 			cacheJquery();
 			$jc.book.turn({gradients: true, acceleration: true});
 			isBook = true;
@@ -186,13 +180,9 @@ var weddingBook = new function () {
 	
 	var destroyCrappyPlugin = function($elem, eventNamespace) {
 	    var isInstantiated  = !! $.data($elem.get(0));
-	 	console.log('hmmm', isInstantiated);
-	    if (isInstantiated) {
+	 	if (isInstantiated) {
 	        $.removeData($elem.get(0));
-	        console.log(
-			    '$element events:',
-			    $._data($elem.get(0), 'events')
-			);
+	       
 	        $elem.off(eventNamespace);
 	        $elem.unbind('.' + eventNamespace);
 	    }

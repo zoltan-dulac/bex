@@ -28,6 +28,19 @@ html, body {
 
 body {
   
+  /* colors */
+  $plum: #6e2b62;
+  $redPlum: #890c58;
+  $redPlum2: #a20067;
+  
+  /* accent colors */
+  $teal: #006269;
+  $lightTeal: hsl(184, 100%, 40%);
+  $silver: #8a8d8f;
+  $brown: #5a4522;
+  
+  color: black;
+  
   #lightboxOverlay, #lightbox {
     -webkit-transform: translateZ(0);
   }
@@ -37,9 +50,14 @@ body {
    font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
    padding-top: 30px;
    background: url('../images/page.jpg');
+   
    @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
       padding: 0px;
-      background: #ffffff;
+      background-color: #ffffff;
+      background-image: url('../images/photos/backgrounds/wine-background.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 100%;
    }
    
    /* shared styles */
@@ -52,7 +70,7 @@ body {
          top: 0;
          left: 0;
          
-         background: black;
+         background: $redPlum;
          color: white;
          width: 100%;
          padding: 10px;
@@ -61,18 +79,18 @@ body {
             position: static;
             
             height: initial;
-            background: white;
-            color: black;
+            background: rgba(255, 255, 255, 0.8);
+            color: $redPlum;
             padding: 0;
          }
          
          li {
             display: inline-block;
-            width: 14%;
+            width: 13%;
             text-align: center;
                
             @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-               width: 14%; 
+               width: 13%; 
             }   
              
             
@@ -102,11 +120,14 @@ body {
                }
                
                @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-                 font-size: 20px;
-                 color: black;
+                 font-size: 15px;
+                 color: $redPlum;
                }
             }
             
+            a:hover {
+              color: $lightTeal;
+            }
             
          }
       }
@@ -157,11 +178,13 @@ body {
          font-size: 30px;
          text-align: center;
          margin-bottom: 10px;
+         color: $redPlum;
          
          &.name {
            @include font-feature-settings('dlig' 0);
            font-size: 50px;
          }
+         
          
          &.cover {
             margin-top: 50px;
@@ -176,6 +199,14 @@ body {
          }
       }
       
+      h2.title {
+        color: $redPlum;
+        @include font-feature-settings('smcp' 1);
+        font-size: 15px;
+        text-align: center;
+        
+      }
+      
       p {
          max-width: 390px;
          width: 100%;
@@ -184,6 +215,10 @@ body {
          @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
             /* max-width: initial;
             width: initial;  */
+         }
+         
+         &.center {
+           text-align: center;
          }
       }
    
@@ -194,6 +229,7 @@ body {
          text-align: center;
          margin-bottom: 10px;
          line-height: 1.1;
+         color: $redPlum;
          
          @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
             font-size: 50px;
@@ -221,9 +257,9 @@ body {
          margin: 0 auto;
       }
       
-      table.rates {
+      table {
         
-        margin: 20px 0 40px 0;
+        margin: 20px auto 40px auto;
         
         & tr, & td {
           border-top: solid 1px #ccc;
@@ -239,10 +275,9 @@ body {
         }
         
         
-        & tr:first-child ,
-        & tr:first-child th
+        & thead tr:first-child 
          {
-          border-bottom: solid 3px black;
+          border-bottom: solid 3px $redPlum;
         }
         
         & th {
@@ -265,6 +300,10 @@ body {
           text-align: center;
           font-size: 0.9em;
         }
+        
+        &.guests input {
+          width: 220px;
+        }
       }
       
       form {
@@ -274,6 +313,10 @@ body {
          
          & > div {
             margin: 20px 0;
+         }
+         
+         & div.email {
+           margin-bottom: 20px;
          }
          
          label > span {
@@ -377,7 +420,9 @@ body {
          overflow: hidden;
          position: relative;
          
-         
+         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+            top: 40px;
+         }
       }
       
       #book{
@@ -443,11 +488,11 @@ body {
                    display: block;
                    height: 39px;
                    line-height: 39px;
-                   
+                   color: $redPlum;
                    
                    &:hover {
-                     color: red;
-                     
+                     color: $lightTeal;
+                     cursor: pointer;
                    }
                }
                
