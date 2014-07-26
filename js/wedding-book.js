@@ -41,7 +41,7 @@ var weddingBook = new function () {
 		
 		cacheJquery();
 		
-		
+		$(window).load(loadEvent);
 		
 		for (var i=6; i<=16; i++) {
 			var $el = $('#' + i + ' .page-container');
@@ -80,6 +80,15 @@ var weddingBook = new function () {
 		}, 1);
 	};
 	
+	function loadEvent(e) {
+	    $jc.body.addClass('loaded');
+	       
+	}
+	
+	me.load = function () {
+	    
+	}
+	
 	function gotoHashPage() {
 		var hash = location.hash;
 		if (location.hash !== '') {
@@ -90,10 +99,12 @@ var weddingBook = new function () {
 	
 	function cacheJquery() {
 		$jc = {
+		    body: $('body'),
 			book: $('#book'),
 			window: $(window),
 			pages: $('#book > div'),
-			counter: $('.counter')
+			counter: $('.counter'),
+			bookContainer: $('#book-container')
 		}
 	}
 	

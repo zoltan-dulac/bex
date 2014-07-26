@@ -1,6 +1,7 @@
 @import "breakpoints.scss";
 @import "compass/css3/transform";
 @import "compass/css3/text-shadow";
+@import "compass/css3/transition";
 @import "reset.scss";
 @import "../fonts/calendas-plus/hinted-stylesheet.css";
 @import "../fonts/mardian/stylesheet.css"; 
@@ -37,6 +38,7 @@ body {
   $teal: #006269;
   $lightTeal: hsl(184, 100%, 40%);
   $silver: #8a8d8f;
+  $solid-bg: #f7f7ef;
   $brown: #5a4522;
   
   color: black;
@@ -191,7 +193,12 @@ body {
          }
          
          &.center-title {
-           margin-top: 180px;
+           @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+             margin-top: 180px;
+           }
+           
+           font-size: 85px;
+           text-shadow: 1px 1px 0 $solid-bg, 2px 2px 0 $silver
          }
          
          @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
@@ -249,6 +256,19 @@ body {
         -ms-user-select: initial;
         user-select: initial;
       }
+      
+      
+      
+     .prev, .next {
+       display: none; 
+     }
+    
+     iframe {
+       display: block;
+       background: rgba(255, 255, 255, 0.4) url('../images/icons/spinner.gif') center center no-repeat;
+       margin: 0 auto;
+     }
+      
       
       img.page-width {
          max-width: 390px;
@@ -405,7 +425,12 @@ body {
       }
       
       #book-container {
+         opacity: 0;
          
+         /* @include transform(translateZ(0) scale(0.90));
+         @include transform-origin(50%, 0); */
+         
+         @include transition(1s opacity ease-in);
          
          /*
          * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
@@ -421,7 +446,7 @@ body {
          position: relative;
          
          @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-            top: 40px;
+            
          }
       }
       
@@ -468,7 +493,7 @@ body {
          }
          
          
-         
+         /* Book styles */
          .turn-page{
             background: url('../images/page.jpg');
             border: solid 1px #cccccc;
@@ -482,30 +507,35 @@ body {
               
                
                .prev, .next {
-                   bottom: $padding;
-                   position: absolute;
-                   text-decoration: none;
-                   display: block;
-                   height: 39px;
-                   line-height: 39px;
-                   color: $redPlum;
                    
-                   &:hover {
-                     color: $lightTeal;
-                     cursor: pointer;
+                   @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+                     display: block;
+                     bottom: $padding;
+                     position: absolute;
+                     text-decoration: none;
+                     display: block;
+                     height: 39px;
+                     line-height: 39px;
+                     color: $redPlum;
+                     
+                     &:hover {
+                       color: $lightTeal;
+                       cursor: pointer;
+                     }
                    }
                }
-               
-               .prev {
-                   left: $padding;
-                   padding-left: 85px;
-                   background: url('../images/icons/pointing-hand-left.png') left center no-repeat;
-               }
-               
-               .next {
-                  right: $padding;
-                  padding-right: 85px;
-                  background: url('../images/icons/pointing-hand-right.png') right center no-repeat;
+               @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+                 .prev {
+                     left: $padding;
+                     padding-left: 85px;
+                     background: url('../images/icons/pointing-hand-left.png') left center no-repeat;
+                 }
+                 
+                 .next {
+                    right: $padding;
+                    padding-right: 85px;
+                    background: url('../images/icons/pointing-hand-right.png') right center no-repeat;
+                 }
                }
                
                iframe {
@@ -534,4 +564,8 @@ body {
    }
 
    
+}
+
+body.loaded #book-container {
+    opacity: 1;
 }

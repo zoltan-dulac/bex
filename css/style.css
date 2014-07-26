@@ -69,7 +69,7 @@ table {
 }
 
 /* Mixins - to be put into a seperate file later */
-/* line 16, ../sass/style.scss */
+/* line 17, ../sass/style.scss */
 html, body {
   height: 100%;
   /* Let's turn off selecting text */
@@ -81,7 +81,7 @@ html, body {
   user-select: none;
 }
 
-/* line 29, ../sass/style.scss */
+/* line 30, ../sass/style.scss */
 body {
   /* colors */
   /* accent colors */
@@ -96,12 +96,12 @@ body {
    * counter stuff
    */
 }
-/* line 44, ../sass/style.scss */
+/* line 46, ../sass/style.scss */
 body #lightboxOverlay, body #lightbox {
   -webkit-transform: translateZ(0);
 }
 @media (min-width: 1000px) {
-  /* line 29, ../sass/style.scss */
+  /* line 30, ../sass/style.scss */
   body {
     padding: 0px;
     background-color: #ffffff;
@@ -111,7 +111,7 @@ body #lightboxOverlay, body #lightbox {
     background-position: 50% 100%;
   }
 }
-/* line 68, ../sass/style.scss */
+/* line 70, ../sass/style.scss */
 body nav ul {
   position: fixed;
   top: 0;
@@ -122,7 +122,7 @@ body nav ul {
   padding: 10px;
 }
 @media (min-width: 1000px) {
-  /* line 68, ../sass/style.scss */
+  /* line 70, ../sass/style.scss */
   body nav ul {
     position: static;
     height: initial;
@@ -131,19 +131,19 @@ body nav ul {
     padding: 0;
   }
 }
-/* line 87, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 body nav ul li {
   display: inline-block;
   width: 13%;
   text-align: center;
 }
 @media (min-width: 1000px) {
-  /* line 87, ../sass/style.scss */
+  /* line 89, ../sass/style.scss */
   body nav ul li {
     width: 13%;
   }
 }
-/* line 97, ../sass/style.scss */
+/* line 99, ../sass/style.scss */
 body nav ul li a {
   text-decoration: none;
   color: white;
@@ -161,7 +161,7 @@ body nav ul li a {
   -webkit-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
   font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
 }
-/* line 112, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 body.ie9down body nav ul li a {
   /*
   * older IE doesn't support font-feature-settings, so we it to use the old
@@ -171,17 +171,17 @@ body.ie9down body nav ul li a {
   font-variant: small-caps;
 }
 @media (min-width: 1000px) {
-  /* line 97, ../sass/style.scss */
+  /* line 99, ../sass/style.scss */
   body nav ul li a {
     font-size: 15px;
     color: #890c58;
   }
 }
-/* line 128, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 body nav ul li a:hover {
   color: #00becc;
 }
-/* line 139, ../sass/style.scss */
+/* line 141, ../sass/style.scss */
 body #book > div {
   /*
   * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
@@ -192,30 +192,30 @@ body #book > div {
   padding: 10px;
 }
 @media (min-width: 1000px) {
-  /* line 139, ../sass/style.scss */
+  /* line 141, ../sass/style.scss */
   body #book > div {
     background: none;
   }
 }
-/* line 151, ../sass/style.scss */
+/* line 153, ../sass/style.scss */
 body #book > div.no-mobile {
   display: none;
 }
-/* line 156, ../sass/style.scss */
+/* line 158, ../sass/style.scss */
 body #book > div.hide {
   display: none;
 }
 @media (min-width: 1000px) {
-  /* line 139, ../sass/style.scss */
+  /* line 141, ../sass/style.scss */
   body #book > div {
     padding: 0;
   }
-  /* line 169, ../sass/style.scss */
+  /* line 171, ../sass/style.scss */
   body #book > div.no-mobile {
     display: initial;
   }
 }
-/* line 175, ../sass/style.scss */
+/* line 177, ../sass/style.scss */
 body #book h1 {
   font-family: 'MardianDemo', cursive;
   -ms-font-feature-settings: "dlig" 1;
@@ -227,7 +227,7 @@ body #book h1 {
   margin-bottom: 10px;
   color: #890c58;
 }
-/* line 183, ../sass/style.scss */
+/* line 185, ../sass/style.scss */
 body #book h1.name {
   -ms-font-feature-settings: "dlig" 0;
   -moz-font-feature-settings: "dlig" 0;
@@ -235,21 +235,28 @@ body #book h1.name {
   font-feature-settings: "dlig" 0;
   font-size: 50px;
 }
-/* line 189, ../sass/style.scss */
+/* line 191, ../sass/style.scss */
 body #book h1.cover {
   margin-top: 50px;
 }
-/* line 193, ../sass/style.scss */
+/* line 195, ../sass/style.scss */
 body #book h1.center-title {
-  margin-top: 180px;
+  font-size: 85px;
+  text-shadow: 1px 1px 0 #f7f7ef, 2px 2px 0 #8a8d8f;
+}
+@media (min-width: 1000px) {
+  /* line 195, ../sass/style.scss */
+  body #book h1.center-title {
+    margin-top: 180px;
+  }
 }
 @media (min-width: 321px) {
-  /* line 175, ../sass/style.scss */
+  /* line 177, ../sass/style.scss */
   body #book h1 {
     font-size: 55px;
   }
 }
-/* line 202, ../sass/style.scss */
+/* line 209, ../sass/style.scss */
 body #book h2.title {
   color: #890c58;
   -ms-font-feature-settings: "smcp" 1;
@@ -259,7 +266,7 @@ body #book h2.title {
   font-size: 15px;
   text-align: center;
 }
-/* line 210, ../sass/style.scss */
+/* line 217, ../sass/style.scss */
 body #book p {
   max-width: 390px;
   width: 100%;
@@ -267,17 +274,17 @@ body #book p {
   font-size: 15px;
 }
 @media (min-width: 321px) {
-  /* line 210, ../sass/style.scss */
+  /* line 217, ../sass/style.scss */
   body #book p {
     /* max-width: initial;
     width: initial;  */
   }
 }
-/* line 220, ../sass/style.scss */
+/* line 227, ../sass/style.scss */
 body #book p.center {
   text-align: center;
 }
-/* line 226, ../sass/style.scss */
+/* line 233, ../sass/style.scss */
 body #book .date {
   font-family: 'MardianDemo', cursive;
   font-size: 30px;
@@ -287,12 +294,12 @@ body #book .date {
   color: #890c58;
 }
 @media (min-width: 321px) {
-  /* line 226, ../sass/style.scss */
+  /* line 233, ../sass/style.scss */
   body #book .date {
     font-size: 50px;
   }
 }
-/* line 239, ../sass/style.scss */
+/* line 246, ../sass/style.scss */
 body #book .address {
   -moz-transform: perspective(1px) skewX(-10deg);
   -ms-transform: perspective(1px) skewX(-10deg);
@@ -308,134 +315,151 @@ body #book .address {
   -ms-user-select: initial;
   user-select: initial;
 }
-/* line 253, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
+body #book .prev, body #book .next {
+  display: none;
+}
+/* line 266, ../sass/style.scss */
+body #book iframe {
+  display: block;
+  background: rgba(255, 255, 255, 0.4) url("../images/icons/spinner.gif") center center no-repeat;
+  margin: 0 auto;
+}
+/* line 273, ../sass/style.scss */
 body #book img.page-width {
   max-width: 390px;
   width: 100%;
   display: block;
   margin: 0 auto;
 }
-/* line 260, ../sass/style.scss */
+/* line 280, ../sass/style.scss */
 body #book table {
   margin: 20px auto 40px auto;
 }
-/* line 264, ../sass/style.scss */
+/* line 284, ../sass/style.scss */
 body #book table tr, body #book table td {
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
 }
-/* line 270, ../sass/style.scss */
+/* line 290, ../sass/style.scss */
 body #book table tr:first-child, body #book table tr:last-child, body #book table tr:last-child td {
   border: none;
 }
-/* line 278, ../sass/style.scss */
+/* line 298, ../sass/style.scss */
 body #book table thead tr:first-child {
   border-bottom: solid 3px #890c58;
 }
-/* line 283, ../sass/style.scss */
+/* line 303, ../sass/style.scss */
 body #book table th {
   vertical-align: bottom;
   border: none;
 }
-/* line 289, ../sass/style.scss */
+/* line 309, ../sass/style.scss */
 body #book table tr th:first-child + th, body #book table tr th:first-child + th + th {
   width: 50px;
 }
-/* line 294, ../sass/style.scss */
+/* line 314, ../sass/style.scss */
 body #book table th, body #book table td {
   padding: 5px 10px;
 }
-/* line 299, ../sass/style.scss */
+/* line 319, ../sass/style.scss */
 body #book table tr td {
   text-align: center;
   font-size: 0.9em;
 }
-/* line 304, ../sass/style.scss */
+/* line 324, ../sass/style.scss */
 body #book table.guests input {
   width: 220px;
 }
-/* line 309, ../sass/style.scss */
+/* line 329, ../sass/style.scss */
 body #book form {
   width: 390px;
   margin: 0 auto;
 }
-/* line 314, ../sass/style.scss */
+/* line 334, ../sass/style.scss */
 body #book form > div {
   margin: 20px 0;
 }
-/* line 318, ../sass/style.scss */
+/* line 338, ../sass/style.scss */
 body #book form div.email {
   margin-bottom: 20px;
 }
-/* line 322, ../sass/style.scss */
+/* line 342, ../sass/style.scss */
 body #book form label > span {
   width: 200px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 328, ../sass/style.scss */
+/* line 348, ../sass/style.scss */
 body #book form input[type="number"] {
   margin-left: 4px;
 }
-/* line 332, ../sass/style.scss */
+/* line 352, ../sass/style.scss */
 body #book form input[type="submit"] {
   display: block;
   margin: 0 auto;
 }
-/* line 337, ../sass/style.scss */
+/* line 357, ../sass/style.scss */
 body #book form label.full-width > span,
 body #book form label.full-width > div,
 body #book form textarea {
   width: 100%;
   text-align: left;
 }
-/* line 344, ../sass/style.scss */
+/* line 364, ../sass/style.scss */
 body #book form textarea {
   height: 100px;
 }
-/* line 348, ../sass/style.scss */
+/* line 368, ../sass/style.scss */
 body #book form label > span, body #book form label > div {
   display: inline-block;
 }
-/* line 356, ../sass/style.scss */
+/* line 376, ../sass/style.scss */
 body #book form select {
   width: 120px;
 }
 @media (min-width: 1000px) {
-  /* line 309, ../sass/style.scss */
+  /* line 329, ../sass/style.scss */
   body #book form {
     width: auto;
     margin: 0;
   }
 }
-/* line 368, ../sass/style.scss */
+/* line 388, ../sass/style.scss */
 body #book ul.photos li {
   display: inline-block;
   margin: 0 0 10px 10px;
 }
-/* line 373, ../sass/style.scss */
+/* line 393, ../sass/style.scss */
 body #book ul.photos li, body #book ul.photos img {
   width: 114px;
   height: 114px;
 }
 @media (min-width: 1000px) {
-  /* line 29, ../sass/style.scss */
+  /* line 30, ../sass/style.scss */
   body {
     /* Nav */
   }
-  /* line 384, ../sass/style.scss */
+  /* line 404, ../sass/style.scss */
   body p {
     margin-bottom: 1em;
     width: auto;
     margin: initial;
   }
-  /* line 395, ../sass/style.scss */
+  /* line 415, ../sass/style.scss */
   body nav ul {
     display: block;
     padding: 10px 0;
   }
-  /* line 407, ../sass/style.scss */
+  /* line 427, ../sass/style.scss */
   body #book-container {
+    opacity: 0;
+    /* @include transform(translateZ(0) scale(0.90));
+    @include transform-origin(50%, 0); */
+    -moz-transition: 1s opacity ease-in;
+    -o-transition: 1s opacity ease-in;
+    -webkit-transition: 1s opacity ease-in;
+    transition: 1s opacity ease-in;
     /*
     * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
     * I cut each half to be 512x700.
@@ -449,51 +473,47 @@ body #book ul.photos li, body #book ul.photos img {
     overflow: hidden;
     position: relative;
   }
-}
-@media (min-width: 1000px) and (min-width: 1000px) {
-  /* line 407, ../sass/style.scss */
-  body #book-container {
-    top: 40px;
-  }
-}
-@media (min-width: 1000px) {
-  /* line 428, ../sass/style.scss */
+  /* line 453, ../sass/style.scss */
   body #book {
     width: 860px;
     height: 650px;
     left: 62px;
     top: 26px;
     position: relative;
+    /* Book styles */
   }
 }
 @media (min-width: 1000px) and (min-width: 1000px) {
-  /* line 428, ../sass/style.scss */
+  /* line 453, ../sass/style.scss */
   body #book {
     background: url("../images/page.jpg");
   }
 }
 @media (min-width: 1000px) {
-  /* line 446, ../sass/style.scss */
+  /* line 471, ../sass/style.scss */
   body #book > .turn-page-wrapper[page="1"] .turn-page, body #book > .turn-page-wrapper[page="3"] .turn-page, body #book > .turn-page-wrapper[page="5"] .turn-page, body #book > .turn-page-wrapper[page="7"] .turn-page, body #book > .turn-page-wrapper[page="9"] .turn-page {
     box-shadow: 10px 0 10px rgba(200, 200, 200, 0.5) inset;
   }
-  /* line 466, ../sass/style.scss */
+  /* line 491, ../sass/style.scss */
   body #book img.page-width {
     margin: 10px 0;
   }
-  /* line 472, ../sass/style.scss */
+  /* line 497, ../sass/style.scss */
   body #book .turn-page {
     background: url("../images/page.jpg");
     border: solid 1px #cccccc;
   }
-  /* line 478, ../sass/style.scss */
+  /* line 503, ../sass/style.scss */
   body #book .turn-page .page-container {
     padding: 20px;
     position: relative;
     height: 100%;
   }
-  /* line 484, ../sass/style.scss */
+}
+@media (min-width: 1000px) and (min-width: 1000px) {
+  /* line 509, ../sass/style.scss */
   body #book .turn-page .page-container .prev, body #book .turn-page .page-container .next {
+    display: block;
     bottom: 20px;
     position: absolute;
     text-decoration: none;
@@ -502,36 +522,45 @@ body #book ul.photos li, body #book ul.photos img {
     line-height: 39px;
     color: #890c58;
   }
-  /* line 493, ../sass/style.scss */
+  /* line 521, ../sass/style.scss */
   body #book .turn-page .page-container .prev:hover, body #book .turn-page .page-container .next:hover {
     color: #00becc;
     cursor: pointer;
   }
-  /* line 499, ../sass/style.scss */
+}
+@media (min-width: 1000px) and (min-width: 1000px) {
+  /* line 528, ../sass/style.scss */
   body #book .turn-page .page-container .prev {
     left: 20px;
     padding-left: 85px;
     background: url("../images/icons/pointing-hand-left.png") left center no-repeat;
   }
-  /* line 505, ../sass/style.scss */
+  /* line 534, ../sass/style.scss */
   body #book .turn-page .page-container .next {
     right: 20px;
     padding-right: 85px;
     background: url("../images/icons/pointing-hand-right.png") right center no-repeat;
   }
-  /* line 511, ../sass/style.scss */
+}
+@media (min-width: 1000px) {
+  /* line 541, ../sass/style.scss */
   body #book .turn-page .page-container iframe {
     background: rgba(255, 255, 255, 0.4) url("../images/icons/spinner.gif") center center no-repeat;
   }
 }
-/* line 525, ../sass/style.scss */
+/* line 555, ../sass/style.scss */
 body .counter.is-countdown {
   margin: 0 auto;
   width: 200px;
   background-color: transparent;
   border: none;
 }
-/* line 531, ../sass/style.scss */
+/* line 561, ../sass/style.scss */
 body .counter.is-countdown .countdown-period {
   font-size: 10px;
+}
+
+/* line 569, ../sass/style.scss */
+body.loaded #book-container {
+  opacity: 1;
 }
