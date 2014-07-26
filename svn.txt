@@ -1,0 +1,3 @@
+svn up: update
+svn st:  status
+svn commit -m 'my comment' :  commit

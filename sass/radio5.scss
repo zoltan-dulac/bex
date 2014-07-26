@@ -1,0 +1,69 @@
+@import "compass/css3/images";
+
+
+  $width: 10px;
+  $innerWidth: 8px;
+  $widthDelta: ($width - $innerWidth) / 2;
+  
+  input[type="radio"] {
+      display:none;
+  }
+  
+  input[type="radio"] + label {
+    cursor:pointer;
+  }
+  
+  input[type="radio"] + label span {
+    
+  
+      display:inline-block;
+      width: $width;
+      height: $width;
+      border-radius: $width ;
+      border: solid 1px #cccccc;
+      
+      margin:-1px 4px 0 0;
+      vertical-align:middle;
+      padding: 0;
+      position: relative;
+      
+  }
+  
+  
+  input[type="radio"] + label span:after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    display: block;
+    top: $widthDelta;
+    left: $widthDelta;
+    width: $innerWidth;
+    height: $innerWidth;
+    border-radius: $innerWidth;
+  }
+  
+  /*
+   * The default is the CHRY color
+   */
+  input[type="radio"]:checked + label span:after {
+    @include background(linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)));
+    background-color: #009bca;
+    
+    /* variations after are for each of the individual brands */
+    .dodge & {
+      background-color: #d20f06;
+    }
+    
+    .jeep & {
+      background-color: #ffb302;
+    }
+    
+    .ram & {
+      background-color: #652316;
+    }
+    
+    .fiat & {
+      background-color: #941711;
+    }
+  }
+ 
