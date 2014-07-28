@@ -313,7 +313,7 @@
 		_updateCountdown: function(elem, inst) {
 			elem = elem.jquery ? elem : $(elem);
 			inst = inst || this._getInst(elem);
-			if (!inst) {
+			if (!inst || jQuery.isEmptyObject(inst)) {
 				return;
 			}
 			elem.html(this._generateHTML(inst)).toggleClass(this._rtlClass, inst.options.isRTL);

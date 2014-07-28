@@ -4,7 +4,6 @@
 */
 @import url(../fonts/calendas-plus/hinted-stylesheet.css);
 @import url(../fonts/mardian/stylesheet.css);
-/* line 6, ../sass/reset.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -27,41 +26,34 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-/* line 27, ../sass/reset.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 31, ../sass/reset.scss */
 body {
   line-height: 1;
 }
 
-/* line 34, ../sass/reset.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 37, ../sass/reset.scss */
 blockquote, q {
   quotes: none;
 }
 
-/* line 40, ../sass/reset.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
 
-/* line 45, ../sass/reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 50, ../sass/reset.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -69,7 +61,6 @@ table {
 }
 
 /* Mixins - to be put into a seperate file later */
-/* line 17, ../sass/style.scss */
 html, body {
   height: 100%;
   /* Let's turn off selecting text */
@@ -81,27 +72,40 @@ html, body {
   user-select: none;
 }
 
-/* line 30, ../sass/style.scss */
+/* colors */
+/* accent colors */
+#lightboxOverlay, #lightbox {
+  -webkit-transform: translateZ(0);
+}
+
+em {
+  display: inline-block;
+  -moz-transform: perspective(1px) skewX(-10deg);
+  -ms-transform: perspective(1px) skewX(-10deg);
+  -webkit-transform: perspective(1px) skewX(-10deg);
+  transform: perspective(1px) skewX(-10deg);
+  /*filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter id="sharpen"><feConvolveMatrix order="3" kernelMatrix="-1 -1 -1 -1 30 -1 -1 -1 -1"/></filter></defs></svg>#sharpen');
+*/
+  text-indent: -0.3em;
+  position: relative;
+  left: 0.3em;
+}
+body.ie9down em {
+  -moz-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  -webkit-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+
 body {
-  /* colors */
-  /* accent colors */
   color: black;
   padding: 0px;
   line-height: 1.2;
   font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
   padding-top: 30px;
   background: url("../images/page.jpg");
-  /* shared styles */
-  /*
-   * counter stuff
-   */
-}
-/* line 46, ../sass/style.scss */
-body #lightboxOverlay, body #lightbox {
-  -webkit-transform: translateZ(0);
 }
 @media (min-width: 1000px) {
-  /* line 30, ../sass/style.scss */
   body {
     padding: 0px;
     background-color: #ffffff;
@@ -111,19 +115,29 @@ body #lightboxOverlay, body #lightbox {
     background-position: 50% 100%;
   }
 }
-/* line 70, ../sass/style.scss */
-body nav ul {
+
+/* shared styles */
+nav {
+  z-index: 10;
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
-  background: #890c58;
-  color: white;
-  width: 100%;
-  padding: 10px;
 }
 @media (min-width: 1000px) {
-  /* line 70, ../sass/style.scss */
-  body nav ul {
+  nav {
+    position: absolute;
+  }
+}
+nav ul {
+  width: 100%;
+  background: #890c58;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+@media (min-width: 1000px) {
+  nav ul {
     position: static;
     height: initial;
     background: rgba(255, 255, 255, 0.8);
@@ -131,20 +145,19 @@ body nav ul {
     padding: 0;
   }
 }
-/* line 89, ../sass/style.scss */
-body nav ul li {
+nav ul li {
   display: inline-block;
-  width: 13%;
+  width: auto;
+  white-space: nowrap;
+  padding: 0 1em 0.5em 0;
   text-align: center;
 }
 @media (min-width: 1000px) {
-  /* line 89, ../sass/style.scss */
-  body nav ul li {
-    width: 13%;
+  nav ul li {
+    padding: 0 2em 0.5em 0;
   }
 }
-/* line 99, ../sass/style.scss */
-body nav ul li a {
+nav ul li a {
   text-decoration: none;
   color: white;
   font-size: 15px;
@@ -161,8 +174,7 @@ body nav ul li a {
   -webkit-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
   font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
 }
-/* line 114, ../sass/style.scss */
-body.ie9down body nav ul li a {
+body.ie9down nav ul li a {
   /*
   * older IE doesn't support font-feature-settings, so we it to use the old
   * way to do small caps. Note this is not the best way to do small caps.
@@ -171,18 +183,16 @@ body.ie9down body nav ul li a {
   font-variant: small-caps;
 }
 @media (min-width: 1000px) {
-  /* line 99, ../sass/style.scss */
-  body nav ul li a {
+  nav ul li a {
     font-size: 15px;
     color: #890c58;
   }
 }
-/* line 130, ../sass/style.scss */
-body nav ul li a:hover {
+nav ul li a:hover {
   color: #00becc;
 }
-/* line 141, ../sass/style.scss */
-body #book > div {
+
+#book > div, .message > div {
   /*
   * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
   * I cut each half to be 512x700.
@@ -192,31 +202,35 @@ body #book > div {
   padding: 10px;
 }
 @media (min-width: 1000px) {
-  /* line 141, ../sass/style.scss */
-  body #book > div {
+  #book > div, .message > div {
     background: none;
   }
 }
-/* line 153, ../sass/style.scss */
-body #book > div.no-mobile {
-  display: none;
-}
-/* line 158, ../sass/style.scss */
-body #book > div.hide {
+#book > div .no-mobile, .message > div .no-mobile {
   display: none;
 }
 @media (min-width: 1000px) {
-  /* line 141, ../sass/style.scss */
-  body #book > div {
+  #book > div .no-mobile, .message > div .no-mobile {
+    display: inherit;
+  }
+}
+@media (min-width: 1000px) {
+  #book > div .no-desktop, .message > div .no-desktop {
+    display: none !important;
+  }
+}
+#book > div.hide, .message > div.hide {
+  display: none;
+}
+@media (min-width: 1000px) {
+  #book > div, .message > div {
     padding: 0;
   }
-  /* line 171, ../sass/style.scss */
-  body #book > div.no-mobile {
+  #book > div.no-mobile, .message > div.no-mobile {
     display: initial;
   }
 }
-/* line 177, ../sass/style.scss */
-body #book h1 {
+#book h1, .message h1 {
   font-family: 'MardianDemo', cursive;
   -ms-font-feature-settings: "dlig" 1;
   -moz-font-feature-settings: "dlig" 1;
@@ -227,37 +241,35 @@ body #book h1 {
   margin-bottom: 10px;
   color: #890c58;
 }
-/* line 185, ../sass/style.scss */
-body #book h1.name {
+body.ie8down #book h1, body.ie8down .message h1 {
+  font-size: 55px;
+}
+#book h1.name, .message h1.name {
   -ms-font-feature-settings: "dlig" 0;
   -moz-font-feature-settings: "dlig" 0;
   -webkit-font-feature-settings: "dlig" 0;
   font-feature-settings: "dlig" 0;
   font-size: 50px;
 }
-/* line 191, ../sass/style.scss */
-body #book h1.cover {
-  margin-top: 50px;
+#book h1.cover, .message h1.cover {
+  margin-top: 10px;
 }
-/* line 195, ../sass/style.scss */
-body #book h1.center-title {
-  font-size: 85px;
+#book h1.center-title, .message h1.center-title {
+  margin-top: 60px;
+  font-size: 65px;
   text-shadow: 1px 1px 0 #f7f7ef, 2px 2px 0 #8a8d8f;
 }
 @media (min-width: 1000px) {
-  /* line 195, ../sass/style.scss */
-  body #book h1.center-title {
+  #book h1.center-title, .message h1.center-title {
     margin-top: 180px;
   }
 }
 @media (min-width: 321px) {
-  /* line 177, ../sass/style.scss */
-  body #book h1 {
+  #book h1, .message h1 {
     font-size: 55px;
   }
 }
-/* line 209, ../sass/style.scss */
-body #book h2.title {
+#book h2.title, .message h2.title {
   color: #890c58;
   -ms-font-feature-settings: "smcp" 1;
   -moz-font-feature-settings: "smcp" 1;
@@ -266,26 +278,68 @@ body #book h2.title {
   font-size: 15px;
   text-align: center;
 }
-/* line 217, ../sass/style.scss */
-body #book p {
+body.ie9down #book h2.title, body.ie9down .message h2.title {
+  /*
+  * older IE doesn't support font-feature-settings, so we it to use the old
+  * way to do small caps. Note this is not the best way to do small caps.
+  * but it's the best it can do
+  */
+  font-variant: small-caps;
+}
+#book .menu h2, .message .menu h2 {
+  font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
+  -ms-font-feature-settings: "smcp" 1;
+  -moz-font-feature-settings: "smcp" 1;
+  -webkit-font-feature-settings: "smcp" 1;
+  font-feature-settings: "smcp" 1;
+  text-align: center;
+  color: #890c58;
+  font-size: 30px;
+  margin-top: 40px;
+}
+body.ie9down #book .menu h2, body.ie9down .message .menu h2 {
+  /*
+  * older IE doesn't support font-feature-settings, so we it to use the old
+  * way to do small caps. Note this is not the best way to do small caps.
+  * but it's the best it can do
+  */
+  font-variant: small-caps;
+}
+#book .menu dl dt, .message .menu dl dt {
+  display: block;
+  -moz-transform: perspective(1px) skewX(-10deg);
+  -ms-transform: perspective(1px) skewX(-10deg);
+  -webkit-transform: perspective(1px) skewX(-10deg);
+  transform: perspective(1px) skewX(-10deg);
+  /*filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter id="sharpen"><feConvolveMatrix order="3" kernelMatrix="-1 -1 -1 -1 30 -1 -1 -1 -1"/></filter></defs></svg>#sharpen');
+*/
+}
+body.ie9down #book .menu dl dt, body.ie9down .message .menu dl dt {
+  -moz-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  -webkit-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+#book .menu dl dd, .message .menu dl dd {
+  display: block;
+  margin: 5px 0 20px 40px;
+}
+#book p, #book .menu ul, #book .menu dl, .message p, .message .menu ul, .message .menu dl {
   max-width: 390px;
   width: 100%;
   margin: 10px auto 10px auto;
   font-size: 15px;
 }
 @media (min-width: 321px) {
-  /* line 217, ../sass/style.scss */
-  body #book p {
+  #book p, #book .menu ul, #book .menu dl, .message p, .message .menu ul, .message .menu dl {
     /* max-width: initial;
     width: initial;  */
   }
 }
-/* line 227, ../sass/style.scss */
-body #book p.center {
+#book p.center, #book .menu ul.center, #book .menu dl.center, .message p.center, .message .menu ul.center, .message .menu dl.center {
   text-align: center;
 }
-/* line 233, ../sass/style.scss */
-body #book .date {
+#book .date, .message .date {
   font-family: 'MardianDemo', cursive;
   font-size: 30px;
   text-align: center;
@@ -294,17 +348,17 @@ body #book .date {
   color: #890c58;
 }
 @media (min-width: 321px) {
-  /* line 233, ../sass/style.scss */
-  body #book .date {
+  #book .date, .message .date {
     font-size: 50px;
   }
 }
-/* line 246, ../sass/style.scss */
-body #book .address {
+#book .address, .message .address {
   -moz-transform: perspective(1px) skewX(-10deg);
   -ms-transform: perspective(1px) skewX(-10deg);
   -webkit-transform: perspective(1px) skewX(-10deg);
   transform: perspective(1px) skewX(-10deg);
+  /*filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter id="sharpen"><feConvolveMatrix order="3" kernelMatrix="-1 -1 -1 -1 30 -1 -1 -1 -1"/></filter></defs></svg>#sharpen');
+*/
   text-align: center;
   margin: 30px 0;
   /* Let's turn off selecting text */
@@ -315,147 +369,183 @@ body #book .address {
   -ms-user-select: initial;
   user-select: initial;
 }
-/* line 262, ../sass/style.scss */
-body #book .prev, body #book .next {
+body.ie9down #book .address, body.ie9down .message .address {
+  -moz-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  -webkit-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+body.ie9down #book .address, body.ie9down .message .address {
+  -moz-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  -webkit-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+#book .prev, #book .next, .message .prev, .message .next {
   display: none;
 }
-/* line 266, ../sass/style.scss */
-body #book iframe {
+#book iframe, .message iframe {
   display: block;
   background: rgba(255, 255, 255, 0.4) url("../images/icons/spinner.gif") center center no-repeat;
   margin: 0 auto;
 }
-/* line 273, ../sass/style.scss */
-body #book img.page-width {
+#book img.page-width, .message img.page-width {
   max-width: 390px;
   width: 100%;
   display: block;
   margin: 0 auto;
 }
-/* line 280, ../sass/style.scss */
-body #book table {
+body.ie8down #book img.page-width, body.ie8down .message img.page-width {
+  width: auto;
+}
+#book table, .message table {
   margin: 20px auto 40px auto;
 }
-/* line 284, ../sass/style.scss */
-body #book table tr, body #book table td {
+#book table tr, #book table td, .message table tr, .message table td {
   border-top: solid 1px #ccc;
   border-bottom: solid 1px #ccc;
 }
-/* line 290, ../sass/style.scss */
-body #book table tr:first-child, body #book table tr:last-child, body #book table tr:last-child td {
+#book table tr:first-child, #book table tr:last-child, #book table tr:last-child td, .message table tr:first-child, .message table tr:last-child, .message table tr:last-child td {
   border: none;
 }
-/* line 298, ../sass/style.scss */
-body #book table thead tr:first-child {
+#book table thead tr:first-child, .message table thead tr:first-child {
   border-bottom: solid 3px #890c58;
 }
-/* line 303, ../sass/style.scss */
-body #book table th {
+#book table th, .message table th {
   vertical-align: bottom;
   border: none;
 }
-/* line 309, ../sass/style.scss */
-body #book table tr th:first-child + th, body #book table tr th:first-child + th + th {
+#book table tr th:first-child + th, #book table tr th:first-child + th + th, .message table tr th:first-child + th, .message table tr th:first-child + th + th {
   width: 50px;
 }
-/* line 314, ../sass/style.scss */
-body #book table th, body #book table td {
+#book table th, #book table td, .message table th, .message table td {
   padding: 5px 10px;
 }
-/* line 319, ../sass/style.scss */
-body #book table tr td {
+#book table tr td, .message table tr td {
   text-align: center;
   font-size: 0.9em;
 }
-/* line 324, ../sass/style.scss */
-body #book table.guests input {
-  width: 220px;
+#book table.guests input, .message table.guests input {
+  width: 130px;
 }
-/* line 329, ../sass/style.scss */
-body #book form {
-  width: 390px;
+@media (min-width: 420px) {
+  #book table.guests input, .message table.guests input {
+    width: 220px;
+  }
+}
+#book form, .message form {
+  width: 100%;
   margin: 0 auto;
 }
-/* line 334, ../sass/style.scss */
-body #book form > div {
+@media (min-width: 420px) {
+  #book form, .message form {
+    width: 390px;
+  }
+}
+#book form > div, .message form > div {
   margin: 20px 0;
 }
-/* line 338, ../sass/style.scss */
-body #book form div.email {
+#book form div.email, .message form div.email {
   margin-bottom: 20px;
 }
-/* line 342, ../sass/style.scss */
-body #book form label > span {
+#book form label > span, .message form label > span {
   width: 200px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 348, ../sass/style.scss */
-body #book form input[type="number"] {
+#book form input[type="number"], .message form input[type="number"] {
   margin-left: 4px;
 }
-/* line 352, ../sass/style.scss */
-body #book form input[type="submit"] {
+#book form input[type="submit"], .message form input[type="submit"] {
   display: block;
   margin: 0 auto;
 }
-/* line 357, ../sass/style.scss */
-body #book form label.full-width > span,
-body #book form label.full-width > div,
-body #book form textarea {
+#book form label.full-width > span,
+#book form label.full-width > div,
+#book form textarea, .message form label.full-width > span,
+.message form label.full-width > div,
+.message form textarea {
   width: 100%;
   text-align: left;
 }
-/* line 364, ../sass/style.scss */
-body #book form textarea {
+#book form textarea, .message form textarea {
   height: 100px;
 }
-/* line 368, ../sass/style.scss */
-body #book form label > span, body #book form label > div {
+#book form label > span, #book form label > div, .message form label > span, .message form label > div {
   display: inline-block;
 }
-/* line 376, ../sass/style.scss */
-body #book form select {
+#book form select, .message form select {
   width: 120px;
 }
 @media (min-width: 1000px) {
-  /* line 329, ../sass/style.scss */
-  body #book form {
+  #book form, .message form {
     width: auto;
     margin: 0;
   }
 }
-/* line 388, ../sass/style.scss */
-body #book ul.photos li {
+#book form div[data-visibleif-rule="coming=='no'"] div span,
+#book form .music-info div span, .message form div[data-visibleif-rule="coming=='no'"] div span,
+.message form .music-info div span {
+  text-align: right;
+  padding-right: 10px;
   display: inline-block;
-  margin: 0 0 10px 10px;
+  width: 150px;
 }
-/* line 393, ../sass/style.scss */
-body #book ul.photos li, body #book ul.photos img {
-  width: 114px;
-  height: 114px;
+#book form#music-form textarea, .message form#music-form textarea {
+  height: 100px;
 }
 @media (min-width: 1000px) {
-  /* line 30, ../sass/style.scss */
-  body {
-    /* Nav */
+  #book form#music-form textarea, .message form#music-form textarea {
+    height: 300px;
   }
-  /* line 404, ../sass/style.scss */
-  body p {
+}
+#book [data-for="photos"], .message [data-for="photos"] {
+  text-align: center;
+}
+#book ul.photos, .message ul.photos {
+  text-align: center;
+  display: inline;
+  position: relative;
+  left: 10px;
+}
+#book ul.photos li, .message ul.photos li {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+}
+#book ul.photos li, #book ul.photos img, .message ul.photos li, .message ul.photos img {
+  width: 85.5px;
+  height: 85.5px;
+}
+@media (min-width: 1000px) {
+  #book ul.photos li, #book ul.photos img, .message ul.photos li, .message ul.photos img {
+    width: 114px;
+    height: 114px;
+  }
+}
+
+/* Mobile book-container */
+#book-container {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  p {
     margin-bottom: 1em;
     width: auto;
     margin: initial;
   }
-  /* line 415, ../sass/style.scss */
-  body nav ul {
+
+  /* Nav */
+  nav ul {
     display: block;
     padding: 10px 0;
   }
-  /* line 427, ../sass/style.scss */
-  body #book-container {
-    opacity: 0;
+
+  #book-container {
     /* @include transform(translateZ(0) scale(0.90));
     @include transform-origin(50%, 0); */
+    display: block;
+    opacity: 0;
     -moz-transition: 1s opacity ease-in;
     -o-transition: 1s opacity ease-in;
     -webkit-transition: 1s opacity ease-in;
@@ -472,9 +562,11 @@ body #book ul.photos li, body #book ul.photos img {
     margin: -20px auto 0 auto;
     overflow: hidden;
     position: relative;
+    top: 45px;
+    z-index: 11;
   }
-  /* line 453, ../sass/style.scss */
-  body #book {
+
+  #book {
     width: 860px;
     height: 650px;
     left: 62px;
@@ -484,35 +576,29 @@ body #book ul.photos li, body #book ul.photos img {
   }
 }
 @media (min-width: 1000px) and (min-width: 1000px) {
-  /* line 453, ../sass/style.scss */
-  body #book {
+  #book {
     background: url("../images/page.jpg");
   }
 }
 @media (min-width: 1000px) {
-  /* line 471, ../sass/style.scss */
-  body #book > .turn-page-wrapper[page="1"] .turn-page, body #book > .turn-page-wrapper[page="3"] .turn-page, body #book > .turn-page-wrapper[page="5"] .turn-page, body #book > .turn-page-wrapper[page="7"] .turn-page, body #book > .turn-page-wrapper[page="9"] .turn-page {
+  #book > .turn-page-wrapper[page="1"] .turn-page, #book > .turn-page-wrapper[page="3"] .turn-page, #book > .turn-page-wrapper[page="5"] .turn-page, #book > .turn-page-wrapper[page="7"] .turn-page, #book > .turn-page-wrapper[page="9"] .turn-page {
     box-shadow: 10px 0 10px rgba(200, 200, 200, 0.5) inset;
   }
-  /* line 491, ../sass/style.scss */
-  body #book img.page-width {
+  #book img.page-width {
     margin: 10px 0;
   }
-  /* line 497, ../sass/style.scss */
-  body #book .turn-page {
+  #book .turn-page {
     background: url("../images/page.jpg");
     border: solid 1px #cccccc;
   }
-  /* line 503, ../sass/style.scss */
-  body #book .turn-page .page-container {
+  #book .turn-page .page-container {
     padding: 20px;
     position: relative;
     height: 100%;
   }
 }
 @media (min-width: 1000px) and (min-width: 1000px) {
-  /* line 509, ../sass/style.scss */
-  body #book .turn-page .page-container .prev, body #book .turn-page .page-container .next {
+  #book .turn-page .page-container .prev, #book .turn-page .page-container .next {
     display: block;
     bottom: 20px;
     position: absolute;
@@ -522,45 +608,122 @@ body #book ul.photos li, body #book ul.photos img {
     line-height: 39px;
     color: #890c58;
   }
-  /* line 521, ../sass/style.scss */
-  body #book .turn-page .page-container .prev:hover, body #book .turn-page .page-container .next:hover {
+  #book .turn-page .page-container .prev:hover, #book .turn-page .page-container .next:hover {
     color: #00becc;
     cursor: pointer;
   }
+  #book .turn-page .page-container .prev:active, #book .turn-page .page-container .next:active {
+    color: #006269;
+  }
 }
 @media (min-width: 1000px) and (min-width: 1000px) {
-  /* line 528, ../sass/style.scss */
-  body #book .turn-page .page-container .prev {
+  #book .turn-page .page-container .prev {
     left: 20px;
     padding-left: 85px;
     background: url("../images/icons/pointing-hand-left.png") left center no-repeat;
   }
-  /* line 534, ../sass/style.scss */
-  body #book .turn-page .page-container .next {
+  #book .turn-page .page-container .next {
     right: 20px;
     padding-right: 85px;
     background: url("../images/icons/pointing-hand-right.png") right center no-repeat;
   }
 }
 @media (min-width: 1000px) {
-  /* line 541, ../sass/style.scss */
-  body #book .turn-page .page-container iframe {
+  #book .turn-page .page-container iframe {
     background: rgba(255, 255, 255, 0.4) url("../images/icons/spinner.gif") center center no-repeat;
   }
 }
-/* line 555, ../sass/style.scss */
-body .counter.is-countdown {
+/* Excpetion: mobile has secondary photo pages have an upper margin */
+div[data-for="photos"] + div[data-for="photos"] {
+  margin-top: -20px;
+}
+@media (min-width: 1000px) {
+  div[data-for="photos"] + div[data-for="photos"] {
+    margin-top: 0px;
+  }
+}
+
+/*
+ * counter stuff
+ */
+.counter.is-countdown {
   margin: 0 auto;
   width: 200px;
   background-color: transparent;
   border: none;
 }
-/* line 561, ../sass/style.scss */
-body .counter.is-countdown .countdown-period {
+.counter.is-countdown .countdown-period {
   font-size: 10px;
 }
 
-/* line 569, ../sass/style.scss */
+.message {
+  width: 80%;
+  margin: 100px auto 0 auto;
+  padding: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  background: white;
+  display: block;
+}
+@media (min-width: 1000px) {
+  .message {
+    background: url("../images/page.jpg");
+  }
+}
+
+.loading {
+  padding: 10%;
+  border: solid 1px #8a8d8f;
+}
+.loading h1 {
+  -moz-animation: loading-anim 2s infinite;
+  -webkit-animation: loading-anim 2s infinite;
+  animation: loading-anim 2s infinite;
+}
+
 body.loaded #book-container {
   opacity: 1;
+  display: block;
+}
+body.loaded .message {
+  display: none;
+}
+
+@-moz-keyframes loading-anim {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes loading-anim {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes loading-anim {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

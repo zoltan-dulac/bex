@@ -1,4 +1,5 @@
 @import "breakpoints.scss";
+@import "animate";
 @import "compass/css3/transform";
 @import "compass/css3/text-shadow";
 @import "compass/css3/transition";
@@ -14,6 +15,16 @@
    font-feature-settings:       $list;
 }
 
+@mixin oblique() {
+  @include transform(perspective(1px)  skewX(-10deg));
+  /*filter: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter id="sharpen"><feConvolveMatrix order="3" kernelMatrix="-1 -1 -1 -1 30 -1 -1 -1 -1"/></filter></defs></svg>#sharpen');
+*/
+  body.ie9down & {
+    @include transform(skewX(-10deg));
+  }
+}
+ 
+
 html, body {
    height: 100%;
    
@@ -27,545 +38,738 @@ html, body {
 }
 
 
-body {
-  
-  /* colors */
-  $plum: #6e2b62;
-  $redPlum: #890c58;
-  $redPlum2: #a20067;
-  
-  /* accent colors */
-  $teal: #006269;
-  $lightTeal: hsl(184, 100%, 40%);
-  $silver: #8a8d8f;
-  $solid-bg: #f7f7ef;
-  $brown: #5a4522;
-  
-  color: black;
-  
-  #lightboxOverlay, #lightbox {
-    -webkit-transform: translateZ(0);
-  }
-   
-   padding: 0px;
-   line-height: 1.2;
-   font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
-   padding-top: 30px;
-   background: url('../images/page.jpg');
-   
-   @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-      padding: 0px;
-      background-color: #ffffff;
-      background-image: url('../images/photos/backgrounds/wine-background.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: 50% 100%;
-   }
-   
-   /* shared styles */
-   nav {
-      
-      
-      
-      ul {
-         position: fixed;
-         top: 0;
-         left: 0;
-         
-         background: $redPlum;
-         color: white;
-         width: 100%;
-         padding: 10px;
-         
-         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-            position: static;
-            
-            height: initial;
-            background: rgba(255, 255, 255, 0.8);
-            color: $redPlum;
-            padding: 0;
-         }
-         
-         li {
-            display: inline-block;
-            width: 13%;
-            text-align: center;
-               
-            @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-               width: 13%; 
-            }   
-             
-            
-            a {
-               text-decoration: none;
-               color: white;
-               font-size: 15px;
-               
-               /*
-               * Tells the browser to use the following variants of the font:
-               * - small caps (see below for CSS fix for old IE)
-               * - ligatures
-               * - discretionary ligatures
-               * - swash characters
-               * - use the font's kerning.
-               */
-               @include font-feature-settings('smcp' 1, 'liga' 1, 'dlig' 1, 'swsh' 1, 'kern' 1);
-               
-               body.ie9down & {
-                  /*
-                  * older IE doesn't support font-feature-settings, so we it to use the old
-                  * way to do small caps. Note this is not the best way to do small caps.
-                  * but it's the best it can do
-                  */
-                  font-variant: small-caps;
-                  
-               }
-               
-               @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-                 font-size: 15px;
-                 color: $redPlum;
-               }
-            }
-            
-            a:hover {
-              color: $lightTeal;
-            }
-            
-         }
-      }
-      
-      
-   }
-   #book {
-      
-      & > div {
-         /*
-         * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
-         * I cut each half to be 512x700.
-         */
-         background: url('../images/page.jpg');
-         padding-top: 30px;
-         
-         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-            background: none;
-         }
-          
-         &.no-mobile {
-           display: none;
-           
-         }
-         
-         &.hide {
-           display: none;
-         }
-         
-         padding: 10px;
-         
-         
-         
-         
-         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-           
-            padding: 0;
-            
-            &.no-mobile {
-               display: initial;
-            }
-         }
-      }
-      
-      h1 {
-         font-family: 'MardianDemo', cursive;
-         @include font-feature-settings('dlig' 1);
-         font-size: 30px;
-         text-align: center;
-         margin-bottom: 10px;
-         color: $redPlum;
-         
-         &.name {
-           @include font-feature-settings('dlig' 0);
-           font-size: 50px;
-         }
-         
-         
-         &.cover {
-            margin-top: 50px;
-         }
-         
-         &.center-title {
-           @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-             margin-top: 180px;
-           }
-           
-           font-size: 85px;
-           text-shadow: 1px 1px 0 $solid-bg, 2px 2px 0 $silver
-         }
-         
-         @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
-            font-size: 55px; 
-         }
-      }
-      
-      h2.title {
-        color: $redPlum;
-        @include font-feature-settings('smcp' 1);
-        font-size: 15px;
-        text-align: center;
-        
-      }
-      
-      p {
-         max-width: 390px;
-         width: 100%;
-         margin: 10px auto 10px auto;
-         font-size: 15px;
-         @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
-            /* max-width: initial;
-            width: initial;  */
-         }
-         
-         &.center {
-           text-align: center;
-         }
-      }
-   
-      
-      .date {
-         font-family: 'MardianDemo', cursive;
-         font-size: 30px;
-         text-align: center;
-         margin-bottom: 10px;
-         line-height: 1.1;
-         color: $redPlum;
-         
-         @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
-            font-size: 50px;
-         }
-      }
-      
-      .address {
-        @include transform(perspective(1px)  skewX(-10deg));
-        text-align: center;
-        margin: 30px 0;
-        
-        /* Let's turn off selecting text */
-        -webkit-touch-callout: initial;
-        -webkit-user-select: initial;
-        -khtml-user-select: initial;
-        -moz-user-select: initial;
-        -ms-user-select: initial;
-        user-select: initial;
-      }
-      
-      
-      
-     .prev, .next {
-       display: none; 
-     }
-    
-     iframe {
-       display: block;
-       background: rgba(255, 255, 255, 0.4) url('../images/icons/spinner.gif') center center no-repeat;
-       margin: 0 auto;
-     }
-      
-      
-      img.page-width {
-         max-width: 390px;
-         width: 100%;
-         display: block;
-         margin: 0 auto;
-      }
-      
-      table {
-        
-        margin: 20px auto 40px auto;
-        
-        & tr, & td {
-          border-top: solid 1px #ccc;
-          border-bottom: solid 1px #ccc;
-        }
-        
-        
-        & tr:first-child,
-        & tr:last-child,
-        & tr:last-child td 
-         {
-          border: none;
-        }
-        
-        
-        & thead tr:first-child 
-         {
-          border-bottom: solid 3px $redPlum;
-        }
-        
-        & th {
-          vertical-align: bottom;
-          border: none;
+/* colors */
+$plum: #6e2b62;
+$redPlum: #890c58;
+$redPlum2: #a20067;
 
-        } 
-        
-        & tr th:first-child + th,
-        & tr th:first-child + th + th{
-          width: 50px;
-        }       
-        
-        & th,
-        & td {
-          padding: 5px 10px;
-        }
-        
-        & tr td {
+/* accent colors */
+$teal: #006269;
+$lightTeal: hsl(184, 100%, 40%);
+$silver: #8a8d8f;
+$solid-bg: #f7f7ef;
+$brown: #5a4522;
+
+
+#lightboxOverlay, #lightbox {
+  -webkit-transform: translateZ(0);
+}
+
+em {
+  display: inline-block;
+  @include oblique();
+  text-indent: -0.3em;
+  position: relative;
+  left: 0.3em;
+  
+}
+
+
+
+body {
+ color: black;
+ padding: 0px;
+ line-height: 1.2;
+ font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
+ padding-top: 30px;
+ background: url('../images/page.jpg');
+ 
+ @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+    padding: 0px;
+    background-color: #ffffff;
+    background-image: url('../images/photos/backgrounds/wine-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    
+ }
+} 
+ 
+ 
+ /* shared styles */
+ nav {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    
+    @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+          position: absolute;
+    }
+    ul {
+       width: 100%;
+       
+       
+       background: $redPlum;
+       color: white;
+       
+       padding: 10px;
+       text-align: center;
+       
+       @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+          position: static;
+          
+          height: initial;
+          background: rgba(255, 255, 255, 0.8);
+          color: $redPlum;
+          padding: 0;
+       } 
+       
+       li {
+          display: inline-block;
+          width: auto;
+          white-space: nowrap;
+          padding: 0 1em 0.5em 0;
           text-align: center;
-          font-size: 0.9em;
-        }
+             
+          @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+             padding: 0 2em 0.5em 0;
+          }   
+           
+          
+          a {
+             text-decoration: none;
+             color: white;
+             font-size: 15px;
+             
+             /*
+             * Tells the browser to use the following variants of the font:
+             * - small caps (see below for CSS fix for old IE)
+             * - ligatures
+             * - discretionary ligatures
+             * - swash characters
+             * - use the font's kerning.
+             */
+             @include font-feature-settings('smcp' 1, 'liga' 1, 'dlig' 1, 'swsh' 1, 'kern' 1);
+             
+             body.ie9down & {
+                /*
+                * older IE doesn't support font-feature-settings, so we it to use the old
+                * way to do small caps. Note this is not the best way to do small caps.
+                * but it's the best it can do
+                */
+                font-variant: small-caps;
+                
+             }
+             
+             @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+               font-size: 15px;
+               color: $redPlum;
+             }
+          }
+          
+          a:hover {
+            color: $lightTeal;
+          }
+          
+       }
+    }
+    
+    
+ }
+ #book, .message {
+    
+    & > div {
+       /*
+       * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
+       * I cut each half to be 512x700.
+       */
+       background: url('../images/page.jpg');
+       padding-top: 30px;
+       
+       @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+          background: none;
+       }
         
-        &.guests input {
+       .no-mobile {
+         display: none;
+         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+           display: inherit; 
+         }
+       }
+       
+       .no-desktop {
+         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+           display: none !important; 
+         }
+       }
+       
+       
+       
+       &.hide {
+         display: none;
+       }
+       
+       padding: 10px;
+       
+       
+       
+       
+       @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+         
+          padding: 0;
+          
+          &.no-mobile {
+             display: initial;
+          }
+       }
+    }
+    
+    h1 {
+       font-family: 'MardianDemo', cursive;
+       @include font-feature-settings('dlig' 1);
+       font-size: 30px;
+       text-align: center;
+       margin-bottom: 10px;
+       color: $redPlum;
+       
+       body.ie8down & {
+         font-size: 55px;
+       }
+       
+       &.name {
+         @include font-feature-settings('dlig' 0);
+         font-size: 50px;
+       }
+       
+       
+       &.cover {
+          margin-top: 10px;
+       }
+       
+       &.center-title {
+         margin-top: 60px;
+         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+           margin-top: 180px;
+         }
+         
+         font-size: 65px;
+         text-shadow: 1px 1px 0 $solid-bg, 2px 2px 0 $silver;
+         
+       }
+       
+       @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
+          font-size: 55px; 
+       }
+    }
+    
+    h2.title {
+      color: $redPlum;
+      @include font-feature-settings('smcp' 1);
+      font-size: 15px;
+      text-align: center;
+      
+      body.ie9down & {
+          /*
+          * older IE doesn't support font-feature-settings, so we it to use the old
+          * way to do small caps. Note this is not the best way to do small caps.
+          * but it's the best it can do
+          */
+          font-variant: small-caps;
+          
+       }
+      
+    }
+    
+    .menu {
+       h2 {
+         font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
+         @include font-feature-settings('smcp' 1);
+         text-align: center;
+         color: $redPlum;
+         font-size: 30px;
+         margin-top: 40px;
+         body.ie9down & {
+            /*
+            * older IE doesn't support font-feature-settings, so we it to use the old
+            * way to do small caps. Note this is not the best way to do small caps.
+            * but it's the best it can do
+            */
+            font-variant: small-caps;
+            
+         }
+       }
+       
+       dl {
+         dt {
+           display: block;
+           @include oblique();
+         }
+         
+         dd {
+           display: block;
+           margin: 5px 0 20px 40px;
+           
+         }
+       }
+       
+       
+    }
+    
+    p, .menu ul, .menu dl {
+       max-width: 390px;
+       width: 100%;
+       margin: 10px auto 10px auto;
+       font-size: 15px;
+       @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
+          /* max-width: initial;
+          width: initial;  */
+       }
+       
+       &.center {
+         text-align: center;
+       }
+    }
+ 
+    
+    .date {
+       font-family: 'MardianDemo', cursive;
+       font-size: 30px;
+       text-align: center;
+       margin-bottom: 10px;
+       line-height: 1.1;
+       color: $redPlum;
+       
+       @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
+          font-size: 50px;
+       }
+    }
+    
+    .address {
+      @include oblique();
+      
+      body.ie9down & {
+        @include transform(skewX(-10deg));
+      }
+      text-align: center;
+      margin: 30px 0;
+      
+      /* Let's turn off selecting text */
+      -webkit-touch-callout: initial;
+      -webkit-user-select: initial;
+      -khtml-user-select: initial;
+      -moz-user-select: initial;
+      -ms-user-select: initial;
+      user-select: initial;
+    }
+    
+    
+    
+   .prev, .next {
+     display: none; 
+   }
+  
+   iframe {
+     display: block;
+     background: rgba(255, 255, 255, 0.4) url('../images/icons/spinner.gif') center center no-repeat;
+     margin: 0 auto;
+   }
+    
+    
+    img.page-width {
+       max-width: 390px;
+       width: 100%;
+       display: block;
+       margin: 0 auto;
+       
+       body.ie8down & {
+         width: auto;
+       } 
+    }
+    
+    table {
+      
+      margin: 20px auto 40px auto;
+      
+      & tr, & td {
+        border-top: solid 1px #ccc;
+        border-bottom: solid 1px #ccc;
+      }
+      
+      
+      & tr:first-child,
+      & tr:last-child,
+      & tr:last-child td 
+       {
+        border: none;
+      }
+      
+      
+      & thead tr:first-child 
+       {
+        border-bottom: solid 3px $redPlum;
+      }
+      
+      & th {
+        vertical-align: bottom;
+        border: none;
+
+      } 
+      
+      & tr th:first-child + th,
+      & tr th:first-child + th + th{
+        width: 50px;
+      }       
+      
+      & th,
+      & td {
+        padding: 5px 10px;
+      }
+      
+      & tr td {
+        text-align: center;
+        font-size: 0.9em;
+      }
+      
+      &.guests input {
+        width: 130px;
+        
+        @include breakpoint($bp-form-large, $no-query: '.no-mqs') {
           width: 220px;
         }
       }
-      
-      form {
-        
-         width: 390px;
+    }
+    
+    form {
+       width: 100%;
+       
+       @include breakpoint($bp-form-large, $no-query: '.no-mqs') {
+        width: 390px;
+       }
+       margin: 0 auto;
+       
+       & > div {
+          margin: 20px 0;
+       }
+       
+       & div.email {
+         margin-bottom: 20px;
+       }
+       
+       label > span {
+          width: 200px;
+          text-align: right;
+          margin-right: 10px;
+       }
+       
+       input[type="number"] {
+          margin-left: 4px;
+       }
+       
+       input[type="submit"] {
+         display: block;
          margin: 0 auto;
-         
-         & > div {
-            margin: 20px 0;
-         }
-         
-         & div.email {
-           margin-bottom: 20px;
-         }
-         
-         label > span {
-            width: 200px;
-            text-align: right;
-            margin-right: 10px;
-         }
-         
-         input[type="number"] {
-            margin-left: 4px;
-         }
-         
-         input[type="submit"] {
-           display: block;
-           margin: 0 auto;
-         }
-         
-         label.full-width > span,
-         label.full-width > div,
-         textarea {
-            width: 100%;
-            text-align: left;
-         }
-         
-         textarea {
-            height: 100px;
-         }
-         
-         label > span, label > div{
-            display: inline-block;
-         }
-         
-         
-         
-         
-         
-         select {
-            width: 120px;
-         }
-         
-         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-           width: auto;
-           margin: 0;
-         }
-      }
-      
-      ul.photos {
-          $thumb_size: 114px;
-          li {
-              display: inline-block;
-              margin: 0 0 10px 10px;
-          }
+       }
+       
+       label.full-width > span,
+       label.full-width > div,
+       textarea {
+          width: 100%;
+          text-align: left;
           
-          li, img {
+          
+       }
+       
+       textarea {
+         height: 100px;
+       }
+       
+       label > span, label > div{
+          display: inline-block;
+       }
+       
+       
+       
+       
+       
+       select {
+          width: 120px;
+       }
+       
+       @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+         width: auto;
+         margin: 0;
+       }
+       
+       div[data-visibleif-rule="coming=='no'"] div span,
+       .music-info div span {
+         text-align: right;
+         padding-right: 10px;
+         display: inline-block;
+         width: 150px;
+       }
+    }
+    
+    form#music-form {
+      textarea {
+        height: 100px;
+        
+        @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+          height: 300px; 
+        }
+      }
+    }
+    
+    [data-for="photos"] {
+      text-align: center;
+    }
+    
+    ul.photos {
+        $thumb_size: 114px;
+        $mobile_thumb_size: 3 * $thumb_size / 4;
+        text-align: center;
+        display: inline;
+        position: relative;
+        left: 10px;
+        
+        li {
+            display: inline-block;
+            margin: 0 10px 10px 0;
+        }
+        
+        li, img {
+            width: $mobile_thumb_size;
+            height: $mobile_thumb_size;
+        
+        
+            @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
               width: $thumb_size;
               height: $thumb_size;
-          }
+            }
         }
-      
-      
-   }
-      
-   @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-     
-      p {
-         margin-bottom: 1em;
-         width: auto;
-         margin: initial;
-      
       }
-      
-      $page-shadow: rgba(200, 200, 200, 0.5);
-      /* Nav */
-      nav {
-         
-         ul {
-            display: block;
-            
-            padding: 10px 0;
-            
-            
-            
-            
-            
-         }
-      }
-      
-      #book-container {
-         opacity: 0;
-         
-         /* @include transform(translateZ(0) scale(0.90));
-         @include transform-origin(50%, 0); */
-         
-         @include transition(1s opacity ease-in);
-         
-         /*
-         * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
-         * I cut each half to be 512x700.
-         */
-         background-image: url('../images/book-cover-left.png'),url('../images/book-cover-right.png');
-         background-position: left top, right top;
-         background-repeat: no-repeat;
-         width: 960px;
-         height: 700px;
-         margin: -20px auto 0 auto;
-         overflow: hidden;
-         position: relative;
-         
-         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-            
-         }
-      }
-      
-      #book{
-         width: 860px;
-         height: 650px;
+    
+    
+ }
+ 
+ /* Mobile book-container */
+ #book-container {
+   display: none;
+ }
+    
+ @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+   
+    p {
+       margin-bottom: 1em;
+       width: auto;
+       margin: initial;
+    
+    }
+    
+    $page-shadow: rgba(200, 200, 200, 0.5);
+    /* Nav */
+    nav {
+       
+       ul {
+          display: block;
           
-         @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-             background: url('../images/page.jpg');
-         }
-         
-         left: 62px;
-         top: 26px;
-         position: relative;
-         
-         & > .turn-page-wrapper[page="1"],
-         & > .turn-page-wrapper[page="3"],
-         & > .turn-page-wrapper[page="5"],
-         & > .turn-page-wrapper[page="7"],
-         & > .turn-page-wrapper[page="9"]
-         {
-            .turn-page {
-               box-shadow: 10px 0 10px $page-shadow inset;
-            }
-         }
-         
-         & > .turn-page-wrapper[page="2"],
-         & > .turn-page-wrapper[page="4"],
-         & > .turn-page-wrapper[page="6"],
-         & > .turn-page-wrapper[page="8"],
-         & > .turn-page-wrapper[page="10"]
-         {
-            .turn-page {
-               
-            }
-         }
-         
-         
-         
-         
-         
-         img.page-width {
-            margin: 10px 0;
-         }
-         
-         
-         /* Book styles */
-         .turn-page{
-            background: url('../images/page.jpg');
-            border: solid 1px #cccccc;
-            $padding: 20px;
-            
-            
-            .page-container {
-               padding: 20px;
-               position: relative;
-               height: 100%;
-              
-               
-               .prev, .next {
-                   
-                   @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-                     display: block;
-                     bottom: $padding;
-                     position: absolute;
-                     text-decoration: none;
-                     display: block;
-                     height: 39px;
-                     line-height: 39px;
-                     color: $redPlum;
-                     
-                     &:hover {
-                       color: $lightTeal;
-                       cursor: pointer;
-                     }
-                   }
-               }
-               @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
-                 .prev {
-                     left: $padding;
-                     padding-left: 85px;
-                     background: url('../images/icons/pointing-hand-left.png') left center no-repeat;
-                 }
-                 
-                 .next {
-                    right: $padding;
-                    padding-right: 85px;
-                    background: url('../images/icons/pointing-hand-right.png') right center no-repeat;
-                 }
-               }
-               
-               iframe {
-                 background: rgba(255, 255, 255, 0.4) url('../images/icons/spinner.gif') center center no-repeat;
-               }
-            }
-         }
-      }
+          padding: 10px 0;
+          
+       }
+       
       
+    }
+    
+    #book-container {
+       /* @include transform(translateZ(0) scale(0.90));
+       @include transform-origin(50%, 0); */
+       display: block;
+       opacity: 0;
+       @include transition(1s opacity ease-in);
+       
+       /*
+       * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
+       * I cut each half to be 512x700.
+       */
+       background-image: url('../images/book-cover-left.png'),url('../images/book-cover-right.png');
+       background-position: left top, right top;
+       background-repeat: no-repeat;
+       width: 960px;
+       height: 700px;
+       margin: -20px auto 0 auto;
+       overflow: hidden;
+       position: relative;
+       top: 45px;
+       z-index: 11;
+       
+    }
+    
+    #book{
+       width: 860px;
+       height: 650px;
+        
+       @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+           background: url('../images/page.jpg');
+       }
+       
+       left: 62px;
+       top: 26px;
+       position: relative;
+       
+       & > .turn-page-wrapper[page="1"],
+       & > .turn-page-wrapper[page="3"],
+       & > .turn-page-wrapper[page="5"],
+       & > .turn-page-wrapper[page="7"],
+       & > .turn-page-wrapper[page="9"]
+       {
+          .turn-page {
+             box-shadow: 10px 0 10px $page-shadow inset;
+          }
+       }
+       
+       & > .turn-page-wrapper[page="2"],
+       & > .turn-page-wrapper[page="4"],
+       & > .turn-page-wrapper[page="6"],
+       & > .turn-page-wrapper[page="8"],
+       & > .turn-page-wrapper[page="10"]
+       {
+          .turn-page {
+             
+          }
+       }
+       
+       
+       
+       
+       
+       img.page-width {
+          margin: 10px 0;
+       }
+       
+       
+       /* Book styles */
+       .turn-page{
+          background: url('../images/page.jpg');
+          border: solid 1px #cccccc;
+          $padding: 20px;
+          
+          
+          .page-container {
+             padding: 20px;
+             position: relative;
+             height: 100%;
+            
+             
+             .prev, .next {
+                 
+                 @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+                   display: block;
+                   bottom: $padding;
+                   position: absolute;
+                   text-decoration: none;
+                   display: block;
+                   height: 39px;
+                   line-height: 39px;
+                   color: $redPlum;
+                   
+                   &:hover {
+                     color: $lightTeal;
+                     cursor: pointer;
+                   }
+                   
+                   &:active {
+                     color: $teal;
+                   }
+                 }
+             }
+             @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+               .prev {
+                   left: $padding;
+                   padding-left: 85px;
+                   background: url('../images/icons/pointing-hand-left.png') left center no-repeat;
+               }
+               
+               .next {
+                  right: $padding;
+                  padding-right: 85px;
+                  background: url('../images/icons/pointing-hand-right.png') right center no-repeat;
+               }
+             }
+             
+             iframe {
+               background: rgba(255, 255, 255, 0.4) url('../images/icons/spinner.gif') center center no-repeat;
+             }
+          }
+       }
+    }
+    
+ }
+ 
+ /* Excpetion: mobile has secondary photo pages have an upper margin */
+ div[data-for="photos"] + div[data-for="photos"] {
+   margin-top: -20px;
+   
+   @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+      margin-top: 0px; 
+   }
+ }
+ 
+ 
+ /*
+  * counter stuff
+  */
+ 
+ .counter.is-countdown {
+   margin: 0 auto;
+   width: 200px;
+   background-color: transparent;
+   border: none;
+   
+   .countdown-period {
+     font-size: 10px;
+   }
+ }
+ 
+ .message {
+   width: 80%;
+   margin: 100px auto 0 auto;
+   padding: 20px;
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+   background: white;
+    display: block;
+   
+   @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
+      background: url('../images/page.jpg');
+    
    }
    
-   
-   /*
-    * counter stuff
-    */
-   
-   .counter.is-countdown {
-     margin: 0 auto;
-     width: 200px;
-     background-color: transparent;
-     border: none;
-     
-     .countdown-period {
-       font-size: 10px;
-     }
+ }
+ 
+ .loading {
+   padding: 10%;
+   border: solid 1px $silver;
+   h1 {
+     @include animation(loading-anim 2s infinite)
    }
+ }
 
-   
+
+body.loaded {
+  
+  #book-container {
+      opacity: 1;
+      display: block;
+  }
+  
+  .message {
+    display: none;
+    
+  }
+  
+  
 }
 
-body.loaded #book-container {
+@include keyframes(loading-anim) {
+  0% {
+    opacity: 0;
+  }
+  
+  50% {
     opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
 }

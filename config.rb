@@ -26,3 +26,5 @@ javascripts_dir = "js"
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 line_comments = false
+
+require "animate"

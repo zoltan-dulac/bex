@@ -31,15 +31,30 @@
 })(jQuery,'smartresize');
 
 
+if (!window.console) {
+	window.console = {
+		log: function () {}
+	}
+}
+
 var weddingBook = new function () {
 	var me = this,
 		$jc = {},
 		originalHTML = '',
-		isBook = false;
+		isBook = false,
+		isOldIE;
 	
 	me.init = function () {
 		
 		cacheJquery();
+		isOldIE = $jc.body.hasClass('ie8down');
+		// before doing anything else
+		$('#mobile-menu').html($('#desktop-menu').html());;
+		var sb = [];
+		$('.no-mobile .photos').each(function(i, el) {
+			sb.push(el.innerHTML);
+		});
+		$('#mobile-photos').html(sb.join(''));
 		
 		$(window).load(loadEvent);
 		
@@ -58,6 +73,8 @@ var weddingBook = new function () {
 		
 		originalHTML = $jc.book.html();
 		
+		
+		
 		resizeEvent();
 		
 		if (isMobile()) {
@@ -67,8 +84,6 @@ var weddingBook = new function () {
 		
 		$(window).smartresize(resizeEvent);
 		
-		
-		startCounter();
 		
 		gotoHashPage();
 		setTimeout(function() {
@@ -82,7 +97,7 @@ var weddingBook = new function () {
 	
 	function loadEvent(e) {
 	    $jc.body.addClass('loaded');
-	       
+	    visibleIf.init(true);   
 	}
 	
 	me.load = function () {
@@ -93,13 +108,15 @@ var weddingBook = new function () {
 		var hash = location.hash;
 		if (location.hash !== '') {
 			$('a[href="' + hash + '"]').click();
-			startCounter();
+			console.log('gotoHashPage');
+			
 		}
 	}
 	
 	function cacheJquery() {
 		$jc = {
 		    body: $('body'),
+		    nav: $('nav ul'),
 			book: $('#book'),
 			window: $(window),
 			pages: $('#book > div'),
@@ -111,37 +128,44 @@ var weddingBook = new function () {
 	function startCounter () {
 		var weddingDate = new Date();
 		weddingDate = new Date(2014, 9, 12, 12, 0);
-		$jc.counter.countdown({until: weddingDate, format: 'dHMs'});
+		
+		$('.counter').removeClass('is-countdown').html('').countdown({until: weddingDate, format: 'dHMs'});
 	}
 	
 	function isMobile() {
 		var w = $jc.window.width();
-		return w < 1024;
+		return (w < 1000 || isOldIE);
 	}
 	
 	function isDesktop() {
 		var w = $jc.window.width();
-		return w >= 1024;
+		return (w >= 1000 && !isOldIE);
 	}
 	
 	function navClickEvent(e) {
 		var target = e.currentTarget,
 			pageNum = parseInt(target.href.split('#')[1]);
 			
-		e.preventDefault();
 			
 		if (isDesktop()) {
 
 			
+			e.preventDefault();
 			location.hash = '#' + pageNum;
 			e.preventDefault();
 			//alert(target.href);
 			$jc.book.turn('page', pageNum);
+			
 		} else {
 			
 			// show only the relavent pages
+			
 			var dataFor = $(target).attr('id');
 			showOnly(dataFor);
+			
+			if (dataFor == 'rsvp' || dataFor == 'music') {
+				visibleIf.init(true);
+			}
 		}
 	}
 	
@@ -166,26 +190,51 @@ var weddingBook = new function () {
 	
 	function resizeEvent(e) {
 		var w = $jc.window.width();
-		
-		if (isMobile() && isBook && originalHTML !== '') {
-			destroyCrappyPlugin($jc.book);
+		//console.log($jc.nav.height());
+		$jc.body.css('padding-top', isMobile()?$jc.nav.outerHeight():0)
+		if (isMobile())  {
+			if (isBook && originalHTML !== '') {
+				destroyCrappyPlugin($jc.book);
+				
+				//console.log(originalHTML);
+				$jc.book.html(originalHTML).attr('style', '');
+				cacheJquery();
+				showOnly('home');
+				isBook = false;
+				gotoHashPage();
+				
+				// prevent scrolling of page
+				$(document).unbind('touchmove', landscapeTouchMoveEvent);
+			} 
 			
-			//console.log(originalHTML);
-			$jc.book.html(originalHTML).attr('style', '');
-			cacheJquery();
-			showOnly('home');
-			isBook = false;
-			gotoHashPage();
+			// change all iframe sizes to appropriate viewport size
+			var iframeSize = $(window).width() - 20;
 			
-			// prevent scrolling of page
-			$(document).unbind('touchmove', landscapeTouchMoveEvent);
+			if (iframeSize > 390) {
+				iframeSize = 390;
+			}
 			
+			$('iframe').attr('width', iframeSize);
+			
+				startCounter();	
 		} else if (isDesktop() && !isBook){
 			cacheJquery();
-			$jc.book.turn({gradients: true, acceleration: true});
+			$jc.book.turn({gradients: true, acceleration: true})
+				.bind('turned', pageTurnedEvent);
 			isBook = true;
 			gotoHashPage();
 			$(document).bind('touchmove', landscapeTouchMoveEvent);
+			$('iframe').attr('width', '390');
+		}
+	}
+	
+	function pageTurnedEvent(e, page, view) {
+		var isOnFormPage = ($('.form-page').length > 0);
+		if (page === 1) {
+			
+			startCounter();
+		} else if (isOnFormPage) {
+			visibleIf.init(true);
 		}
 	}
 	

@@ -4,7 +4,6 @@
 */
 @import url(../fonts/calendas-plus/hinted-stylesheet.css);
 @import url(../fonts/mardian/stylesheet.css);
-/* line 6, ../sass/reset.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -27,41 +26,34 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-/* line 27, ../sass/reset.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 31, ../sass/reset.scss */
 body {
   line-height: 1;
 }
 
-/* line 34, ../sass/reset.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 37, ../sass/reset.scss */
 blockquote, q {
   quotes: none;
 }
 
-/* line 40, ../sass/reset.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
 
-/* line 45, ../sass/reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 50, ../sass/reset.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -69,19 +61,16 @@ table {
 }
 
 /* Mixins - to be put into a seperate file later */
-/* line 14, ../sass/main.scss */
 html, body {
   height: 100%;
   background: yellow;
 }
 @media (min-width: 321px) {
-  /* line 14, ../sass/main.scss */
   html, body {
     background: blue;
   }
 }
 
-/* line 23, ../sass/main.scss */
 body {
   background: #ffffff;
   padding: 10px;
@@ -89,24 +78,20 @@ body {
   font-family: "hinted-Calendas-Plus", "Times New Roman", "Times Roman", serif;
 }
 
-/* line 29, ../sass/main.scss */
 p {
   margin-bottom: 1em;
 }
 
 /* Nav */
-/* line 37, ../sass/main.scss */
 nav ul {
   display: block;
   padding: 10px 0;
 }
-/* line 44, ../sass/main.scss */
 nav ul li {
   display: inline-block;
   width: 19%;
   text-align: center;
 }
-/* line 49, ../sass/main.scss */
 nav ul li a {
   text-decoration: none;
   color: black;
@@ -124,7 +109,6 @@ nav ul li a {
   -webkit-font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
   font-feature-settings: "smcp" 1, "liga" 1, "dlig" 1, "swsh" 1, "kern" 1;
 }
-/* line 63, ../sass/main.scss */
 body.ie9down nav ul li a {
   /* 
    * older IE doesn't support font-feature-settings, so we it to use the old
@@ -134,7 +118,6 @@ body.ie9down nav ul li a {
   font-variant: small-caps;
 }
 
-/* line 80, ../sass/main.scss */
 #book-container {
   /* 
    * Original: http://upload.wikimedia.org/wikipedia/commons/f/f2/Goethe_die_wahlverwandtschaften_erstausgabe_1809.jpg
@@ -148,7 +131,6 @@ body.ie9down nav ul li a {
   margin: 0 auto;
   overflow: hidden;
 }
-/* line 96, ../sass/main.scss */
 #book-container #book {
   width: 860px;
   height: 650px;
@@ -157,11 +139,9 @@ body.ie9down nav ul li a {
   top: 26px;
   position: relative;
 }
-/* line 112, ../sass/main.scss */
 #book-container #book > .turn-page-wrapper[page="1"] .turn-page, #book-container #book > .turn-page-wrapper[page="3"] .turn-page, #book-container #book > .turn-page-wrapper[page="5"] .turn-page, #book-container #book > .turn-page-wrapper[page="7"] .turn-page, #book-container #book > .turn-page-wrapper[page="9"] .turn-page {
   box-shadow: 10px 0 10px rgba(200, 200, 200, 0.5) inset;
 }
-/* line 130, ../sass/main.scss */
 #book-container #book h1 {
   font-family: 'MardianDemo', cursive;
   -ms-font-feature-settings: "dlig" 1;
@@ -172,11 +152,9 @@ body.ie9down nav ul li a {
   text-align: center;
   margin-bottom: 10px;
 }
-/* line 138, ../sass/main.scss */
 #book-container #book h1.cover {
   margin-top: 50px;
 }
-/* line 143, ../sass/main.scss */
 #book-container #book .date {
   font-family: 'MardianDemo', cursive;
   font-size: 50px;
@@ -184,50 +162,40 @@ body.ie9down nav ul li a {
   margin-bottom: 10px;
   line-height: 1.1;
 }
-/* line 151, ../sass/main.scss */
 #book-container #book img.page-width {
   width: 390px;
   margin: 10px 0;
 }
-/* line 157, ../sass/main.scss */
 #book-container #book form > div {
   margin: 20px 0;
 }
-/* line 161, ../sass/main.scss */
 #book-container #book form label > span {
   width: 200px;
   text-align: right;
   margin-right: 10px;
 }
-/* line 167, ../sass/main.scss */
 #book-container #book form input[type="number"] {
   margin-left: 4px;
 }
-/* line 171, ../sass/main.scss */
 #book-container #book form label.full-width > span,
 #book-container #book form label.full-width > div,
 #book-container #book form textarea {
   width: 100%;
   text-align: left;
 }
-/* line 178, ../sass/main.scss */
 #book-container #book form textarea {
   height: 200px;
 }
-/* line 182, ../sass/main.scss */
 #book-container #book form label > span, #book-container #book form label > div {
   display: inline-block;
 }
-/* line 190, ../sass/main.scss */
 #book-container #book form select {
   width: 120px;
 }
-/* line 195, ../sass/main.scss */
 #book-container #book .turn-page {
   background: url("../images/page.jpg");
   border: solid 1px #cccccc;
 }
-/* line 201, ../sass/main.scss */
 #book-container #book .turn-page .page-container {
   padding: 20px;
 }

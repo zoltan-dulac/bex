@@ -256,7 +256,7 @@ var visibleIf = new function(){
 		
 		for (var i = 0; i < fields.length; i++) {
 			var field = fields[i]
-			if (!isVisible(field) && !CSSHelpers.isMemberOfClass(field, 'visibleIf-submitIfInvisible')) {
+			if (!isVisible(field) && field.type != 'hidden' && !CSSHelpers.isMemberOfClass(field, 'visibleIf-submitIfInvisible')) {
 				CSSHelpers.addClass(field, 'visibleIf-notSubmitted');
 				field.disabled = true;
 			} else {
