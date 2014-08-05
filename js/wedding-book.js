@@ -58,7 +58,7 @@ var weddingBook = new function () {
 		
 		$(window).load(loadEvent);
 		
-		for (var i=6; i<=16; i++) {
+		for (var i=6; i<=19; i++) {
 			var $el = $('#' + i + ' .page-container');
 			if (i % 2 === 0) {
 				$el.append('<div href="#' + (i+1) + '" class="next">Next</a>');
@@ -106,9 +106,10 @@ var weddingBook = new function () {
 	
 	function gotoHashPage() {
 		var hash = location.hash;
-		if (location.hash !== '') {
+		if (location.hash === '' ) {
+			startCounter();
+		} else { 
 			$('a[href="' + hash + '"]').click();
-			console.log('gotoHashPage');
 			
 		}
 	}
@@ -154,6 +155,7 @@ var weddingBook = new function () {
 			location.hash = '#' + pageNum;
 			e.preventDefault();
 			//alert(target.href);
+			
 			$jc.book.turn('page', pageNum);
 			
 		} else {
@@ -205,6 +207,13 @@ var weddingBook = new function () {
 				
 				// prevent scrolling of page
 				$(document).unbind('touchmove', landscapeTouchMoveEvent);
+				
+				// reinitialize webforms
+				if (window.$wf2) {
+					html5Forms.setupExtraFeatures();
+					$wf2.init(true);
+					
+				}
 			} 
 			
 			// change all iframe sizes to appropriate viewport size

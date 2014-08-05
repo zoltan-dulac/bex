@@ -1,0 +1,4 @@
+AuthUserFile C:\project3\jodylovesrebecca.com\.htpasswd
+AuthType Basic
+AuthName "Leave the username field blank.  Only enter the password given in the invitation mailed to you."
+Require valid-user

@@ -89,7 +89,7 @@ body {
  /* shared styles */
  nav {
     z-index: 10;
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 0;
     left: 0;
@@ -203,7 +203,18 @@ body {
        
        padding: 10px;
        
-       
+       a.cta {
+          display: block;
+          text-decoration: none;
+          width: 50%;
+          margin: 30px auto 0 auto; 
+          text-align: center;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
        
        
        @include breakpoint($bp-desktop, $no-query: '.no-mqs') {
@@ -250,7 +261,7 @@ body {
        }
        
        @include breakpoint($bp-tablet, $no-query: '.no-mqs') {
-          font-size: 55px; 
+          font-size: 50px; 
        }
     }
     
@@ -422,13 +433,25 @@ body {
         font-size: 0.9em;
       }
       
-      &.guests input {
-        width: 130px;
+      &.guests {
+        input {
+          width: 130px;
+          
         
-        @include breakpoint($bp-form-large, $no-query: '.no-mqs') {
-          width: 220px;
+          
+          
+          @include breakpoint($bp-form-large, $no-query: '.no-mqs') {
+            width: 220px;
+          }
         }
+        
+        input:invalid,
+        select:invalid{
+          box-shadow: none;
+        } 
       }
+      
+      
     }
     
     form {
@@ -459,7 +482,7 @@ body {
        
        input[type="submit"] {
          display: block;
-         margin: 0 auto;
+         margin: 10px auto 0 auto;
        }
        
        label.full-width > span,
@@ -611,7 +634,19 @@ body {
        & > .turn-page-wrapper[page="3"],
        & > .turn-page-wrapper[page="5"],
        & > .turn-page-wrapper[page="7"],
-       & > .turn-page-wrapper[page="9"]
+       & > .turn-page-wrapper[page="9"],
+       & > .turn-page-wrapper[page="11"],
+       & > .turn-page-wrapper[page="13"],
+       & > .turn-page-wrapper[page="15"],
+       & > .turn-page-wrapper[page="17"],
+       & > .turn-page-wrapper[page="19"],
+       & > .turn-page-wrapper[page="21"],
+       & > .turn-page-wrapper[page="23"],
+       & > .turn-page-wrapper[page="25"],
+       & > .turn-page-wrapper[page="27"],
+       & > .turn-page-wrapper[page="29"],
+       & > .turn-page-wrapper[page="31"],
+       & > .turn-page-wrapper[page="33"],
        {
           .turn-page {
              box-shadow: 10px 0 10px $page-shadow inset;
@@ -622,7 +657,19 @@ body {
        & > .turn-page-wrapper[page="4"],
        & > .turn-page-wrapper[page="6"],
        & > .turn-page-wrapper[page="8"],
-       & > .turn-page-wrapper[page="10"]
+       & > .turn-page-wrapper[page="10"],
+       & > .turn-page-wrapper[page="12"],
+       & > .turn-page-wrapper[page="14"],
+       & > .turn-page-wrapper[page="16"],
+       & > .turn-page-wrapper[page="18"],
+       & > .turn-page-wrapper[page="20"],
+       & > .turn-page-wrapper[page="22"],
+       & > .turn-page-wrapper[page="24"],
+       & > .turn-page-wrapper[page="26"],
+       & > .turn-page-wrapper[page="28"],
+       & > .turn-page-wrapper[page="30"],
+       & > .turn-page-wrapper[page="32"],
+       & > .turn-page-wrapper[page="34"]
        {
           .turn-page {
              
@@ -646,7 +693,7 @@ body {
           
           
           .page-container {
-             padding: 20px;
+             padding: 10px 20px;
              position: relative;
              height: 100%;
             
@@ -737,7 +784,7 @@ body {
  }
  
  .loading {
-   padding: 10%;
+   padding: 1%;
    border: solid 1px $silver;
    h1 {
      @include animation(loading-anim 2s infinite)
@@ -773,3 +820,9 @@ body.loaded {
     opacity: 0;
   }
 }
+
+input[type="submit"] {
+   display: block;
+   margin: 10px auto 0 auto;
+}
+

@@ -449,10 +449,10 @@ $TARGET_EMAIL = array("^zoltan\.dulac@gmail\.com$");
 $DEF_ALERT = "zoltan.dulac@gmail.com";
 
 /* Help: http://www.tectite.com/fmdoc/site_domain.php */
-$SITE_DOMAIN = "localhost"; /* your website domain name */
+$SITE_DOMAIN = "jodylovesrebecca.com"; /* your website domain name */
 
 /* Help: http://www.tectite.com/fmdoc/set_real_document_root.php */
-$SET_REAL_DOCUMENT_ROOT = ""; /* overrides the value set by SetRealDocumentRoot function */
+$SET_REAL_DOCUMENT_ROOT = "/kunden/homepages/21/d289070231/htdocs/jodylovesrebecca.com/"; /* overrides the value set by SetRealDocumentRoot function */
 
 //
 // override $REAL_DOCUMENT_ROOT from the $SET_REAL_DOCUMENT_ROOT value (if any)
